@@ -1,0 +1,18 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form .end {
+  align-self: flex-end;
+  margin-top: -6px;
+}
+
+.auth-form .inline-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}

@@ -1,0 +1,20 @@
+# Dependencias y builds
+node_modules/
+dist/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Editores y sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.swp
