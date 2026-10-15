@@ -1,0 +1,420 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model alergias {
+  id               Int                @id @default(autoincrement()) @db.SmallInt
+  nombre           String             @unique @db.VarChar(100)
+  tipo             String             @default("alimentaria") @db.VarChar(30)
+  usuario_alergias usuario_alergias[]
+}
+
+model alimentos {
+  id                  BigInt              @id @default(autoincrement())
+  categoria_id        Int                 @db.SmallInt
+  nombre              String              @unique @db.VarChar(120)
+  descripcion         String?
+  porcion_g           Decimal             @default(100) @db.Decimal(6, 1)
+  calorias            Decimal?            @db.Decimal(6, 1)
+  proteinas_g         Decimal?            @db.Decimal(6, 1)
+  carbohidratos_g     Decimal?            @db.Decimal(6, 1)
+  grasas_g            Decimal?            @db.Decimal(6, 1)
+  imagen_url          String?             @db.VarChar(500)
+  categorias_alimento categorias_alimento @relation(fields: [categoria_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([categoria_id], map: "ix_alimentos_categoria")
+}
+
+model categorias_alimento {
+  id          Int         @id @default(autoincrement()) @db.SmallInt
+  nombre      String      @unique @db.VarChar(60)
+  descripcion String?
+  alimentos   alimentos[]
+}
+
+model categorias_receta {
+  id      Int       @id @default(autoincrement()) @db.SmallInt
+  nombre  String    @unique @db.VarChar(60)
+  orden   Int       @default(0) @db.SmallInt
+  recetas recetas[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model condiciones_salud {
+  id                        Int                         @id @default(autoincrement()) @db.SmallInt
+  tipo                      String                      @db.VarChar(30)
+  nombre                    String                      @db.VarChar(100)
+  usuario_condiciones_salud usuario_condiciones_salud[]
+
+  @@unique([tipo, nombre], map: "uq_condiciones_tipo_nombre")
+}
+
+model configuracion_usuario {
+  usuario_id                 BigInt    @id
+  notif_recordatorio_entreno Boolean   @default(true)
+  hora_recordatorio          DateTime? @db.Time(6)
+  notif_recordatorio_agua    Boolean   @default(true)
+  notif_resumen_semanal      Boolean   @default(true)
+  notif_novedades            Boolean   @default(false)
+  privacidad_fotos_privadas  Boolean   @default(true)
+  privacidad_compartir_datos Boolean   @default(false)
+  actualizado_en             DateTime  @default(now()) @db.Timestamptz(6)
+  usuarios                   usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model consejos_nutricionales {
+  id          BigInt     @id @default(autoincrement())
+  titulo      String     @db.VarChar(150)
+  contenido   String
+  objetivo_id Int?       @db.SmallInt
+  activo      Boolean    @default(true)
+  creado_en   DateTime   @default(now()) @db.Timestamptz(6)
+  objetivos   objetivos? @relation(fields: [objetivo_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model ejercicios {
+  id                 BigInt              @id @default(autoincrement())
+  nombre             String              @unique @db.VarChar(120)
+  descripcion        String?
+  tecnica            String?
+  grupo_muscular_id  Int?                @db.SmallInt
+  nivel_id           Int?                @db.SmallInt
+  imagen_url         String?             @db.VarChar(500)
+  video_url          String?             @db.VarChar(500)
+  activo             Boolean             @default(true)
+  creado_en          DateTime            @default(now()) @db.Timestamptz(6)
+  grupos_musculares  grupos_musculares?  @relation(fields: [grupo_muscular_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  niveles_dificultad niveles_dificultad? @relation(fields: [nivel_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  rutina_ejercicios  rutina_ejercicios[]
+
+  @@index([grupo_muscular_id], map: "ix_ejercicios_grupo")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model fotos_progreso {
+  id               BigInt          @id @default(autoincrement())
+  usuario_id       BigInt
+  url              String          @db.VarChar(500)
+  nombre_archivo   String          @db.VarChar(255)
+  tipo_mime        String          @db.VarChar(30)
+  tamano_bytes     Int
+  vista            String?         @db.VarChar(20)
+  fecha_foto       DateTime        @default(dbgenerated("CURRENT_DATE")) @db.Date
+  registro_peso_id BigInt?
+  nota             String?         @db.VarChar(255)
+  creado_en        DateTime        @default(now()) @db.Timestamptz(6)
+  registros_peso   registros_peso? @relation(fields: [registro_peso_id], references: [id], onUpdate: NoAction)
+  usuarios         usuarios        @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id, fecha_foto], map: "ix_fotos_progreso_usuario_fecha")
+}
+
+model grupos_musculares {
+  id                       Int                        @id @default(autoincrement()) @db.SmallInt
+  nombre                   String                     @unique @db.VarChar(60)
+  ejercicios               ejercicios[]
+  rutina_grupos_musculares rutina_grupos_musculares[]
+}
+
+model lugares_entrenamiento {
+  id       Int        @id @default(autoincrement()) @db.SmallInt
+  codigo   String     @unique @db.VarChar(30)
+  nombre   String     @unique @db.VarChar(60)
+  perfiles perfiles[]
+  rutinas  rutinas[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model metas_peso {
+  id              BigInt    @id @default(autoincrement())
+  usuario_id      BigInt
+  peso_inicial_kg Decimal   @db.Decimal(5, 2)
+  peso_meta_kg    Decimal   @db.Decimal(5, 2)
+  fecha_inicio    DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Date
+  fecha_objetivo  DateTime? @db.Date
+  activa          Boolean   @default(true)
+  alcanzada_en    DateTime? @db.Date
+  creado_en       DateTime  @default(now()) @db.Timestamptz(6)
+  usuarios        usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model niveles_actividad {
+  id          Int        @id @default(autoincrement()) @db.SmallInt
+  codigo      String     @unique @db.VarChar(30)
+  nombre      String     @unique @db.VarChar(60)
+  descripcion String?
+  orden       Int        @default(0) @db.SmallInt
+  perfiles    perfiles[]
+}
+
+model niveles_dificultad {
+  id         Int          @id @default(autoincrement()) @db.SmallInt
+  codigo     String       @unique @db.VarChar(30)
+  nombre     String       @unique @db.VarChar(50)
+  orden      Int          @default(0) @db.SmallInt
+  ejercicios ejercicios[]
+  rutinas    rutinas[]
+}
+
+model objetivos {
+  id                     Int                      @id @default(autoincrement()) @db.SmallInt
+  codigo                 String                   @unique @db.VarChar(40)
+  nombre                 String                   @unique @db.VarChar(80)
+  descripcion            String?
+  consejos_nutricionales consejos_nutricionales[]
+  perfiles               perfiles[]
+  recetas                recetas[]
+  rutinas                rutinas[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model perfiles {
+  usuario_id                 BigInt                 @id
+  objetivo_id                Int?                   @db.SmallInt
+  fecha_nacimiento           DateTime?              @db.Date
+  estatura_m                 Decimal?               @db.Decimal(3, 2)
+  nivel_actividad_id         Int?                   @db.SmallInt
+  lugar_entrenamiento_id     Int?                   @db.SmallInt
+  meta_entrenamientos_semana Int                    @default(3) @db.SmallInt
+  meta_agua_ml               Int                    @default(2000)
+  actualizado_en             DateTime               @default(now()) @db.Timestamptz(6)
+  lugares_entrenamiento      lugares_entrenamiento? @relation(fields: [lugar_entrenamiento_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  niveles_actividad          niveles_actividad?     @relation(fields: [nivel_actividad_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  objetivos                  objetivos?             @relation(fields: [objetivo_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios                   usuarios               @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([objetivo_id], map: "ix_perfiles_objetivo")
+}
+
+model preguntas_frecuentes {
+  id        BigInt  @id @default(autoincrement())
+  categoria String  @db.VarChar(60)
+  pregunta  String  @db.VarChar(255)
+  respuesta String
+  orden     Int     @default(0) @db.SmallInt
+  activa    Boolean @default(true)
+}
+
+model recetas {
+  id                BigInt            @id @default(autoincrement())
+  categoria_id      Int               @db.SmallInt
+  objetivo_id       Int?              @db.SmallInt
+  nombre            String            @db.VarChar(150)
+  descripcion       String?
+  ingredientes      String
+  preparacion       String
+  tiempo_prep_min   Int?              @db.SmallInt
+  porciones         Int?              @db.SmallInt
+  calorias          Int?
+  imagen_url        String?           @db.VarChar(500)
+  activa            Boolean           @default(true)
+  creado_en         DateTime          @default(now()) @db.Timestamptz(6)
+  categorias_receta categorias_receta @relation(fields: [categoria_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  objetivos         objetivos?        @relation(fields: [objetivo_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([categoria_id], map: "ix_recetas_categoria")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model registros_agua {
+  id            BigInt   @id @default(autoincrement())
+  usuario_id    BigInt
+  cantidad_ml   Int
+  registrado_en DateTime @default(now()) @db.Timestamptz(6)
+  usuarios      usuarios @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id, registrado_en], map: "ix_registros_agua_usuario_fecha")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model registros_peso {
+  id             BigInt           @id @default(autoincrement())
+  usuario_id     BigInt
+  peso_kg        Decimal          @db.Decimal(5, 2)
+  fecha          DateTime         @default(dbgenerated("CURRENT_DATE")) @db.Date
+  nota           String?          @db.VarChar(255)
+  creado_en      DateTime         @default(now()) @db.Timestamptz(6)
+  actualizado_en DateTime         @default(now()) @db.Timestamptz(6)
+  fotos_progreso fotos_progreso[]
+  usuarios       usuarios         @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([usuario_id, fecha], map: "uq_registros_peso_usuario_fecha")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model rutina_ejercicios {
+  id           BigInt     @id @default(autoincrement())
+  rutina_id    BigInt
+  ejercicio_id BigInt
+  orden        Int        @db.SmallInt
+  series       Int        @db.SmallInt
+  repeticiones Int?       @db.SmallInt
+  duracion_seg Int?
+  descanso_seg Int?       @db.SmallInt
+  ejercicios   ejercicios @relation(fields: [ejercicio_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  rutinas      rutinas    @relation(fields: [rutina_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([rutina_id, orden], map: "uq_rutina_ejercicios_orden")
+  @@index([ejercicio_id], map: "ix_rutina_ejercicios_ejercicio")
+}
+
+model rutina_grupos_musculares {
+  rutina_id         BigInt
+  grupo_muscular_id Int               @db.SmallInt
+  grupos_musculares grupos_musculares @relation(fields: [grupo_muscular_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  rutinas           rutinas           @relation(fields: [rutina_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([rutina_id, grupo_muscular_id])
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model rutinas {
+  id                       BigInt                     @id @default(autoincrement())
+  nombre                   String                     @db.VarChar(120)
+  descripcion              String?
+  objetivo_id              Int?                       @db.SmallInt
+  nivel_id                 Int                        @db.SmallInt
+  lugar_entrenamiento_id   Int?                       @db.SmallInt
+  duracion_estimada_min    Int                        @db.SmallInt
+  calorias_estimadas       Int?
+  imagen_url               String?                    @db.VarChar(500)
+  activa                   Boolean                    @default(true)
+  creado_en                DateTime                   @default(now()) @db.Timestamptz(6)
+  rutina_ejercicios        rutina_ejercicios[]
+  rutina_grupos_musculares rutina_grupos_musculares[]
+  lugares_entrenamiento    lugares_entrenamiento?     @relation(fields: [lugar_entrenamiento_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  niveles_dificultad       niveles_dificultad         @relation(fields: [nivel_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  objetivos                objetivos?                 @relation(fields: [objetivo_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  rutinas_programadas      rutinas_programadas[]
+  sesiones_entrenamiento   sesiones_entrenamiento[]
+  usuario_rutinas          usuario_rutinas[]
+
+  @@index([nivel_id], map: "ix_rutinas_nivel")
+  @@index([objetivo_id], map: "ix_rutinas_objetivo")
+}
+
+model rutinas_programadas {
+  id         BigInt   @id @default(autoincrement())
+  usuario_id BigInt
+  rutina_id  BigInt
+  fecha      DateTime @db.Date
+  rutinas    rutinas  @relation(fields: [rutina_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  usuarios   usuarios @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([usuario_id, fecha, rutina_id], map: "uq_rutinas_programadas")
+  @@index([usuario_id, fecha], map: "ix_rutinas_programadas_usuario_fecha")
+}
+
+model sesiones {
+  id                 BigInt    @id @default(autoincrement())
+  usuario_id         BigInt
+  refresh_token_hash String    @unique @db.VarChar(255)
+  dispositivo        String?   @db.VarChar(150)
+  ip                 String?   @db.VarChar(45)
+  creado_en          DateTime  @default(now()) @db.Timestamptz(6)
+  expira_en          DateTime  @db.Timestamptz(6)
+  cerrada_en         DateTime? @db.Timestamptz(6)
+  usuarios           usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id], map: "ix_sesiones_usuario")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model sesiones_entrenamiento {
+  id                BigInt    @id @default(autoincrement())
+  usuario_id        BigInt
+  rutina_id         BigInt?
+  iniciada_en       DateTime  @default(now()) @db.Timestamptz(6)
+  finalizada_en     DateTime? @db.Timestamptz(6)
+  duracion_min      Int?      @db.SmallInt
+  calorias_quemadas Int?
+  estado            String    @default("en_curso") @db.VarChar(20)
+  rutinas           rutinas?  @relation(fields: [rutina_id], references: [id], onUpdate: NoAction)
+  usuarios          usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id, iniciada_en], map: "ix_sesiones_entrenamiento_usuario_fecha")
+}
+
+model tokens_recuperacion {
+  id         BigInt    @id @default(autoincrement())
+  usuario_id BigInt
+  token_hash String    @unique @db.VarChar(255)
+  expira_en  DateTime  @db.Timestamptz(6)
+  usado_en   DateTime? @db.Timestamptz(6)
+  creado_en  DateTime  @default(now()) @db.Timestamptz(6)
+  usuarios   usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id], map: "ix_tokens_recuperacion_usuario")
+}
+
+model usuario_alergias {
+  usuario_id BigInt
+  alergia_id Int      @db.SmallInt
+  notas      String?  @db.VarChar(255)
+  creado_en  DateTime @default(now()) @db.Timestamptz(6)
+  alergias   alergias @relation(fields: [alergia_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios   usuarios @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([usuario_id, alergia_id])
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model usuario_condiciones_salud {
+  id                BigInt             @id @default(autoincrement())
+  usuario_id        BigInt
+  condicion_id      Int?               @db.SmallInt
+  descripcion       String?            @db.VarChar(255)
+  fecha_aprox       DateTime?          @db.Date
+  vigente           Boolean            @default(true)
+  creado_en         DateTime           @default(now()) @db.Timestamptz(6)
+  condiciones_salud condiciones_salud? @relation(fields: [condicion_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios          usuarios           @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([usuario_id], map: "ix_usuario_condiciones_usuario")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model usuario_rutinas {
+  usuario_id BigInt
+  rutina_id  BigInt
+  origen     String   @default("guardada") @db.VarChar(20)
+  creado_en  DateTime @default(now()) @db.Timestamptz(6)
+  rutinas    rutinas  @relation(fields: [rutina_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  usuarios   usuarios @relation(fields: [usuario_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([usuario_id, rutina_id])
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model usuarios {
+  id                        BigInt                      @id @default(autoincrement())
+  nombre_completo           String                      @db.VarChar(150)
+  correo                    String                      @db.VarChar(255)
+  contrasena_hash           String                      @db.VarChar(255)
+  acepto_terminos           Boolean                     @default(false)
+  fecha_acepto_terminos     DateTime?                   @db.Timestamptz(6)
+  activo                    Boolean                     @default(true)
+  ultimo_acceso             DateTime?                   @db.Timestamptz(6)
+  creado_en                 DateTime                    @default(now()) @db.Timestamptz(6)
+  actualizado_en            DateTime                    @default(now()) @db.Timestamptz(6)
+  configuracion_usuario     configuracion_usuario?
+  fotos_progreso            fotos_progreso[]
+  metas_peso                metas_peso[]
+  perfiles                  perfiles?
+  registros_agua            registros_agua[]
+  registros_peso            registros_peso[]
+  rutinas_programadas       rutinas_programadas[]
+  sesiones                  sesiones[]
+  sesiones_entrenamiento    sesiones_entrenamiento[]
+  tokens_recuperacion       tokens_recuperacion[]
+  usuario_alergias          usuario_alergias[]
+  usuario_condiciones_salud usuario_condiciones_salud[]
+  usuario_rutinas           usuario_rutinas[]
+}
