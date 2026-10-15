@@ -1,0 +1,1861 @@
+{
+  "referenceDataset": "Kaggle Food.com Recipes and Reviews",
+  "sourceUrl": "https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews",
+  "note": "Seed de demostración; requiere importar registros verificados del dataset original.",
+  "categories": [
+    {
+      "id": "recipe-0",
+      "name": "Desayunos",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-0-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-0-0",
+          "name": "Avena con frutos rojos",
+          "image": "recipes/recipe-0-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 320,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
+            "recipeId": "196347",
+            "recipeName": "Strawberries and Cream Oatmeal",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-1",
+          "name": "Tostada de aguacate y huevo",
+          "image": "recipes/recipe-0-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 385,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
+            "recipeId": "358497",
+            "recipeName": "Poached Eggs &amp; Avocado Toasts",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-2",
+          "name": "Pancakes de banano y avena",
+          "image": "recipes/recipe-0-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 290,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/84/35/2/piciqaxiR.jpg",
+            "recipeId": "84352",
+            "recipeName": "Banana, Raisin, and Oatmeal Pancakes",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-3",
+          "name": "Parfait de yogur y granola",
+          "image": "recipes/recipe-0-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 275,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/07/66/picHXHeeN.jpg",
+            "recipeId": "130766",
+            "recipeName": "A Breakfast Yogurt Parfait (Granola)",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-4",
+          "name": "Omelette de espinaca",
+          "image": "recipes/recipe-0-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 240,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
+            "recipeId": "56875",
+            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-5",
+          "name": "Bowl de quinua y mango",
+          "image": "recipes/recipe-0-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 355,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/53/84/4/picqP2pOQ.jpg",
+            "recipeId": "53844",
+            "recipeName": "Banana, Mango, Apple Rice Kugel",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-6",
+          "name": "Chía pudding con fresas",
+          "image": "recipes/recipe-0-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 310,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/21/32/0/picmKIL6x.jpg",
+            "recipeId": "21320",
+            "recipeName": "Vanilla Pudding Fruit Salad",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-7",
+          "name": "Arepa integral con huevo",
+          "image": "recipes/recipe-0-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 330,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/73/50/5/picGVfjgR.jpg",
+            "recipeId": "73505",
+            "recipeName": "Whole Grain Pancake Mix",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-8",
+          "name": "Tostadas francesas integrales",
+          "image": "recipes/recipe-0-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 260,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/57/23/picqDrkk7.jpg",
+            "recipeId": "475723",
+            "recipeName": "Mexican Breakfast Tostadas With Avocado Pico De Gallo",
+            "recipeCategory": "Breakfast"
+          }
+        },
+        {
+          "id": "recipe-0-9",
+          "name": "Bowl de yogur y kiwi",
+          "image": "recipes/recipe-0-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 295,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/29/1/pichZ5Gak.jpg",
+            "recipeId": "41291",
+            "recipeName": "Blueberry Yogurt Pancakes",
+            "recipeCategory": "Breakfast"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recipe-1",
+      "name": "Almuerzos",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-1-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-1-0",
+          "name": "Bowl de pollo y quinua",
+          "image": "recipes/recipe-1-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 385,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/65/71/mWougfgSESR9RBAnnRjw_quinoa-chicken-tenders-6700.jpg",
+            "recipeId": "416571",
+            "recipeName": "Quinoa Crusted Chicken Fingers",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-1",
+          "name": "Ensalada de salmón y aguacate",
+          "image": "recipes/recipe-1-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 290,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
+            "recipeId": "123153",
+            "recipeName": "Smoked Salmon and Caviar Salad",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-2",
+          "name": "Bowl de garbanzos y verduras",
+          "image": "recipes/recipe-1-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 275,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
+            "recipeId": "13504",
+            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-3",
+          "name": "Wrap integral de pavo",
+          "image": "recipes/recipe-1-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 240,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/38/85/picB1JcdI.jpg",
+            "recipeId": "313885",
+            "recipeName": "Swiss Turkey Wrap With Fresh Basil",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-4",
+          "name": "Lentejas con verduras",
+          "image": "recipes/recipe-1-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 355,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
+            "recipeId": "13504",
+            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-5",
+          "name": "Tacos de pescado al horno",
+          "image": "recipes/recipe-1-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 310,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/26/51/6/kTaETJG5RTWNeCpVok9o_FT%204%20-%20final_2.jpg",
+            "recipeId": "26516",
+            "recipeName": "Fish Tacos",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-6",
+          "name": "Bowl de tofu y arroz integral",
+          "image": "recipes/recipe-1-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 330,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/70/11/picihWLSk.jpg",
+            "recipeId": "137011",
+            "recipeName": "Low-Sodium Whole-Grain Crackers",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-7",
+          "name": "Ensalada de atún y fríjoles",
+          "image": "recipes/recipe-1-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 260,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/38/76/picdJWrl7.jpg",
+            "recipeId": "143876",
+            "recipeName": "Curry Couscous and Broccoli Feta Salad With Garbanzo Beans",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-8",
+          "name": "Pollo con camote asado",
+          "image": "recipes/recipe-1-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 295,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/36/42/50/picdFkTs2.jpg",
+            "recipeId": "364250",
+            "recipeName": "Roasted Sweet Potato Fries",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-1-9",
+          "name": "Quinua mediterránea con vegetales",
+          "image": "recipes/recipe-1-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 320,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Proteína magra",
+            "Verduras variadas",
+            "Quinua o arroz integral",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/07/5/picKl8iSx.jpg",
+            "recipeId": "29075",
+            "recipeName": "Mediterranean Veggie Wrap",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recipe-2",
+      "name": "Comidas y cenas",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-2-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-2-0",
+          "name": "Salmón con brócoli al horno",
+          "image": "recipes/recipe-2-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 290,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
+            "recipeId": "43404",
+            "recipeName": "Baked Salmon Delight",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-1",
+          "name": "Salteado de tofu y verduras",
+          "image": "recipes/recipe-2-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 275,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/96/05/picqorflh.jpg",
+            "recipeId": "309605",
+            "recipeName": "Savory Tofu and Vegetables over Tomato Couscous",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-2",
+          "name": "Pollo al limón con calabacín",
+          "image": "recipes/recipe-2-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 240,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/95/38/3/DwebiNDPRcCTZWQfIWvT_WIN_20141004_200213.JPG",
+            "recipeId": "95383",
+            "recipeName": "Garlic Chicken Zucchini Stir Fry",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-3",
+          "name": "Tazón de fríjoles negros",
+          "image": "recipes/recipe-2-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 355,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/20/3/picahmqDz.jpg",
+            "recipeId": "10203",
+            "recipeName": "Quick Homemade Chili Con Carne With Beans",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-4",
+          "name": "Pasta integral con tomate",
+          "image": "recipes/recipe-2-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 310,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/45/2/scmIxe0oTkIF6B8mo9hg_image.jpeg",
+            "recipeId": "13452",
+            "recipeName": "White Bean and Pasta Soup With Sun-Dried Tomatoes",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-5",
+          "name": "Pescado con ensalada fresca",
+          "image": "recipes/recipe-2-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 330,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/08/1/yHQXrL8OToGNQALZqERz_My%20o%20my%20best%20thai%20beef%20salad%20ever%2051081-4.jpg",
+            "recipeId": "51081",
+            "recipeName": "My O My.. Best Thai Beef Salad Ever!",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-6",
+          "name": "Berenjena rellena de lentejas",
+          "image": "recipes/recipe-2-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 260,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/13/8/picE35lHY.jpg",
+            "recipeId": "51138",
+            "recipeName": "Oven Fried Eggplant or and Zucchini Parmesan",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-7",
+          "name": "Frittata de verduras",
+          "image": "recipes/recipe-2-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 295,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/20/93/6/SYE3YhCLTyu5YqXaqMCH_7%20(1%20of%201).jpg",
+            "recipeId": "20936",
+            "recipeName": "Bacon Potato Frittata",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-8",
+          "name": "Tacos de pollo y aguacate",
+          "image": "recipes/recipe-2-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 320,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/66/99/0/picrFKe50.jpg",
+            "recipeId": "66990",
+            "recipeName": "Chipotle Chicken Salad Tacos",
+            "recipeCategory": "One Dish Meal"
+          }
+        },
+        {
+          "id": "recipe-2-9",
+          "name": "Sopa de garbanzos y espinaca",
+          "image": "recipes/recipe-2-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 385,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Verduras frescas",
+            "Hummus o yogur",
+            "Semillas o nueces",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/58/1/picCw7na3.jpg",
+            "recipeId": "30581",
+            "recipeName": "Garlic, Chickpea &amp; Spinach Soup",
+            "recipeCategory": "One Dish Meal"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recipe-3",
+      "name": "Snacks",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-3-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-3-0",
+          "name": "Hummus con bastones de verduras",
+          "image": "recipes/recipe-3-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 275,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
+            "recipeId": "13504",
+            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-1",
+          "name": "Manzana con mantequilla de maní",
+          "image": "recipes/recipe-3-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 240,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/12/05/picF2UbRD.jpg",
+            "recipeId": "111205",
+            "recipeName": "Grilled Cheddar and Apple Butter Sandwich",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-2",
+          "name": "Yogur con semillas de chía",
+          "image": "recipes/recipe-3-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 355,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/56/4/picK7qda7.jpg",
+            "recipeId": "16564",
+            "recipeName": "Beet Koshumbir - Beet Salad with yogurt",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-3",
+          "name": "Garbanzos crujientes al horno",
+          "image": "recipes/recipe-3-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 310,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/52/66/pic1oHIHg.jpg",
+            "recipeId": "245266",
+            "recipeName": "Easiest  Crispy Jacket Baked Potato for Lazy Busy People",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-4",
+          "name": "Tostada integral con ricotta",
+          "image": "recipes/recipe-3-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 330,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/14/35/picHGrbjm.jpg",
+            "recipeId": "101435",
+            "recipeName": "Italian Sausage Spinach and Ricotta Toasts",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-5",
+          "name": "Bolitas de avena y cacao",
+          "image": "recipes/recipe-3-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 260,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/90/8/picsbzqzo.jpg",
+            "recipeId": "16908",
+            "recipeName": "Cocoa Dreams",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-6",
+          "name": "Edamame con limón",
+          "image": "recipes/recipe-3-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 295,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/24/2/pic6PNSDE.jpg",
+            "recipeId": "14242",
+            "recipeName": "Lemon Asparagus",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-7",
+          "name": "Bananos con yogur",
+          "image": "recipes/recipe-3-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 320,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/56/4/picK7qda7.jpg",
+            "recipeId": "16564",
+            "recipeName": "Beet Koshumbir - Beet Salad with yogurt",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-8",
+          "name": "Mix de nueces y arándanos",
+          "image": "recipes/recipe-3-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 385,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
+            "recipeId": "197346",
+            "recipeName": "Mixed Nuts With Rosemary",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        },
+        {
+          "id": "recipe-3-9",
+          "name": "Rollitos de pavo y pepino",
+          "image": "recipes/recipe-3-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 290,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Fruta fresca",
+            "Leche o bebida vegetal",
+            "Avena o semillas",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/52/3/pic05jFaP.jpg",
+            "recipeId": "11523",
+            "recipeName": "Turkey Stuffed Yellow &amp; Red Bell Peppers",
+            "recipeCategory": "Lunch/Snacks"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recipe-4",
+      "name": "Batidos",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-4-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-4-0",
+          "name": "Batido de banano y avena",
+          "image": "recipes/recipe-4-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 240,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/29/3/picEkeICQ.jpg",
+            "recipeId": "35293",
+            "recipeName": "Horlicks Banana Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-1",
+          "name": "Batido verde de espinaca y piña",
+          "image": "recipes/recipe-4-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 355,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/06/19/picBrBPLc.jpg",
+            "recipeId": "310619",
+            "recipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-2",
+          "name": "Batido de frutos rojos y yogur",
+          "image": "recipes/recipe-4-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 310,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/51/8/piczfGJ08.jpg",
+            "recipeId": "31518",
+            "recipeName": "Berry Yogurt Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-3",
+          "name": "Batido de mango y kéfir",
+          "image": "recipes/recipe-4-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 330,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/35/7/picysWpki.jpg",
+            "recipeId": "29357",
+            "recipeName": "Mango Orange Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-4",
+          "name": "Batido de cacao y banano",
+          "image": "recipes/recipe-4-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 260,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/62/0/pict8BRWc.jpg",
+            "recipeId": "38620",
+            "recipeName": "Banana Cocoa Smoothies",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-5",
+          "name": "Batido de papaya y naranja",
+          "image": "recipes/recipe-4-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 295,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/57/46/0/piceRG5xD.jpg",
+            "recipeId": "57460",
+            "recipeName": "Papaya Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-6",
+          "name": "Batido de fresa y chía",
+          "image": "recipes/recipe-4-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 320,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/48/4/38484.jpg",
+            "recipeId": "38484",
+            "recipeName": "Soy Delicious Strawberry Banana Shake or Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-7",
+          "name": "Batido tropical de maracuyá",
+          "image": "recipes/recipe-4-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 385,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/69/57/6/picohyjgh.jpg",
+            "recipeId": "69576",
+            "recipeName": "Tropical Fruit Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-8",
+          "name": "Batido de manzana y canela",
+          "image": "recipes/recipe-4-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 290,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/40/2/picYCJxGC.jpg",
+            "recipeId": "39402",
+            "recipeName": "Apple Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        },
+        {
+          "id": "recipe-4-9",
+          "name": "Batido de café y avena",
+          "image": "recipes/recipe-4-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 275,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Fruta madura",
+            "Yogur o avena",
+            "Cacao sin azúcar",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/36/70/1/pic3v1r2p.jpg",
+            "recipeId": "36701",
+            "recipeName": "Coffee Smoothie",
+            "recipeCategory": "Smoothies"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recipe-5",
+      "name": "Postres saludables",
+      "description": "Recetas sencillas con ingredientes nutritivos.",
+      "image": "recipes/recipe-5-0.jpg",
+      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "items": [
+        {
+          "id": "recipe-5-0",
+          "name": "Manzana asada con canela",
+          "image": "recipes/recipe-5-0.jpg",
+          "minutes": 15,
+          "servings": 2,
+          "calories": 355,
+          "protein": 18,
+          "carbs": 38,
+          "fat": 9,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/17/05/51/pichR6K5r.jpg",
+            "recipeId": "170551",
+            "recipeName": "Pina Asada",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-1",
+          "name": "Mousse de cacao y aguacate",
+          "image": "recipes/recipe-5-1.jpg",
+          "minutes": 20,
+          "servings": 2,
+          "calories": 310,
+          "protein": 24,
+          "carbs": 32,
+          "fat": 14,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/48/48/RQ0XXWnTReGJx5AqQ3PG_white%20chocolate%20mousse.JPG",
+            "recipeId": "144848",
+            "recipeName": "White Chocolate Mousse Torte",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-2",
+          "name": "Yogur helado de frutos rojos",
+          "image": "recipes/recipe-5-2.jpg",
+          "minutes": 25,
+          "servings": 2,
+          "calories": 330,
+          "protein": 12,
+          "carbs": 42,
+          "fat": 8,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
+            "recipeId": "503681",
+            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-3",
+          "name": "Pudín de chía y mango",
+          "image": "recipes/recipe-5-3.jpg",
+          "minutes": 30,
+          "servings": 2,
+          "calories": 260,
+          "protein": 14,
+          "carbs": 30,
+          "fat": 10,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/46/15/picC1msYw.jpg",
+            "recipeId": "494615",
+            "recipeName": "Mango-Coconut Chia Pudding",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-4",
+          "name": "Galletas de avena y banano",
+          "image": "recipes/recipe-5-4.jpg",
+          "minutes": 35,
+          "servings": 2,
+          "calories": 295,
+          "protein": 20,
+          "carbs": 28,
+          "fat": 7,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/32/61/15/piczS42eY.jpg",
+            "recipeId": "326115",
+            "recipeName": "Banana Oatmeal Blueberry Cookies",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-5",
+          "name": "Fresas con yogur griego",
+          "image": "recipes/recipe-5-5.jpg",
+          "minutes": 18,
+          "servings": 2,
+          "calories": 320,
+          "protein": 16,
+          "carbs": 45,
+          "fat": 11,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
+            "recipeId": "503681",
+            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-6",
+          "name": "Brownie de fríjol negro",
+          "image": "recipes/recipe-5-6.jpg",
+          "minutes": 22,
+          "servings": 2,
+          "calories": 385,
+          "protein": 22,
+          "carbs": 34,
+          "fat": 12,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/86/92/picPqp6hm.jpg",
+            "recipeId": "418692",
+            "recipeName": "Black Bean Brownies (Gluten Free)",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-7",
+          "name": "Peras al horno con nueces",
+          "image": "recipes/recipe-5-7.jpg",
+          "minutes": 28,
+          "servings": 2,
+          "calories": 290,
+          "protein": 19,
+          "carbs": 37,
+          "fat": 9,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/70/45/picFbaOSi.jpg",
+            "recipeId": "237045",
+            "recipeName": "Baked Apples (With Chopped Hazelnuts)",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-8",
+          "name": "Trufas de dátil y cacao",
+          "image": "recipes/recipe-5-8.jpg",
+          "minutes": 32,
+          "servings": 2,
+          "calories": 275,
+          "protein": 11,
+          "carbs": 40,
+          "fat": 8,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/27/91/65/picLb71Gm.jpg",
+            "recipeId": "279165",
+            "recipeName": "Date Truffles (Madgooga)",
+            "recipeCategory": "Dessert"
+          }
+        },
+        {
+          "id": "recipe-5-9",
+          "name": "Copa de ricotta y fruta",
+          "image": "recipes/recipe-5-9.jpg",
+          "minutes": 12,
+          "servings": 2,
+          "calories": 240,
+          "protein": 17,
+          "carbs": 33,
+          "fat": 10,
+          "ingredients": [
+            "Avena",
+            "Yogur natural",
+            "Fruta fresca",
+            "Limón, canela o especias al gusto"
+          ],
+          "steps": [
+            "Lava y prepara los ingredientes; corta las frutas o verduras.",
+            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
+            "Sirve en dos porciones y ajusta las especias al gusto."
+          ],
+          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "imageSource": {
+            "dataset": "Food.com Recipes and Reviews · Kaggle",
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/71/73/1/pic9KJup4.jpg",
+            "recipeId": "71731",
+            "recipeName": "Apple-Rum Ricotta Cream Dessert",
+            "recipeCategory": "Dessert"
+          }
+        }
+      ]
+    }
+  ]
+}
