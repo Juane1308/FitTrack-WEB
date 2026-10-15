@@ -7,6 +7,10 @@ import {
   Recipe,
   Routine,
 } from '@/models'
+import fullBodyImage from '@/assets/images/training/full-body.png'
+import hypertrophyImage from '@/assets/images/training/hypertrophy.png'
+import fatLossImage from '@/assets/images/training/fat-loss.png'
+import strengthImage from '@/assets/images/training/strength.png'
 
 export class MockRepository {
   get currentUser() {
@@ -33,9 +37,15 @@ export class MockRepository {
 
   get routines() {
     return [
+      new Routine({ id: 'full-body', name: 'Full Body', level: 'Principiante', durationWeeks: 4, image: fullBodyImage }),
+      new Routine({ id: 'hypertrophy', name: 'Hipertrofia', level: 'Intermedio', durationWeeks: 8, image: hypertrophyImage }),
+      new Routine({ id: 'fat-loss', name: 'Pérdida de grasa', level: 'Intermedio', durationWeeks: 8, image: fatLossImage }),
       new Routine({
-        name: 'Fuerza de tren superior',
-        level: 'Intermedio',
+        id: 'strength',
+        name: 'Fuerza',
+        image: strengthImage,
+        durationWeeks: 8,
+        level: 'Avanzado',
         durationMinutes: 45,
         goal: 'Ganar fuerza',
         muscleGroup: 'Tren superior',

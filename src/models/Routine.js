@@ -1,5 +1,8 @@
 export class Routine {
-  constructor({ name, level, durationMinutes, goal, muscleGroup, exercises }) {
+  constructor({ id, name, level, durationMinutes, durationWeeks, image, goal, muscleGroup, exercises = [] }) {
+    this.id = id
+    this.durationWeeks = durationWeeks
+    this.image = image
     this.name = name
     this.level = level
     this.durationMinutes = durationMinutes
