@@ -2,6 +2,7 @@ import { computed, ref, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 
 import { MockAuthRepository } from '@/repositories/authRepository'
+import { HttpAuthRepository } from '@/repositories/httpAuthRepository'
 
 export const AuthStatus = Object.freeze({
   loggedOut: 'loggedOut',
@@ -9,8 +10,14 @@ export const AuthStatus = Object.freeze({
   authenticated: 'authenticated',
 })
 
+// Con VITE_API_URL se usa la API real; sin ella (por ejemplo, en las pruebas), el MOCK.
+function createDefaultRepository() {
+  const apiUrl = import.meta.env.VITE_API_URL
+  return apiUrl ? new HttpAuthRepository(apiUrl) : new MockAuthRepository()
+}
+
 export const useAuthController = defineStore('auth', () => {
-  const repository = shallowRef(new MockAuthRepository())
+  const repository = shallowRef(createDefaultRepository())
   const status = ref(AuthStatus.loggedOut)
   const currentUser = ref(null)
 

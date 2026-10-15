@@ -8,6 +8,8 @@ export function authErrorMessage(status) {
       return 'Correo o contraseña incorrectos.'
     case AuthResultStatus.inactiveAccount:
       return 'La cuenta no está activa.'
+    case AuthResultStatus.serverUnavailable:
+      return 'No se pudo conectar con el servidor. Intenta de nuevo.'
     default:
       return ''
   }

@@ -4,7 +4,7 @@ Aplicación web para seguimiento del entrenamiento, alimentación y progreso fí
 
 ## Estado actual
 
-Etapas 1 y 2: proyecto base y autenticación MOCK funcionando con Vue 3.
+Etapas 1 y 2: proyecto base y autenticación conectada a PostgreSQL mediante la API del backend.
 
 Incluye:
 
@@ -14,8 +14,8 @@ Incluye:
 - Arquitectura MVC: modelos, controladores (Pinia + composables) y vistas.
 - Botón único y contextual del asistente virtual.
 - Diseño responsive para móvil y escritorio.
-- Login, registro, recuperación de contraseña y cierre de sesión.
-- Contraseñas mock representadas mediante huella SHA-256, nunca en texto plano.
+- Login y registro contra PostgreSQL (API Express + Prisma), recuperación de contraseña y cierre de sesión.
+- Contraseñas guardadas con bcrypt, nunca en texto plano.
 - Identidad visual con logo FITTRACK.
 
 ## Tecnologías
@@ -25,6 +25,7 @@ Incluye:
 - Vue Router.
 - Pinia para gestión de estado.
 - Vitest y Vue Test Utils.
+- Node.js, Express, Prisma y PostgreSQL (Railway) en el backend.
 - Git y GitHub.
 
 ## Requisitos
@@ -33,13 +34,44 @@ Incluye:
 
 ## Instalación y ejecución
 
+Se necesitan dos terminales: una para la API (`backend/`) y otra para el frontend.
+
+**1. API (backend)** — requiere `backend/.env` con `DATABASE_URL` (ver README principal, sección *Base de datos*):
+
 ```bash
+cd backend
 npm install
-npm test
-npm run dev
+npm run db:deploy     # aplica las migraciones (solo la primera vez o si hay nuevas)
+npm run db:generate
+npm run db:seed       # crea/actualiza los usuarios demo
+npm run dev           # API en http://localhost:3000/api
 ```
 
-La aplicación queda disponible en `http://localhost:5173`.
+**2. Frontend** (desde la raíz del proyecto):
+
+```bash
+npm install
+npm run dev           # http://localhost:5173
+```
+
+En modo desarrollo el frontend usa la API real: Vite redirige `/api` a `http://localhost:3000` (configurado en `.env.development` y `vite.config.js`). Si se borra `VITE_API_URL` de `.env.development`, vuelve a usar el MOCK en memoria.
+
+### Usuarios demo
+
+| Nombre | Correo               | Contraseña     | Objetivo            |
+|--------|----------------------|----------------|---------------------|
+| Juan   | `juan@fittrack.com`  | `FitTrack2026` | Ganar masa muscular |
+| Samu   | `samu@fittrack.com`  | `FitTrack2026` | Perder peso         |
+| Mutis  | `mutis@fittrack.com` | `FitTrack2026` | Mantenerse en forma |
+
+`npm run db:seed` se puede ejecutar varias veces: si el usuario ya existe lo actualiza en lugar de duplicarlo.
+
+### Pruebas
+
+```bash
+npm test                  # frontend (Vitest)
+cd backend && npm test    # API (node:test, sin necesidad de base de datos)
+```
 
 ## Entregables
 
@@ -62,7 +94,7 @@ src/
 ├── styles/         # Tema global
 └── assets/         # Imágenes, íconos y fuentes
 tests/              # Pruebas con Vitest
-backend/            # Estructura del backend (pendiente)
+backend/            # API Express + Prisma (routes, controllers, services, prisma/seed.js)
 ```
 
 Las vistas solo contienen plantilla y estilos; toda la lógica (validación, llamadas a repositorios, navegación) vive en `src/controllers/`.
@@ -74,6 +106,17 @@ Las vistas solo contienen plantilla y estilos; toda la lógica (validación, lla
 
 Las funcionalidades se desarrollarán en ramas `feature/...` y se integrarán en `develop`.
 
-## Flujo de autenticación MOCK
+## API de autenticación
 
-En esta etapa las cuentas viven únicamente en memoria mientras la pestaña está abierta (recargar la página las borra). Registra una cuenta desde la pantalla de Login y después inicia sesión. No se envían correos reales ni se conecta un backend.
+| Método | Ruta                        | Respuesta                                                                  |
+|--------|-----------------------------|----------------------------------------------------------------------------|
+| POST   | `/api/auth/register`        | `201 success` · `409 emailAlreadyRegistered` · `400` datos inválidos       |
+| POST   | `/api/auth/login`           | `200 success` · `401 invalidCredentials` · `403 inactiveAccount`           |
+| POST   | `/api/auth/forgot-password` | `202` (aún no envía correos; no revela si el correo existe)                |
+| GET    | `/api/health`               | `200 { status: "ok" }`                                                     |
+
+Las contraseñas se guardan con **bcrypt** en `usuarios.contrasena_hash`. El registro crea también el `perfil` y la `configuracion_usuario` del usuario. El inicio de sesión actualiza `usuarios.ultimo_acceso`.
+
+El backend sigue la misma separación MVC: `routes/` → `controllers/` (HTTP) → `services/` (lógica y acceso con Prisma) → base de datos.
+
+Pendiente: la sesión vive en memoria del navegador (recargar la página la cierra); los tokens de sesión (`sesiones`) y el envío de correos de recuperación se implementarán más adelante.

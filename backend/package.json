@@ -1,14 +1,18 @@
 {
   "name": "fittrack-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API de FitTrack (Express + Prisma).",
+  "main": "src/server.js",
   "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test",
     "db:deploy": "prisma migrate deploy",
     "db:status": "prisma migrate status",
     "db:pull": "prisma db pull",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "db:seed": "prisma db seed"
   },
   "keywords": [],
   "type": "commonjs",
@@ -16,7 +20,18 @@
     "prisma": "6.16.2"
   },
   "dependencies": {
-    "@prisma/client": "6.16.2"
+    "@prisma/client": "6.16.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
   },
-  "private": true
+  "private": true,
+  "allowScripts": {
+    "@prisma/client@6.16.2": true,
+    "@prisma/engines@6.16.2": true,
+    "prisma@6.16.2": true
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
 }

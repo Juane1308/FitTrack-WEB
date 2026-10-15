@@ -3,6 +3,7 @@ export const AuthResultStatus = Object.freeze({
   emailAlreadyRegistered: 'emailAlreadyRegistered',
   invalidCredentials: 'invalidCredentials',
   inactiveAccount: 'inactiveAccount',
+  serverUnavailable: 'serverUnavailable',
 })
 
 export class AuthResult {
