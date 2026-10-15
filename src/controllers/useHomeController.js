@@ -1,5 +1,6 @@
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
+import { fetchWeeklyProgress } from '@/repositories/weeklyProgressRepository'
 import { useAppStateController } from './appStateController'
 import { useAuthController } from './authController'
 
@@ -8,21 +9,40 @@ export function useHomeController() {
   const auth = useAuthController()
 
   const user = computed(() => auth.currentUser ?? appState.currentUser)
-  const dashboard = computed(() => appState.dashboard)
-  const routineDetails = computed(
-    () =>
-      `${dashboard.value.routineDate}  ·  ${dashboard.value.durationMinutes} min  ·  ${dashboard.value.difficulty}`,
-  )
-  const metrics = computed(() => [
-    { key: 'weeklyGoal', label: 'Meta semanal', value: `${dashboard.value.weeklyGoal} días` },
-    {
-      key: 'progress',
-      label: 'Progreso',
-      value: `${Math.round(dashboard.value.progressPercent * 100)}%`,
-    },
-    { key: 'calories', label: 'Calorías', value: `${Math.round(dashboard.value.calories)} kcal` },
-    { key: 'streak', label: 'Racha activa', value: `${dashboard.value.activeStreak} días` },
-  ])
+  const weeklyProgress = ref(null)
+  const isLoading = ref(false)
+  const error = ref('')
 
-  return { user, dashboard, routineDetails, metrics }
+  const progressPercent = computed(() => {
+    if (!weeklyProgress.value) return 0
+
+    const completed = Math.max(0, weeklyProgress.value.completedWorkouts)
+    const goal = Math.max(0, weeklyProgress.value.weeklyGoal)
+
+    if (goal === 0) return 0
+
+    return Math.min(100, Math.round((completed / goal) * 100))
+  })
+
+  async function loadWeeklyProgress() {
+    isLoading.value = true
+    error.value = ''
+
+    try {
+      weeklyProgress.value = await fetchWeeklyProgress()
+    } catch (exception) {
+      error.value = exception.message
+    } finally {
+      isLoading.value = false
+    }
+  }
+
+  return {
+    user,
+    weeklyProgress,
+    progressPercent,
+    isLoading,
+    error,
+    loadWeeklyProgress,
+  }
 }
