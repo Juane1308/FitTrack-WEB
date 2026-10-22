@@ -80,8 +80,8 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
     <footer class="source-note">
       <span>Fuente de referencia:</span>
       <a :href="sourceUrl" target="_blank" rel="noreferrer">{{ activeTab === 'foods' ? 'USDA FoodData Central' : 'Kaggle · Food.com Recipes and Reviews' }}</a>
-      <p v-if="activeTab === 'foods'">Información nutricional de referencia por 100 g basada en USDA FoodData Central. Las fotografías son de recetas relacionadas del dataset Food.com en Kaggle.</p>
-      <p v-else>Las fotografías corresponden al dataset de Food.com en Kaggle; las recetas y sus valores nutricionales son datos de demostración.</p>
+      <p v-if="activeTab === 'foods'">Información nutricional de referencia por 100 g basada en USDA FoodData Central. Las fotografías tienen su fuente y licencia indicadas en cada ficha.</p>
+      <p v-else>Los nombres, ingredientes y pasos se basan en Food.com en Kaggle. Calorías y macronutrientes son estimaciones de FitTrack; las fotos incluyen su fuente y licencia en cada ficha.</p>
     </footer>
 
     <Teleport to="body">
@@ -107,9 +107,11 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
                 <div><span>Fibra</span><strong>{{ selectedItem.fiber == null ? 'No disponible' : `${selectedItem.fiber} g` }}</strong></div>
               </div>
               <h3>Beneficios</h3><p class="detail-paragraph">{{ selectedItem.benefits }}</p>
-              <p class="detail-source">
-                Fuente: <a :href="selectedItem.sourceUrl" target="_blank" rel="noreferrer">{{ selectedItem.source }}</a>
-                <br />Imagen relacionada: <a :href="selectedItem.imageSource.url" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.recipeName }} · Kaggle</a>
+              <p class="detail-source">Información: <a :href="selectedItem.sourceUrl" target="_blank" rel="noreferrer">{{ selectedItem.source }}</a></p>
+              <p v-if="selectedItem.imageSource?.sourcePage" class="detail-source">
+                Fotografía: <a :href="selectedItem.imageSource.sourcePage" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.title }}</a>
+                <span v-if="selectedItem.imageSource.creator"> · {{ selectedItem.imageSource.creator }}</span>
+                <span v-if="selectedItem.imageSource.license"> · <a :href="selectedItem.imageSource.licenseUrl" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.license }}</a></span>
               </p>
             </template>
             <template v-else>
@@ -119,6 +121,11 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
               <h3>Preparación</h3>
               <ol class="steps-list"><li v-for="step in selectedItem.steps" :key="step">{{ step }}</li></ol>
               <p class="detail-source">{{ selectedItem.source }}</p>
+              <p v-if="selectedItem.imageSource?.sourcePage" class="detail-source">
+                Fotografía: <a :href="selectedItem.imageSource.sourcePage" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.title }}</a>
+                <span v-if="selectedItem.imageSource.creator"> · {{ selectedItem.imageSource.creator }}</span>
+                <span v-if="selectedItem.imageSource.license"> · <a :href="selectedItem.imageSource.licenseUrl" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.license }}</a></span>
+              </p>
             </template>
           </div>
         </article>
@@ -210,4 +217,3 @@ button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3
   .nutrition-facts { grid-template-columns: repeat(2,1fr); }
 }
 </style>
-

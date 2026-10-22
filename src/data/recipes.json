@@ -1,18 +1,18 @@
 {
   "referenceDataset": "Kaggle Food.com Recipes and Reviews",
   "sourceUrl": "https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews",
-  "note": "Seed de demostración; requiere importar registros verificados del dataset original.",
+  "note": "Nombres, ingredientes y pasos traducidos al español desde el registro Food.com indicado en imageSource. Se conserva el texto original del dataset en sourceRecipeName; los valores nutricionales siguen siendo estimaciones para FitTrack.",
   "categories": [
     {
       "id": "recipe-0",
       "name": "Desayunos",
       "description": "Recetas sencillas con ingredientes nutritivos.",
       "image": "recipes/recipe-0-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-0-0",
-          "name": "Avena con frutos rojos",
+          "name": "Avena cremosa con fresas",
           "image": "recipes/recipe-0-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -21,28 +21,36 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Avena de cocción rápida",
+            "Leche",
+            "Bebida de soya",
+            "Fresas",
+            "Banano",
+            "Azúcar",
+            "Edulcorante artificial"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon la avena y la leche en un recipiente hondo y caliéntalas en el microondas de 3 a 5 minutos, según la potencia y la textura deseada. Vigila que no se derrame.",
+            "Mientras se cocina la avena, lava y corta las fresas. Si están muy firmes, puedes aplastarlas un poco.",
+            "Cuando la avena esté lista, incorpora las fresas y el banano en rodajas. Si quieres, añade un poco de azúcar o edulcorante.",
+            "Si usas leche sola, puedes agregar un poco de extracto de vainilla. Si la fruta enfría la avena, caliéntala unos segundos antes de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 196347",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-            "recipeId": "196347",
-            "recipeName": "Strawberries and Cream Oatmeal",
-            "recipeCategory": "Breakfast"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "oatmeal strawberries breakfast",
+            "title": "Granola oatmeal with soymilk flickr user daisybush.jpg",
+            "creator": "daisybush",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg/1280px-Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "Strawberries and Cream Oatmeal"
         },
         {
           "id": "recipe-0-1",
-          "name": "Tostada de aguacate y huevo",
+          "name": "Tostadas de aguacate con huevos escalfados",
           "image": "recipes/recipe-0-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -51,28 +59,36 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Huevos",
+            "Aguacates",
+            "Jugo de limón",
+            "Queso rallado",
+            "Mantequilla",
+            "Pan"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Escalfa los huevos con el método que prefieras.",
+            "Corta los aguacates por la mitad, retira las semillas y saca la pulpa con una cuchara.",
+            "Pon la pulpa en un recipiente; agrega jugo de limón o lima, sal y pimienta.",
+            "Aplasta el aguacate ligeramente con un tenedor.",
+            "Tuesta el pan y úntalo con mantequilla.",
+            "Distribuye el aguacate sobre las tostadas y coloca un huevo escalfado encima de cada una.",
+            "Espolvorea queso rallado y sirve de inmediato.",
+            "Puedes acompañarlas con mitades de tomate fresco o asado."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 358497",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
             "recipeId": "358497",
             "recipeName": "Poached Eggs &amp; Avocado Toasts",
             "recipeCategory": "Breakfast"
-          }
+          },
+          "sourceRecipeName": "Poached Eggs & Avocado Toasts"
         },
         {
           "id": "recipe-0-2",
-          "name": "Pancakes de banano y avena",
+          "name": "Pancakes de avena, banano y pasas",
           "image": "recipes/recipe-0-2.jpg",
           "minutes": 25,
           "servings": 2,
@@ -81,28 +97,48 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Avena",
+            "Avena tradicional",
+            "Harina de trigo",
+            "Azúcar morena",
+            "Polvo para hornear",
+            "Bicarbonato de sodio",
+            "Canela molida",
             "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Leche",
+            "Huevos",
+            "Vainilla",
+            "Bananos",
+            "Pasas",
+            "Mantequilla sin sal",
+            "Mantequilla para la plancha"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla en un recipiente la avena, la harina, el azúcar morena, el polvo para hornear, el bicarbonato y la canela.",
+            "En otro recipiente, bate el yogur, la leche, los huevos y la vainilla.",
+            "Incorpora los ingredientes secos a la mezcla de yogur y remueve solo hasta integrar.",
+            "Añade el banano aplastado, las pasas y la mantequilla derretida; mezcla con movimientos envolventes.",
+            "Unta una plancha o sartén antiadherente con mantequilla y caliéntala a fuego medio.",
+            "Vierte porciones de aproximadamente un tercio de taza de mezcla.",
+            "Cocina hasta que aparezcan burbujas y la base esté dorada, unos 2 minutos.",
+            "Voltea los pancakes y cocina el otro lado hasta que se dore.",
+            "Sirve calientes."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 84352",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/84/35/2/piciqaxiR.jpg",
-            "recipeId": "84352",
-            "recipeName": "Banana, Raisin, and Oatmeal Pancakes",
-            "recipeCategory": "Breakfast"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "banana oatmeal pancakes",
+            "title": "Oatmeal pancake with fruit.jpg",
+            "creator": "Drhnn",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Oatmeal_pancake_with_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Oatmeal_pancake_with_fruit.jpg",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+          },
+          "sourceRecipeName": "Banana, Raisin, and Oatmeal Pancakes"
         },
         {
           "id": "recipe-0-3",
-          "name": "Parfait de yogur y granola",
+          "name": "Parfait de yogur de vainilla y granola",
           "image": "recipes/recipe-0-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -111,28 +147,31 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Yogur de vainilla",
+            "Granola"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon un tercio de taza de granola en un vaso para parfait y cúbrela con la mitad del yogur.",
+            "Repite las capas de granola y yogur.",
+            "Termina con el resto de la granola.",
+            "Si lo deseas, mezcla fruta con el yogur o intercala capas de fruta entre el yogur y la granola."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 130766",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/07/66/picHXHeeN.jpg",
-            "recipeId": "130766",
-            "recipeName": "A Breakfast Yogurt Parfait (Granola)",
-            "recipeCategory": "Breakfast"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "yogurt granola parfait",
+            "title": "Yogurt parfait with granola and blueberries in shot glasses with silverware spoons (17098581522).jpg",
+            "creator": "Personal Creations",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Yogurt_parfait_with_granola_and_blueberries_in_shot_glasses_with_silverware_spoons_%2817098581522%29.jpg/1280px-Yogurt_parfait_with_granola_and_blueberries_in_shot_glasses_with_silverware_spoons_%2817098581522%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_parfait_with_granola_and_blueberries_in_shot_glasses_with_silverware_spoons_(17098581522).jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "A Breakfast Yogurt Parfait (Granola)"
         },
         {
           "id": "recipe-0-4",
-          "name": "Omelette de espinaca",
+          "name": "Omelette francesa de espinaca y queso suizo",
           "image": "recipes/recipe-0-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -141,28 +180,42 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Huevos",
+            "Leche",
+            "Agua",
+            "Mantequilla",
+            "Queso suizo",
+            "Espinaca",
+            "Crema agria",
+            "Cáscara de limón"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Bate los huevos con la leche, el agua y los condimentos.",
+            "Derrite la mantequilla en una sartén antiadherente de 25 cm, ligeramente engrasada, a fuego alto.",
+            "Cuando la mantequilla burbujee, vierte la mezcla de huevo.",
+            "Mueve la sartén y remueve rápidamente el fondo con un tenedor para que el huevo se cocine de manera uniforme.",
+            "Retira del fuego cuando el huevo ya no esté líquido, pero siga jugoso.",
+            "Coloca el queso y la espinaca sobre una mitad del omelette.",
+            "Dóblalo por la mitad y pásalo a un plato. Si quieres, acomoda los bordes delgados por debajo.",
+            "Déjalo reposar un minuto.",
+            "Decora con una cucharada de crema agria y una tira de cáscara de limón."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 56875",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
-          }
+            "url": "https://live.staticflickr.com/7497/16024957891_8f1514ded2_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/32539604@N00/16024957891",
+            "title": "Spinach cheese omelette",
+            "creator": "Kakei.R",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+            "dataset": "Openverse / Flickr",
+            "query": "Omelette francesa de espinaca y queso suizo"
+          },
+          "sourceRecipeName": "French Omelet With Spinach & Swiss Cheese"
         },
         {
           "id": "recipe-0-5",
-          "name": "Bowl de quinua y mango",
+          "name": "Kugel de arroz con banano, mango y manzana",
           "image": "recipes/recipe-0-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -171,28 +224,38 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Arroz cocido",
+            "Mantequilla",
+            "Crema de leche",
+            "Pasas",
+            "Banano",
+            "Mango",
+            "Manzana",
+            "Sal",
+            "Huevos",
+            "Azúcar",
+            "Canela",
+            "Coco rallado"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla bien todos los ingredientes en un recipiente.",
+            "Vierte la mezcla en una fuente para horno previamente engrasada.",
+            "Tapa y hornea a 175 °C durante una hora; remueve a mitad de la cocción.",
+            "En los últimos 15 minutos, destapa y añade más canela, azúcar y coco rallado al gusto."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 53844",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/53/84/4/picqP2pOQ.jpg",
             "recipeId": "53844",
             "recipeName": "Banana, Mango, Apple Rice Kugel",
             "recipeCategory": "Breakfast"
-          }
+          },
+          "sourceRecipeName": "Banana, Mango, Apple Rice Kugel"
         },
         {
           "id": "recipe-0-6",
-          "name": "Chía pudding con fresas",
+          "name": "Ensalada de frutas con pudín de vainilla",
           "image": "recipes/recipe-0-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -201,28 +264,39 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Bananos",
+            "Manzanas",
+            "Jugo de limón",
+            "Piña en trozos",
+            "Fresas",
+            "Uvas",
+            "Nueces pecanas",
+            "Mezcla instantánea de pudín de vainilla sin azúcar",
+            "Agua",
+            "Jugo de piña"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla los bananos y las manzanas con jugo de limón en un recipiente grande.",
+            "Revuelve para cubrir la fruta con el limón.",
+            "Añade la piña, las fresas, las uvas y las nueces pecanas.",
+            "En otro recipiente, bate la mezcla de pudín con agua y jugo de piña hasta que quede suave.",
+            "Vierte el pudín sobre la fruta.",
+            "Mezcla con cuidado hasta cubrirla por completo.",
+            "Refrigera hasta el momento de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 21320",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/21/32/0/picmKIL6x.jpg",
             "recipeId": "21320",
             "recipeName": "Vanilla Pudding Fruit Salad",
             "recipeCategory": "Breakfast"
-          }
+          },
+          "sourceRecipeName": "Vanilla Pudding Fruit Salad"
         },
         {
           "id": "recipe-0-7",
-          "name": "Arepa integral con huevo",
+          "name": "Mezcla para pancakes integrales",
           "image": "recipes/recipe-0-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -231,28 +305,39 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Avena en hojuelas",
+            "Germen de trigo",
+            "Azúcar morena",
+            "Harina integral",
+            "Leche descremada en polvo",
+            "Polvo para hornear",
+            "Bicarbonato de sodio",
+            "Sal",
+            "Huevo",
+            "Leche",
+            "Vainilla",
+            "Aceite"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla la avena, el germen de trigo, el azúcar, la harina, la leche en polvo, el polvo para hornear, el bicarbonato y la sal; procesa brevemente en un procesador de alimentos.",
+            "Para preparar los pancakes, bate un huevo con una cucharada de aceite, media taza de leche y un cuarto de cucharadita de vainilla.",
+            "Agrega tres cuartos de taza de la mezcla integral y revuelve solo hasta integrar.",
+            "Deja reposar la masa durante 5 minutos.",
+            "Cocina porciones en una sartén engrasada con mantequilla, como pancakes tradicionales."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 73505",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/73/50/5/picGVfjgR.jpg",
             "recipeId": "73505",
             "recipeName": "Whole Grain Pancake Mix",
             "recipeCategory": "Breakfast"
-          }
+          },
+          "sourceRecipeName": "Whole Grain Pancake Mix"
         },
         {
           "id": "recipe-0-8",
-          "name": "Tostadas francesas integrales",
+          "name": "Tostadas mexicanas de desayuno con pico de gallo de aguacate",
           "image": "recipes/recipe-0-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -261,28 +346,44 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Tortillas de maíz",
+            "Aceite vegetal",
+            "Comino",
+            "Sal",
+            "Fríjoles negros",
+            "Papas en cubos con cebolla",
+            "Pimentón rojo",
+            "Huevos",
+            "Leche",
+            "Mantequilla",
+            "Aguacate",
+            "Tomates Roma",
+            "Cebolla",
+            "Jalapeño",
+            "Jugo de lima",
+            "Cilantro",
+            "Queso de cabra"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Calienta dos cucharadas de aceite en una sartén grande. Fríe las tortillas, una por una, hasta que estén doradas y crujientes, aproximadamente un minuto por lado. Escúrrelas sobre papel absorbente.",
+            "En la misma sartén, calienta otras dos cucharadas de aceite. Agrega las papas con cebolla, el pimentón, los fríjoles, el comino y la sal. Tapa y cocina unos 10 minutos, removiendo cada 2 o 3 minutos.",
+            "Mientras se cocinan las papas, mezcla en un recipiente el aguacate, la cebolla y los tomates picados, el jalapeño y el jugo de lima. Tapa y refrigera.",
+            "Derrite mantequilla en una sartén antiadherente. Bate los huevos con la leche, viértelos en la sartén y remueve hasta que cuajen y no quede líquido visible.",
+            "Arma cada tostada con la mezcla de papa y fríjoles, huevo revuelto, pico de gallo de aguacate y una cucharada de queso de cabra. Sirve el relleno restante al lado."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 475723",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/57/23/picqDrkk7.jpg",
             "recipeId": "475723",
             "recipeName": "Mexican Breakfast Tostadas With Avocado Pico De Gallo",
             "recipeCategory": "Breakfast"
-          }
+          },
+          "sourceRecipeName": "Mexican Breakfast Tostadas With Avocado Pico De Gallo"
         },
         {
           "id": "recipe-0-9",
-          "name": "Bowl de yogur y kiwi",
+          "name": "Pancakes de yogur y arándanos",
           "image": "recipes/recipe-0-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -291,37 +392,56 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Huevos",
+            "Harina de trigo",
+            "Azúcar",
+            "Polvo para hornear",
+            "Bicarbonato de sodio",
+            "Sal"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Bate los huevos en un recipiente mediano hasta que queden espumosos.",
+            "Añade los demás ingredientes y bate solo hasta integrarlos.",
+            "Calienta una plancha y engrásala si es necesario. Para comprobar la temperatura, deja caer unas gotas de agua: si chisporrotean y se desplazan, está lista.",
+            "Vierte aproximadamente 3 cucharadas de mezcla por pancake sobre la plancha caliente.",
+            "Cocina hasta que se esponjen y los bordes se vean secos.",
+            "Voltea y cocina el otro lado hasta que quede dorado."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 41291",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/29/1/pichZ5Gak.jpg",
-            "recipeId": "41291",
-            "recipeName": "Blueberry Yogurt Pancakes",
-            "recipeCategory": "Breakfast"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "blueberry pancakes",
+            "title": "Blueberry Pancakes.jpg",
+            "creator": "Danny William Wilson",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Blueberry_Pancakes.jpg/1280px-Blueberry_Pancakes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Blueberry_Pancakes.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Blueberry Yogurt Pancakes"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Wikimedia Commons",
+        "query": "oatmeal strawberries breakfast",
+        "title": "Granola oatmeal with soymilk flickr user daisybush.jpg",
+        "creator": "daisybush",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg/1280px-Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Granola_oatmeal_with_soymilk_flickr_user_daisybush.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
     },
     {
       "id": "recipe-1",
       "name": "Almuerzos",
       "description": "Recetas sencillas con ingredientes nutritivos.",
-      "image": "recipes/recipe-1-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "image": "recipes/recipe-1-4.jpg",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-1-0",
-          "name": "Bowl de pollo y quinua",
+          "name": "Tiras de pollo con costra de quinua",
           "image": "recipes/recipe-1-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -330,28 +450,36 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Pechugas de pollo sin piel ni hueso",
+            "Sal",
+            "Ajo en polvo",
+            "Pimienta negra recién molida",
+            "Paprika",
+            "Quinua cocida",
+            "Pan rallado",
+            "Aceite de oliva",
+            "Claras de huevo"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Extiende la quinua sobre papel encerado o aluminio. Añade el pan rallado y presiónalos con los dedos para que la humedad de la quinua lo absorba.",
+            "Sazona el pollo con sal, ajo en polvo, pimienta y paprika.",
+            "Pon las claras en un recipiente poco profundo. Pasa el pollo por la clara y luego por la mezcla de quinua.",
+            "Calienta el aceite en una sartén grande a fuego alto. Cuando esté caliente, añade el pollo y baja a fuego medio. Cocina unos 5 minutos por lado, hasta que la cubierta se dore y el pollo deje de verse rosado.",
+            "Pasa las tiras a un plato y sírvelas de inmediato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 416571",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/65/71/mWougfgSESR9RBAnnRjw_quinoa-chicken-tenders-6700.jpg",
             "recipeId": "416571",
             "recipeName": "Quinoa Crusted Chicken Fingers",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Quinoa Crusted Chicken Fingers"
         },
         {
           "id": "recipe-1-1",
-          "name": "Ensalada de salmón y aguacate",
+          "name": "Ensalada de salmón ahumado y caviar",
           "image": "recipes/recipe-1-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -360,28 +488,40 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Papas kipfler",
+            "Aceite de oliva",
+            "Espárragos frescos",
+            "Salmón ahumado",
+            "Mezcla de hojas verdes",
+            "Caviar rojo",
+            "Aguacate",
+            "Crema agria",
+            "Eneldo fresco",
+            "Jugo de lima"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Hierve, cocina al vapor o en el microondas las papas hasta que estén tiernas; escúrrelas.",
+            "Precalienta el horno a temperatura alta.",
+            "Corta las papas por la mitad, ponlas con el lado cortado hacia arriba en una bandeja ligeramente aceitada y rocíalas con aceite. Hornéalas unos 15 minutos, volteándolas de vez en cuando, hasta que estén doradas y crujientes.",
+            "Cocina los espárragos al vapor, hervidos o en microondas hasta que estén tiernos. Escúrrelos y corta los tallos por la mitad.",
+            "Corta el salmón en tiras.",
+            "Para el puré de aguacate, pártelo, retira la semilla y saca la pulpa.",
+            "Procesa el aguacate con la crema agria, el eneldo y el jugo de lima hasta obtener una mezcla suave.",
+            "Reparte el puré en los platos y sirve encima las papas, las hojas verdes, los espárragos, el salmón ahumado y una cucharada de caviar."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 123153",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
             "recipeId": "123153",
             "recipeName": "Smoked Salmon and Caviar Salad",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Smoked Salmon and Caviar Salad"
         },
         {
           "id": "recipe-1-2",
-          "name": "Bowl de garbanzos y verduras",
+          "name": "Verduras asadas dentro de una calabaza al horno",
           "image": "recipes/recipe-1-2.jpg",
           "minutes": 25,
           "servings": 2,
@@ -390,28 +530,57 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Cebollas rojas",
+            "Chalotas",
+            "Ajo",
+            "Hojas de laurel",
+            "Sal kosher o marina",
+            "Pimienta negra",
+            "Romero fresco",
+            "Hojas de salvia fresca",
+            "Aceite de oliva",
+            "Calabaza entera",
+            "Pimentón verde",
+            "Verduras de raíz variadas",
+            "Pimienta de Cayena (opcional)"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Corta la parte superior de la calabaza para formar una tapa.",
+            "Retira las semillas; resérvalas para tostarlas o deséchalas.",
+            "Limpia el interior de la calabaza y úntalo con aceite de oliva.",
+            "Añade un poco de sal y aproximadamente media taza de agua.",
+            "Hornea la calabaza a 165 °C durante unos 30 minutos, hasta que empiece a ablandarse.",
+            "Retírala del horno y resérvala.",
+            "Pela las verduras de raíz y córtalas en trozos grandes de tamaño similar.",
+            "Ponlas en una bolsa con cierre junto con aproximadamente un tercio de taza de aceite.",
+            "Cierra la bolsa y agítala para cubrir bien las verduras.",
+            "Pásalas a una fuente grande para horno.",
+            "Agrega las cebollas, las chalotas, el ajo picado y las hierbas.",
+            "Mezcla con una cuchara grande.",
+            "Añade sal kosher o marina y pimienta negra.",
+            "Hornea la fuente destapada a 220 °C.",
+            "Asa unos 20 minutos, agitando la fuente dos o tres veces.",
+            "Gira la fuente, baja la temperatura a 190 °C y hornea otros 20 minutos; remueve para que las verduras no se quemen.",
+            "Continúa horneando de 10 a 20 minutos más, hasta que estén suaves.",
+            "Pasa las verduras a la calabaza tibia y cúbrela con la tapa.",
+            "Sirve; si quieres, acompaña con trozos de la pulpa de calabaza.",
+            "Retira las hojas de laurel antes de comer.",
+            "Puedes añadir pimentón rojo o verde asado.",
+            "Para un toque picante, agrega un poco de pimienta de Cayena."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 13504",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
             "recipeId": "13504",
             "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Roasted Harvest Vegetables in a Baked Pumpkin"
         },
         {
           "id": "recipe-1-3",
-          "name": "Wrap integral de pavo",
+          "name": "Wrap integral de pavo con albahaca fresca",
           "image": "recipes/recipe-1-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -420,28 +589,35 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Tortilla integral",
+            "Pavo en tajadas",
+            "Tomate Roma",
+            "Hojas de albahaca fresca",
+            "Pimienta negra recién molida",
+            "Queso untable",
+            "Aceite en aerosol"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Calienta una sartén a fuego medio.",
+            "Unta el queso sobre la tortilla.",
+            "Coloca encima el pavo, las rodajas de tomate, la albahaca y la pimienta.",
+            "Rocía la sartén con aceite y pon la tortilla.",
+            "Caliéntala hasta que el pavo esté tibio, cuidando que la tortilla no se tueste demasiado.",
+            "Enrolla y sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 313885",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/38/85/picB1JcdI.jpg",
             "recipeId": "313885",
             "recipeName": "Swiss Turkey Wrap With Fresh Basil",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Swiss Turkey Wrap With Fresh Basil"
         },
         {
           "id": "recipe-1-4",
-          "name": "Lentejas con verduras",
+          "name": "Sopa de lentejas y verduras",
           "image": "recipes/recipe-1-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -450,28 +626,48 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Cebolla",
+            "Chalota",
+            "Apio",
+            "Dientes de ajo",
+            "Zanahorias",
+            "Champiñones",
+            "Pasta de tomate",
+            "Lentejas",
+            "Jamón",
+            "Caldo de pollo",
+            "Tallo de brócoli",
+            "Condimento Vegeta",
+            "Ajedrea",
+            "Sal",
+            "Pimienta negra recién molida",
+            "Queso parmesano"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Calienta aceite en una olla grande para sopa. Añade cebolla, chalota, zanahoria y apio; cocina unos 5 minutos.",
+            "Agrega el ajo y los champiñones y cocina 5 minutos más.",
+            "Incorpora la pasta de tomate y cocina durante 1 minuto.",
+            "Añade las lentejas, el jamón y el caldo de pollo. Agrega Vegeta y ajedrea y mezcla.",
+            "Tapa y cocina hasta que las lentejas estén tiernas, unos 30–40 minutos; incorpora los tallos de brócoli durante los últimos 10 minutos.",
+            "Prueba y ajusta la sal y la pimienta.",
+            "Si lo deseas, sirve con queso parmesano."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 531244",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "lentil vegetable soup bowl",
+            "title": "Liat Portal for Foodie Disorder - Red lentil soup with vegetables and dumpling.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Liat_Portal_for_Foodie_Disorder_-_Red_lentil_soup_with_vegetables_and_dumpling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Red_lentil_soup_with_vegetables_and_dumpling.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Lentil Vegetable Soup"
         },
         {
           "id": "recipe-1-5",
-          "name": "Tacos de pescado al horno",
+          "name": "Tacos de pescado",
           "image": "recipes/recipe-1-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -480,28 +676,38 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Crema agria",
+            "Mayonesa",
+            "Cilantro fresco",
+            "Bacalao",
+            "Aceite vegetal",
+            "Jugo de limón",
+            "Tortillas de harina",
+            "Repollo",
+            "Tomate picado",
+            "Jugo de lima",
+            "Mezcla de condimentos"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla la crema agria, la mayonesa, el cilantro y dos cucharadas de la mezcla de condimentos en un recipiente pequeño.",
+            "En otro recipiente, mezcla el pescado con aceite vegetal, jugo de limón y el resto de los condimentos. Pásalo a una sartén grande.",
+            "Cocina a fuego medio-alto, removiendo constantemente, durante 4–5 minutos o hasta que el bacalao se desmenuce fácilmente con un tenedor.",
+            "Rellena las tortillas con el pescado.",
+            "Añade los acompañamientos y la salsa al gusto."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 26516",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/26/51/6/kTaETJG5RTWNeCpVok9o_FT%204%20-%20final_2.jpg",
             "recipeId": "26516",
             "recipeName": "Fish Tacos",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Fish Tacos"
         },
         {
           "id": "recipe-1-6",
-          "name": "Bowl de tofu y arroz integral",
+          "name": "Galletas integrales bajas en sodio",
           "image": "recipes/recipe-1-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -510,28 +716,36 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Harina integral",
+            "Avena de cocción rápida",
+            "Germen de trigo",
+            "Sustituto de azúcar",
+            "Azúcar",
+            "Semillas de sésamo",
+            "Agua",
+            "Aceite de oliva"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mezcla en un recipiente la harina, la avena, el germen de trigo, el sustituto de azúcar y el azúcar. Añade el agua y el aceite. Remueve con una espátula hasta formar una masa y divídela en dos.",
+            "Sobre una superficie enharinada, estira cada porción hasta formar un cuadrado de unos 35 cm. Córtalo en cuadrados de 9 cm y luego en triángulos. Si la masa se seca, agrega un poco de agua. Colócalos separados en bandejas sin engrasar.",
+            "Hornea a 175 °C durante unos 18 minutos, hasta que estén dorados. Enfría sobre una rejilla y guarda en un recipiente hermético. Rinde aproximadamente 64 galletas."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 137011",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/70/11/picihWLSk.jpg",
-            "recipeId": "137011",
-            "recipeName": "Low-Sodium Whole-Grain Crackers",
-            "recipeCategory": "Lunch/Snacks"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "whole grain crackers",
+            "title": "2019-11-29 16 12 27 Lance Real Peanut Butter Whole Grain Cracker Sandwiches in the Dulles section of Sterling, Loudoun County, Virginia.jpg",
+            "creator": "Famartin",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/2019-11-29_16_12_27_Lance_Real_Peanut_Butter_Whole_Grain_Cracker_Sandwiches_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:2019-11-29_16_12_27_Lance_Real_Peanut_Butter_Whole_Grain_Cracker_Sandwiches_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Low-Sodium Whole-Grain Crackers"
         },
         {
           "id": "recipe-1-7",
-          "name": "Ensalada de atún y fríjoles",
+          "name": "Ensalada de cuscús al curry, brócoli, feta y garbanzos",
           "image": "recipes/recipe-1-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -540,28 +754,47 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Curry en polvo",
+            "Agua",
+            "Sal",
+            "Brócoli",
+            "Coliflor",
+            "Zanahoria",
+            "Cuscús",
+            "Garbanzos",
+            "Aceite de oliva",
+            "Vinagre de vino blanco",
+            "Jengibre fresco",
+            "Queso feta",
+            "Cebollas verdes",
+            "Almendras tostadas (opcional)",
+            "Pimienta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Tuesta el curry en una olla grande a fuego medio durante aproximadamente un minuto, hasta que desprenda aroma.",
+            "Añade 2 1/4 tazas de agua y una cucharadita de sal.",
+            "Incorpora los floretes de brócoli y coliflor y la zanahoria. Lleva a hervor, tapa y cocina durante un minuto.",
+            "Retira del fuego, agrega el cuscús y tapa. Déjalo reposar de 5 a 6 minutos, hasta que se hidrate.",
+            "Pasa el cuscús y las verduras a un recipiente grande.",
+            "Añade los garbanzos, el aceite, el vinagre y el jengibre picado; mezcla.",
+            "Deja enfriar a temperatura ambiente o refrigera por completo para que el feta no se derrita.",
+            "Agrega el queso feta, las cebollas verdes y, si quieres, las almendras tostadas.",
+            "Prueba y ajusta la sal y la pimienta.",
+            "Refrigera al menos 2 horas antes de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 143876",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/38/76/picdJWrl7.jpg",
             "recipeId": "143876",
             "recipeName": "Curry Couscous and Broccoli Feta Salad With Garbanzo Beans",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Curry Couscous and Broccoli Feta Salad With Garbanzo Beans"
         },
         {
           "id": "recipe-1-8",
-          "name": "Pollo con camote asado",
+          "name": "Papas fritas de camote al horno",
           "image": "recipes/recipe-1-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -570,28 +803,32 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Camotes",
+            "Sal",
+            "Aceite de oliva",
+            "Condimento Montreal para bistec (opcional)"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 175 °C.",
+            "Corta los camotes en bastones y distribúyelos en una sola capa sobre una bandeja.",
+            "Rocíalos con aceite de oliva.",
+            "Añade el condimento y la sal.",
+            "Hornea de 30 a 45 minutos; el tiempo puede variar según el horno.",
+            "Voltea los bastones una vez durante la cocción."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 364250",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/36/42/50/picdFkTs2.jpg",
             "recipeId": "364250",
             "recipeName": "Roasted Sweet Potato Fries",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Roasted Sweet Potato Fries"
         },
         {
           "id": "recipe-1-9",
-          "name": "Quinua mediterránea con vegetales",
+          "name": "Wrap mediterráneo de verduras",
           "image": "recipes/recipe-1-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -600,37 +837,51 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Proteína magra",
-            "Verduras variadas",
-            "Quinua o arroz integral",
-            "Limón, canela o especias al gusto"
+            "Tortilla de harina",
+            "Hummus",
+            "Perejil fresco",
+            "Aceitunas maduras",
+            "Pepino",
+            "Tomates",
+            "Queso feta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Unta hummus sobre la tortilla, dejando libre aproximadamente 1 cm alrededor del borde.",
+            "Añade perejil, pepino, aceitunas, tomate y queso feta.",
+            "Enrolla la tortilla y sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 29075",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/07/5/picKl8iSx.jpg",
             "recipeId": "29075",
             "recipeName": "Mediterranean Veggie Wrap",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Mediterranean Veggie Wrap"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Wikimedia Commons",
+        "query": "lentil vegetable soup bowl",
+        "title": "Liat Portal for Foodie Disorder - Red lentil soup with vegetables and dumpling.jpg",
+        "creator": "HaJunkiyada",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Liat_Portal_for_Foodie_Disorder_-_Red_lentil_soup_with_vegetables_and_dumpling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Red_lentil_soup_with_vegetables_and_dumpling.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
     },
     {
       "id": "recipe-2",
       "name": "Comidas y cenas",
       "description": "Recetas sencillas con ingredientes nutritivos.",
       "image": "recipes/recipe-2-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-2-0",
-          "name": "Salmón con brócoli al horno",
+          "name": "Salmón al horno con mostaza y estragón",
           "image": "recipes/recipe-2-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -639,28 +890,40 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Filetes de salmón",
+            "Mostaza de Dijon",
+            "Mayonesa",
+            "Estragón",
+            "Pan rallado panko",
+            "Sal"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Coloca el filete con la piel hacia abajo sobre una rejilla.",
+            "Pon la rejilla sobre una bandeja para recoger los jugos.",
+            "Sazona el pescado ligeramente con sal.",
+            "Unta una capa uniforme de mostaza sobre el salmón.",
+            "Espolvorea estragón.",
+            "Unta una capa de mayonesa.",
+            "Cubre con panko o pan rallado sin sazonar.",
+            "Hornea a 200 °C durante aproximadamente 15–20 minutos, en la parte superior del horno.",
+            "Enciende el gratinador durante los últimos 2–3 minutos para dorar la cubierta."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 43404",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
-            "recipeId": "43404",
-            "recipeName": "Baked Salmon Delight",
-            "recipeCategory": "One Dish Meal"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "baked salmon fillet",
+            "title": "Liat Portal for Foodie Disorder - Oven-baked teriyaki salmon with vegetables.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Liat_Portal_for_Foodie_Disorder_-_Oven-baked_teriyaki_salmon_with_vegetables.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Oven-baked_teriyaki_salmon_with_vegetables.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Baked Salmon Delight"
         },
         {
           "id": "recipe-2-1",
-          "name": "Salteado de tofu y verduras",
+          "name": "Tofu y verduras sobre cuscús de tomate",
           "image": "recipes/recipe-2-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -669,28 +932,41 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Tofu extra firme",
+            "Alcachofas con su líquido",
+            "Comino molido",
+            "Pimienta negra",
+            "Aceite de oliva",
+            "Zanahorias",
+            "Puerros",
+            "Tomates en cubos con su líquido",
+            "Agua",
+            "Cuscús",
+            "Dientes de ajo",
+            "Sal"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "En una sartén antiadherente mezcla las alcachofas con su líquido, el tofu, el comino y tres cuartos de cucharadita de pimienta. Cocina a fuego alto durante 5 minutos, removiendo, hasta que se evapore el líquido. Pasa a un recipiente.",
+            "Calienta el aceite en la misma sartén a fuego medio-alto. Añade las zanahorias, los puerros y un cuarto de cucharadita de pimienta. Cocina unos 10 minutos, hasta que las zanahorias estén tiernas y los puerros ligeramente dorados.",
+            "Mientras tanto, lleva a hervor los tomates con su líquido y dos tercios de taza de agua. Agrega el cuscús, tapa y retira del fuego. Déjalo reposar 5 minutos y sepáralo con un tenedor.",
+            "Añade el ajo y la mezcla de tofu reservada a las verduras. Cocina 3 minutos a fuego medio, hasta que esté caliente y el ajo desprenda aroma. Sirve el tofu y las verduras sobre el cuscús de tomate."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 309605",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/96/05/picqorflh.jpg",
-            "recipeId": "309605",
-            "recipeName": "Savory Tofu and Vegetables over Tomato Couscous",
-            "recipeCategory": "One Dish Meal"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "tofu couscous",
+            "title": "Awaran couscous In Northern Nigeria 6.jpg",
+            "creator": "Hajjare",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Awaran_couscous_In_Northern_Nigeria_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Awaran_couscous_In_Northern_Nigeria_6.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Savory Tofu and Vegetables over Tomato Couscous"
         },
         {
           "id": "recipe-2-2",
-          "name": "Pollo al limón con calabacín",
+          "name": "Salteado de pollo al ajo con calabacín",
           "image": "recipes/recipe-2-2.jpg",
           "minutes": 25,
           "servings": 2,
@@ -699,28 +975,37 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Pechuga de pollo sin piel ni hueso",
+            "Ajo",
+            "Aceite de oliva",
+            "Calabacín",
+            "Jugo de limón fresco",
+            "Orégano seco",
+            "Albahaca seca",
+            "Caldo de pollo",
+            "Sal y pimienta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Corta el pollo en cubos de aproximadamente 1 cm.",
+            "Corta el calabacín en rodajas y luego cada rodaja por la mitad.",
+            "Calienta el aceite en una olla o sartén mediana.",
+            "Sazona el pollo con sal y pimienta y añádelo al aceite junto con el ajo.",
+            "Agrega los demás ingredientes y lleva a hervor suave.",
+            "Retira del fuego cuando el pollo ya no esté rosado y el calabacín esté tierno, pero aún firme."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 95383",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/95/38/3/DwebiNDPRcCTZWQfIWvT_WIN_20141004_200213.JPG",
             "recipeId": "95383",
             "recipeName": "Garlic Chicken Zucchini Stir Fry",
             "recipeCategory": "One Dish Meal"
-          }
+          },
+          "sourceRecipeName": "Garlic Chicken Zucchini Stir Fry"
         },
         {
           "id": "recipe-2-3",
-          "name": "Tazón de fríjoles negros",
+          "name": "Chili casero rápido con fríjoles",
           "image": "recipes/recipe-2-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -729,28 +1014,38 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Diente de ajo",
+            "Carne de res molida",
+            "Fríjoles rojos con su líquido",
+            "Cebolla",
+            "Salsa de tomate",
+            "Chile en polvo",
+            "Sal",
+            "Aceite"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Calienta aceite en una sartén grande y añade el ajo, la cebolla y la carne molida.",
+            "Remueve y cocina hasta que la carne se dore.",
+            "Retira el exceso de grasa.",
+            "Agrega los fríjoles con su líquido, la salsa de tomate, la sal y el chile en polvo.",
+            "Cocina a fuego bajo, removiendo de vez en cuando, hasta que el chili alcance el espesor deseado."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 10203",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/20/3/picahmqDz.jpg",
-            "recipeId": "10203",
-            "recipeName": "Quick Homemade Chili Con Carne With Beans",
-            "recipeCategory": "One Dish Meal"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "bean chili",
+            "title": "Five-bean chili and refried beans, with Indian pickled limes and puff paratha - Massachusetts.jpg",
+            "creator": "Daderot",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Five-bean_chili_and_refried_beans%2C_with_Indian_pickled_limes_and_puff_paratha_-_Massachusetts.jpg/1280px-Five-bean_chili_and_refried_beans%2C_with_Indian_pickled_limes_and_puff_paratha_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Five-bean_chili_and_refried_beans,_with_Indian_pickled_limes_and_puff_paratha_-_Massachusetts.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+          },
+          "sourceRecipeName": "Quick Homemade Chili Con Carne With Beans"
         },
         {
           "id": "recipe-2-4",
-          "name": "Pasta integral con tomate",
+          "name": "Sopa de fríjoles blancos y pasta con tomates secos",
           "image": "recipes/recipe-2-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -759,28 +1054,55 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Fríjoles blancos secos",
+            "Aceite de oliva",
+            "Cebollas amarillas",
+            "Zanahorias",
+            "Hinojo",
+            "Apio",
+            "Dientes de ajo",
+            "Hojuelas de chile rojo seco",
+            "Hojas de laurel",
+            "Pasta tipo moñito",
+            "Tomates secos",
+            "Perejil fresco",
+            "Queso parmesano",
+            "Caldo"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Remoja los fríjoles durante toda la noche en agua que los cubra por unos 7 cm.",
+            "Calienta el aceite en una olla grande y pesada a fuego medio.",
+            "Agrega las cebollas, zanahorias, hinojo, ajo, hojuelas de chile y hojas de laurel.",
+            "Tapa y cocina unos 10 minutos, removiendo ocasionalmente, hasta que la cebolla esté tierna.",
+            "Añade los fríjoles y 7 tazas de caldo.",
+            "Sube el fuego y lleva a hervor.",
+            "Baja el fuego, tapa parcialmente y cocina a fuego lento aproximadamente 1 hora y 15 minutos, hasta que los fríjoles estén tiernos.",
+            "En este punto puedes dejar enfriar y refrigerar la sopa hasta el día siguiente.",
+            "Si la refrigeraste, vuelve a calentarla hasta que hierva suavemente antes de continuar.",
+            "Añade la pasta y los tomates secos.",
+            "Tapa parcialmente y cocina unos 15 minutos, hasta que los fríjoles y la pasta estén muy tiernos. Si queda demasiado espesa, agrega hasta una taza más de caldo.",
+            "Añade el perejil.",
+            "Prueba y ajusta la sal.",
+            "Retira las hojas de laurel.",
+            "Sirve la sopa en platos hondos.",
+            "Acompaña con el queso parmesano aparte."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 13452",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/45/2/scmIxe0oTkIF6B8mo9hg_image.jpeg",
-            "recipeId": "13452",
-            "recipeName": "White Bean and Pasta Soup With Sun-Dried Tomatoes",
-            "recipeCategory": "One Dish Meal"
-          }
+            "url": "https://live.staticflickr.com/7005/6540574063_b445247c9e_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/22146930@N07/6540574063",
+            "title": "Pasta e fagioli soup",
+            "creator": "",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+            "dataset": "Openverse / Flickr",
+            "query": "Sopa de fríjoles blancos y pasta con tomates secos"
+          },
+          "sourceRecipeName": "White Bean and Pasta Soup With Sun-Dried Tomatoes"
         },
         {
           "id": "recipe-2-5",
-          "name": "Pescado con ensalada fresca",
+          "name": "¡La mejor ensalada tailandesa de res!",
           "image": "recipes/recipe-2-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -789,28 +1111,43 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Cebollas rojas",
+            "Hojas de lima kaffir",
+            "Chiles rojos",
+            "Cilantro fresco",
+            "Hojas de menta",
+            "Hojas de albahaca",
+            "Salsa de soya",
+            "Salsa de pescado",
+            "Jugo de lima",
+            "Azúcar morena",
+            "Azúcar de palma",
+            "Carne de res",
+            "Hojas para ensalada",
+            "Aceite"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Unta la carne con un poco de aceite y ásala a la parrilla, en barbacoa o en una sartén hasta alcanzar el punto deseado.",
+            "Déjala reposar 5 minutos y córtala en láminas finas.",
+            "Pon las hojas de ensalada, la cebolla, las hojas de lima kaffir, el chile, el cilantro, la menta y la albahaca en un recipiente y mezcla suavemente.",
+            "Para el aderezo, combina la salsa de soya, la salsa de pescado, el jugo de lima y los dos tipos de azúcar.",
+            "Revuelve bien el aderezo.",
+            "Coloca la carne sobre la ensalada y vierte el aderezo encima.",
+            "Sirve de inmediato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 51081",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/08/1/yHQXrL8OToGNQALZqERz_My%20o%20my%20best%20thai%20beef%20salad%20ever%2051081-4.jpg",
             "recipeId": "51081",
             "recipeName": "My O My.. Best Thai Beef Salad Ever!",
             "recipeCategory": "One Dish Meal"
-          }
+          },
+          "sourceRecipeName": "My O My.. Best Thai Beef Salad Ever!"
         },
         {
           "id": "recipe-2-6",
-          "name": "Berenjena rellena de lentejas",
+          "name": "Berenjena o calabacín a la parmesana al horno",
           "image": "recipes/recipe-2-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -819,28 +1156,58 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Aceite de oliva",
+            "Cebolla",
+            "Apio",
+            "Dientes de ajo",
+            "Tomates triturados",
+            "Pasta de tomate",
+            "Orégano",
+            "Mejorana",
+            "Perejil",
+            "Albahaca fresca",
+            "Vino tinto seco (opcional)",
+            "Berenjena o calabacín",
+            "Harina",
+            "Huevos",
+            "Leche agria",
+            "Queso ricotta",
+            "Queso mozzarella",
+            "Queso romano",
+            "Queso parmesano",
+            "Pan rallado sazonado",
+            "Sal y pimienta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Para la salsa, cubre el fondo de una olla grande con aceite de oliva.",
+            "Añade la cebolla, el apio y el ajo y sofríe unos 5 minutos, hasta que estén tiernos.",
+            "Incorpora los tomates, la pasta de tomate, las especias y, si quieres, el vino. Prueba la salsa; si está ácida, puedes añadir una cucharadita de azúcar.",
+            "Lleva a hervor, baja el fuego y cocina a fuego lento durante 1 hora, removiendo con frecuencia.",
+            "Pon harina, sal y pimienta en una bolsa grande con cierre. Agítala y añade las rodajas de berenjena para cubrirlas.",
+            "Mezcla los huevos con la leche agria en un recipiente.",
+            "Pasa las rodajas enharinadas por la mezcla de huevo.",
+            "Agrega el pan rallado sazonado a la harina restante de la bolsa y agítala.",
+            "Pasa la berenjena por la mezcla de pan rallado para cubrirla.",
+            "Coloca las rodajas en bandejas rociadas con aceite y hornéalas a 200 °C durante 10 minutos por lado.",
+            "Mezcla los quesos para preparar la capa de queso.",
+            "En una fuente para horno alterna capas de salsa, berenjena y mezcla de quesos hasta terminar los ingredientes.",
+            "Cubre con más queso rallado.",
+            "Hornea a 165 °C durante 30 minutos.",
+            "Sirve con pan italiano crujiente y ensalada verde."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 51138",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/13/8/picE35lHY.jpg",
             "recipeId": "51138",
             "recipeName": "Oven Fried Eggplant or and Zucchini Parmesan",
             "recipeCategory": "One Dish Meal"
-          }
+          },
+          "sourceRecipeName": "Oven Fried Eggplant or and Zucchini Parmesan"
         },
         {
           "id": "recipe-2-7",
-          "name": "Frittata de verduras",
+          "name": "Frittata de papa con tocino",
           "image": "recipes/recipe-2-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -849,28 +1216,52 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Tocino",
+            "Papas",
+            "Huevos",
+            "Leche",
+            "Pimienta",
+            "Sal",
+            "Queso parmesano",
+            "Cebolla verde",
+            "Albahaca fresca",
+            "Albahaca seca",
+            "Salsa (opcional)",
+            "Crema agria (opcional)"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "En una sartén grande antiadherente, cocina el tocino en trozos hasta que quede crujiente.",
+            "Reserva dos cucharadas de la grasa del tocino.",
+            "Escurre el tocino sobre papel absorbente.",
+            "Añade las rodajas de papa a la sartén con la grasa reservada.",
+            "Tapa y cocina a fuego medio de 12 a 15 minutos, hasta que estén tiernas y ligeramente doradas.",
+            "Voltea las papas y baja el fuego si se están dorando demasiado.",
+            "En un recipiente grande, bate los huevos con la leche, la pimienta y la sal.",
+            "Incorpora el queso, la cebolla verde y la albahaca.",
+            "Reserva la mezcla de huevo.",
+            "Distribuye las papas cocidas en una capa uniforme en el fondo de la sartén.",
+            "Espolvorea el tocino encima.",
+            "Vierte la mezcla de huevo.",
+            "Tapa y baja el fuego a medio-bajo.",
+            "Cocina de 15 a 20 minutos, hasta que la superficie del huevo esté cuajada.",
+            "Si hace falta, baja a fuego lento para que el centro termine de cocinarse sin quemar los bordes.",
+            "Desprende los bordes de la frittata y voltéala con cuidado sobre un plato grande.",
+            "Córtala en porciones.",
+            "Si quieres, añade una cucharada de crema agria o salsa justo antes de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 20936",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/20/93/6/SYE3YhCLTyu5YqXaqMCH_7%20(1%20of%201).jpg",
             "recipeId": "20936",
             "recipeName": "Bacon Potato Frittata",
             "recipeCategory": "One Dish Meal"
-          }
+          },
+          "sourceRecipeName": "Bacon Potato Frittata"
         },
         {
           "id": "recipe-2-8",
-          "name": "Tacos de pollo y aguacate",
+          "name": "Tacos de ensalada de pollo al chipotle",
           "image": "recipes/recipe-2-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -879,28 +1270,41 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Aceite de oliva",
+            "Chiles chipotles en adobo",
+            "Sal",
+            "Repollo napa",
+            "Zanahoria",
+            "Cebolla roja",
+            "Cilantro fresco",
+            "Pollo cocido",
+            "Aguacate",
+            "Queso añejo",
+            "Tortillas de maíz",
+            "Vinagre"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Para el relleno, bate en un recipiente grande el vinagre, el aceite de oliva y los chipotles.",
+            "Sazona generosamente con sal, aproximadamente un cuarto de cucharadita.",
+            "Añade el repollo, la zanahoria, la cebolla, el cilantro y el pollo.",
+            "Mezcla todo y deja reposar 15 minutos.",
+            "Prueba y añade más sal si hace falta.",
+            "Pasa el relleno a un recipiente bajo y amplio; agrega cubos de aguacate y espolvorea bastante queso.",
+            "Sirve con tortillas calientes."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 66990",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/66/99/0/picrFKe50.jpg",
             "recipeId": "66990",
             "recipeName": "Chipotle Chicken Salad Tacos",
             "recipeCategory": "One Dish Meal"
-          }
+          },
+          "sourceRecipeName": "Chipotle Chicken Salad Tacos"
         },
         {
           "id": "recipe-2-9",
-          "name": "Sopa de garbanzos y espinaca",
+          "name": "Sopa de ajo, garbanzos y espinaca",
           "image": "recipes/recipe-2-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -909,37 +1313,68 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Verduras frescas",
-            "Hummus o yogur",
-            "Semillas o nueces",
-            "Limón, canela o especias al gusto"
+            "Aceite de oliva",
+            "Dientes de ajo",
+            "Cebolla",
+            "Comino molido",
+            "Cilantro molido",
+            "Papas",
+            "Garbanzos",
+            "Fécula de maíz",
+            "Tahini",
+            "Espinaca",
+            "Pimienta de Cayena",
+            "Caldo",
+            "Crema",
+            "Sal y pimienta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Calienta el aceite en una olla y cocina el ajo y la cebolla hasta que estén suaves y dorados.",
+            "Agrega el comino y el cilantro molido y cocina durante un minuto.",
+            "Añade el caldo y las papas.",
+            "Lleva a hervor y cocina a fuego lento 10 minutos.",
+            "Agrega los garbanzos y cocina 5 minutos más o hasta que las papas estén tiernas.",
+            "Mezcla la fécula de maíz con la crema y el tahini.",
+            "Incorpora esa mezcla a la sopa junto con la espinaca.",
+            "Sazona con sal y pimienta al gusto.",
+            "Lleva de nuevo a hervor y cocina, removiendo, durante 2 minutos.",
+            "Espolvorea pimienta de Cayena antes de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 30581",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/58/1/picCw7na3.jpg",
-            "recipeId": "30581",
-            "recipeName": "Garlic, Chickpea &amp; Spinach Soup",
-            "recipeCategory": "One Dish Meal"
-          }
+            "dataset": "Openverse / Flickr",
+            "query": "chickpea spinach soup",
+            "title": "Chick Pea and Spinach Soup",
+            "creator": "",
+            "url": "https://live.staticflickr.com/4011/4284579281_497d72b9d6_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/19762676@N00/4284579281",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+          },
+          "sourceRecipeName": "Garlic, Chickpea & Spinach Soup"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Wikimedia Commons",
+        "query": "baked salmon fillet",
+        "title": "Liat Portal for Foodie Disorder - Oven-baked teriyaki salmon with vegetables.jpg",
+        "creator": "HaJunkiyada",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Liat_Portal_for_Foodie_Disorder_-_Oven-baked_teriyaki_salmon_with_vegetables.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Oven-baked_teriyaki_salmon_with_vegetables.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
     },
     {
       "id": "recipe-3",
       "name": "Snacks",
       "description": "Recetas sencillas con ingredientes nutritivos.",
-      "image": "recipes/recipe-3-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "image": "recipes/recipe-3-7.jpg",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-3-0",
-          "name": "Hummus con bastones de verduras",
+          "name": "Dip picante de garbanzos (hummus)",
           "image": "recipes/recipe-3-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -948,28 +1383,33 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Dientes de ajo",
+            "Tahini",
+            "Aceite de oliva",
+            "Jugo de limón",
+            "Garbanzos",
+            "Sal kosher",
+            "Pimienta de Cayena"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon el ajo, el tahini, el aceite de oliva, el jugo de limón y la sal en un procesador o licuadora. Procesa hasta picar finamente el ajo. Si lo haces a mano, pícalo y aplástalo antes de mezclarlo con los demás ingredientes.",
+            "Añade los garbanzos y sigue procesando hasta obtener una pasta suave.",
+            "Decora con pimienta de Cayena.",
+            "Sirve a temperatura ambiente o frío."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 8019",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
-          }
+            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/80/19/picGptfe2.jpg",
+            "recipeId": "8019",
+            "recipeName": "Spicy Chickpea Dip (Hummus)",
+            "recipeCategory": "Vegetable"
+          },
+          "sourceRecipeName": "Spicy Chickpea Dip (Hummus)"
         },
         {
           "id": "recipe-3-1",
-          "name": "Manzana con mantequilla de maní",
+          "name": "Sándwich a la plancha de cheddar y mantequilla de manzana",
           "image": "recipes/recipe-3-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -978,28 +1418,34 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Queso cheddar suave",
+            "Mantequilla de manzana",
+            "Mantequilla",
+            "Pan"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Arma el sándwich en una sartén antiadherente fría.",
+            "Unta mantequilla en un lado de la primera tajada de pan y colócala en la sartén con el lado untado hacia abajo.",
+            "Pon una tajada de queso sobre el pan y una cucharada de mantequilla de manzana en el centro.",
+            "Cubre con otra tajada de queso.",
+            "Unta mantequilla en un lado de la segunda tajada de pan y colócala encima, con el lado untado hacia arriba.",
+            "Enciende el fuego a temperatura media-baja.",
+            "Tuesta cada lado lentamente y con cuidado, hasta que el interior esté fundido y el pan dorado.",
+            "Sirve caliente."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 111205",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/12/05/picF2UbRD.jpg",
             "recipeId": "111205",
             "recipeName": "Grilled Cheddar and Apple Butter Sandwich",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Grilled Cheddar and Apple Butter Sandwich"
         },
         {
           "id": "recipe-3-2",
-          "name": "Yogur con semillas de chía",
+          "name": "Koshumbir de remolacha con yogur",
           "image": "recipes/recipe-3-2.jpg",
           "minutes": 25,
           "servings": 2,
@@ -1008,28 +1454,27 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Remolachas cocidas",
+            "Yogur natural bajo en grasa",
+            "Eneldo fresco"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Incorpora suavemente las remolachas al yogur.",
+            "Pasa la mezcla a un recipiente para servir y decora con eneldo picado."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 16564",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/56/4/picK7qda7.jpg",
             "recipeId": "16564",
             "recipeName": "Beet Koshumbir - Beet Salad with yogurt",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Beet Koshumbir - Beet Salad with yogurt"
         },
         {
           "id": "recipe-3-3",
-          "name": "Garbanzos crujientes al horno",
+          "name": "Papa asada crujiente fácil",
           "image": "recipes/recipe-3-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -1038,28 +1483,29 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Papas",
+            "Sal",
+            "Mantequilla",
+            "Crema agria"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 200 °C. Lava bien las papas, pero no las peles ni las cortes. Pínchalas 4 o 5 veces con un cuchillo en distintos puntos.",
+            "Colócalas en la rejilla central y hornéalas unos 40 minutos, hasta que estén suaves al pincharlas con un cuchillo.",
+            "Pon cada papa sobre una tabla y haz un corte en forma de X en la parte superior, sin llegar hasta el fondo. Con un paño limpio o guantes de horno, presiona los bordes de la X para abrirla y añade mantequilla o el acompañamiento que prefieras."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 245266",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/52/66/pic1oHIHg.jpg",
             "recipeId": "245266",
             "recipeName": "Easiest  Crispy Jacket Baked Potato for Lazy Busy People",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Easiest  Crispy Jacket Baked Potato for Lazy Busy People"
         },
         {
           "id": "recipe-3-4",
-          "name": "Tostada integral con ricotta",
+          "name": "Tostadas de salchicha italiana, espinaca y ricotta",
           "image": "recipes/recipe-3-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -1068,28 +1514,36 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Salchichas italianas dulces",
+            "Ajo",
+            "Espinaca congelada",
+            "Espinaca fresca",
+            "Queso ricotta",
+            "Nuez moscada",
+            "Pimienta negra recién molida",
+            "Queso parmesano",
+            "Rebanadas de pan tostado"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Dora las salchichas en una sartén grande a fuego medio, removiendo con frecuencia. Añade ajo y espinaca y cocina, removiendo, hasta que la espinaca se reduzca, aproximadamente 1–2 minutos. Retira del fuego e incorpora ricotta, nuez moscada y pimienta.",
+            "Precalienta el gratinador del horno y coloca las tostadas en una bandeja apta para horno.",
+            "Unta la mezcla de salchicha y queso sobre cada tostada y espolvorea parmesano.",
+            "Gratina de 3 a 4 minutos, hasta que el queso se dore y la cubierta burbujee. Hazlo en tandas si es necesario.",
+            "Sirve caliente."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 101435",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/14/35/picHGrbjm.jpg",
             "recipeId": "101435",
             "recipeName": "Italian Sausage Spinach and Ricotta Toasts",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Italian Sausage Spinach and Ricotta Toasts"
         },
         {
           "id": "recipe-3-5",
-          "name": "Bolitas de avena y cacao",
+          "name": "Sueños de cacao",
           "image": "recipes/recipe-3-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -1098,28 +1552,34 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Azúcar",
+            "Mantequilla",
+            "Margarina",
+            "Leche",
+            "Avena de cocción rápida",
+            "Mantequilla de maní",
+            "Vainilla"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon el azúcar, la mantequilla, la margarina y la leche en una olla grande y lleva a hervor.",
+            "Deja hervir durante un minuto.",
+            "Retira la olla del fuego.",
+            "Añade la avena, la mantequilla de maní y la vainilla; mezcla bien.",
+            "Deja caer cucharadas de la mezcla sobre papel encerado y espera a que se endurezcan. No se hornean."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 16908",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/90/8/picsbzqzo.jpg",
             "recipeId": "16908",
             "recipeName": "Cocoa Dreams",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Cocoa Dreams"
         },
         {
           "id": "recipe-3-6",
-          "name": "Edamame con limón",
+          "name": "Espárragos al limón",
           "image": "recipes/recipe-3-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -1128,28 +1588,33 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Espárragos",
+            "Chalota",
+            "Dientes de ajo",
+            "Aceite de oliva",
+            "Vino blanco seco",
+            "Jugo de limón fresco",
+            "Pimienta"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Mantén calientes los espárragos ya cocidos al vapor.",
+            "Sofríe la chalota y el ajo en aceite a fuego bajo unos 10 minutos, hasta que el ajo se dore.",
+            "Bate el jugo de limón con el vino blanco; añade la mezcla a la sartén y agrega pimienta.",
+            "Vierte la salsa sobre los espárragos y sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 14242",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/24/2/pic6PNSDE.jpg",
             "recipeId": "14242",
             "recipeName": "Lemon Asparagus",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Lemon Asparagus"
         },
         {
           "id": "recipe-3-7",
-          "name": "Bananos con yogur",
+          "name": "Yogur de banano y mantequilla de maní",
           "image": "recipes/recipe-3-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -1158,28 +1623,29 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Yogur de vainilla",
+            "Banano",
+            "Mantequilla de maní"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en una licuadora y procesa hasta que la mezcla quede suave."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 253035",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/16/56/4/picK7qda7.jpg",
-            "recipeId": "16564",
-            "recipeName": "Beet Koshumbir - Beet Salad with yogurt",
-            "recipeCategory": "Lunch/Snacks"
-          }
+            "dataset": "Unsplash",
+            "query": "yogur de banano y mantequilla de maní",
+            "title": "A bowl of cereal with chocolate and bananas",
+            "creator": "Kate Mishchankova",
+            "url": "https://images.unsplash.com/photo-1640458348210-6c46cc136f18?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+            "sourcePage": "https://unsplash.com/photos/a-bowl-of-cereal-with-chocolate-and-bananas-ibFvdszg748",
+            "license": "Unsplash License",
+            "licenseUrl": "https://unsplash.com/license"
+          },
+          "sourceRecipeName": "Peanut Banana Yogurt"
         },
         {
           "id": "recipe-3-8",
-          "name": "Mix de nueces y arándanos",
+          "name": "Mix de nueces con romero",
           "image": "recipes/recipe-3-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -1188,28 +1654,31 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Mantequilla sin sal",
+            "Romero seco",
+            "Sal",
+            "Pimienta de Cayena",
+            "Nueces mixtas"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 175 °C.",
+            "Derrite la mantequilla con el romero, la sal y la pimienta de Cayena.",
+            "Extiende las nueces en una bandeja para horno. Vierte encima la mezcla de mantequilla y revuelve para cubrirlas.",
+            "Hornea 10 minutos, removiendo ocasionalmente."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 197346",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
             "recipeId": "197346",
             "recipeName": "Mixed Nuts With Rosemary",
             "recipeCategory": "Lunch/Snacks"
-          }
+          },
+          "sourceRecipeName": "Mixed Nuts With Rosemary"
         },
         {
           "id": "recipe-3-9",
-          "name": "Rollitos de pavo y pepino",
+          "name": "Pimentones amarillos y rojos rellenos de pavo",
           "image": "recipes/recipe-3-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -1218,37 +1687,71 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Fruta fresca",
-            "Leche o bebida vegetal",
-            "Avena o semillas",
-            "Limón, canela o especias al gusto"
+            "Pimentones amarillos",
+            "Pimentones rojos",
+            "Cebolla",
+            "Dientes de ajo",
+            "Pavo molido magro",
+            "Sal",
+            "Pimienta",
+            "Albahaca seca",
+            "Orégano seco",
+            "Tomates en cubos",
+            "Arroz integral cocido",
+            "Queso cheddar maduro",
+            "Queso parmesano",
+            "Mantequilla",
+            "Pan rallado",
+            "Aceite"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 190 °C.",
+            "Corta los pimentones a lo largo y retira las semillas.",
+            "Colócalos con el lado cortado hacia arriba en una bandeja; si quieres, puedes cocinarlos brevemente al vapor.",
+            "Calienta aceite en una sartén a fuego medio-alto.",
+            "Añade la cebolla y el ajo y sofríe durante 5 minutos, removiendo un par de veces.",
+            "Agrega el pavo molido y cocina 5 minutos, removiendo con frecuencia.",
+            "Añade los tomates y el arroz y cocina 5 minutos más.",
+            "Retira del fuego, incorpora las hierbas, sal, pimienta y cheddar.",
+            "Rellena los pimentones con la mezcla.",
+            "Mezcla el pan rallado y el parmesano con mantequilla derretida.",
+            "Cubre los pimentones con esa mezcla y hornéalos de 30 a 40 minutos."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 11523",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/52/3/pic05jFaP.jpg",
-            "recipeId": "11523",
-            "recipeName": "Turkey Stuffed Yellow &amp; Red Bell Peppers",
-            "recipeCategory": "Lunch/Snacks"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "turkey stuffed bell peppers",
+            "title": "Red peppers (8333822843).jpg",
+            "creator": "Peter O'Connor aka anemoneprojectors",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Red_peppers_%288333822843%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Red_peppers_(8333822843).jpg",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+          },
+          "sourceRecipeName": "Turkey Stuffed Yellow & Red Bell Peppers"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Unsplash",
+        "query": "yogur de banano y mantequilla de maní",
+        "title": "A bowl of cereal with chocolate and bananas",
+        "creator": "Kate Mishchankova",
+        "url": "https://images.unsplash.com/photo-1640458348210-6c46cc136f18?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+        "sourcePage": "https://unsplash.com/photos/a-bowl-of-cereal-with-chocolate-and-bananas-ibFvdszg748",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license"
+      }
     },
     {
       "id": "recipe-4",
       "name": "Batidos",
       "description": "Recetas sencillas con ingredientes nutritivos.",
       "image": "recipes/recipe-4-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-4-0",
-          "name": "Batido de banano y avena",
+          "name": "Batido de banano con Horlicks",
           "image": "recipes/recipe-4-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -1257,28 +1760,31 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Leche",
+            "Banano",
+            "Azúcar morena",
+            "Extracto de vainilla"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora y procesa hasta obtener una mezcla suave y espumosa.",
+            "Sirve de inmediato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 35293",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/29/3/picEkeICQ.jpg",
-            "recipeId": "35293",
-            "recipeName": "Horlicks Banana Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "reused matching catalog photo",
+            "title": "Banana and strawberry smoothie.jpg",
+            "creator": "Frankie Roberto from London, UK\n\nbest blender for smoothies from Evakitchen",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Banana_and_strawberry_smoothie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Banana_and_strawberry_smoothie.jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "Horlicks Banana Smoothie"
         },
         {
           "id": "recipe-4-1",
-          "name": "Batido verde de espinaca y piña",
+          "name": "Batido de frutos rojos, espinaca y linaza",
           "image": "recipes/recipe-4-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -1287,24 +1793,27 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Frutos rojos",
+            "Yogur natural descremado",
+            "Leche descremada",
+            "Espinaca fresca",
+            "Banano",
+            "Linaza molida"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora. Usa la función para triturar hielo hasta que la mayoría de los frutos rojos se hayan deshecho.",
+            "Luego licúa a velocidad alta durante aproximadamente 2 minutos, hasta que la mezcla quede suave.",
+            "Si usas fruta fresca, incluye al menos algunos frutos rojos, como frambuesas o fresas. Si usas solo arándanos, la textura puede quedar gelatinosa."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 310619",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/06/19/picBrBPLc.jpg",
             "recipeId": "310619",
             "recipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)",
             "recipeCategory": "Smoothies"
-          }
+          },
+          "sourceRecipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)"
         },
         {
           "id": "recipe-4-2",
@@ -1317,28 +1826,37 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Frambuesas congeladas sin azúcar",
+            "Moras",
+            "Yogur de vainilla",
+            "Leche baja en grasa al 2 %",
+            "Miel",
+            "Ralladura de naranja",
+            "Extracto de vainilla",
+            "Canela"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora.",
+            "Procesa aproximadamente 2 minutos, hasta que quede espeso y suave.",
+            "Vierte en dos vasos grandes.",
+            "Sirve de inmediato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 31518",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/51/8/piczfGJ08.jpg",
-            "recipeId": "31518",
-            "recipeName": "Berry Yogurt Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "url": "https://live.staticflickr.com/8803/28917334924_166c9be017_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/143500187@N08/28917334924",
+            "title": "Berry yogurt smoothie",
+            "creator": "RunningStats",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+            "dataset": "Openverse / Flickr",
+            "query": "Batido de frutos rojos y yogur"
+          },
+          "sourceRecipeName": "Berry Yogurt Smoothie"
         },
         {
           "id": "recipe-4-3",
-          "name": "Batido de mango y kéfir",
+          "name": "Batido de mango y naranja",
           "image": "recipes/recipe-4-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -1347,28 +1865,31 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Mango",
+            "Yogur natural descremado",
+            "Hielo",
+            "Jugo de naranja"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon el mango, el yogur y el hielo en la licuadora y procesa hasta que quede suave. Añade el jugo de naranja y mezcla.",
+            "Vierte en vasos y sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 29357",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/35/7/picysWpki.jpg",
-            "recipeId": "29357",
-            "recipeName": "Mango Orange Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "mango orange smoothie",
+            "title": "DFC 0873 Two colorful tropical smoothies - one strawberry-red one mango-yellow - each topped with a fun stirrer and straw ready to sip.jpg",
+            "creator": "PattayaPatrol",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/DFC_0873_Two_colorful_tropical_smoothies_-_one_strawberry-red_one_mango-yellow_-_each_topped_with_a_fun_stirrer_and_straw_ready_to_sip.jpg/1280px-DFC_0873_Two_colorful_tropical_smoothies_-_one_strawberry-red_one_mango-yellow_-_each_topped_with_a_fun_stirrer_and_straw_ready_to_sip.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_0873_Two_colorful_tropical_smoothies_-_one_strawberry-red_one_mango-yellow_-_each_topped_with_a_fun_stirrer_and_straw_ready_to_sip.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Mango Orange Smoothie"
         },
         {
           "id": "recipe-4-4",
-          "name": "Batido de cacao y banano",
+          "name": "Batidos de banano y cacao",
           "image": "recipes/recipe-4-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -1377,28 +1898,28 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Yogur de vainilla",
+            "Leche",
+            "Banano",
+            "Vainilla"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora.",
+            "Tapa y procesa hasta obtener una mezcla suave."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 38620",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/62/0/pict8BRWc.jpg",
             "recipeId": "38620",
             "recipeName": "Banana Cocoa Smoothies",
             "recipeCategory": "Smoothies"
-          }
+          },
+          "sourceRecipeName": "Banana Cocoa Smoothies"
         },
         {
           "id": "recipe-4-5",
-          "name": "Batido de papaya y naranja",
+          "name": "Batido de papaya",
           "image": "recipes/recipe-4-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -1407,28 +1928,27 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Papaya",
+            "Jugo de lima"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en el vaso de una licuadora.",
+            "Licúa a velocidad alta durante unos 20 segundos o hasta que la mezcla quede completamente suave.",
+            "Sirve en copas frías."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 57460",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/57/46/0/piceRG5xD.jpg",
             "recipeId": "57460",
             "recipeName": "Papaya Smoothie",
             "recipeCategory": "Smoothies"
-          }
+          },
+          "sourceRecipeName": "Papaya Smoothie"
         },
         {
           "id": "recipe-4-6",
-          "name": "Batido de fresa y chía",
+          "name": "Batido de fresa y banano con leche de soya",
           "image": "recipes/recipe-4-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -1437,28 +1957,31 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Leche de soya con sabor a vainilla",
+            "Fresas",
+            "Banano",
+            "Sustituto de azúcar Splenda"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Licúa los ingredientes, sirve en un vaso y disfruta.",
+            "Para una textura de smoothie, congela la fruta en una bolsa con cierre. Descongélala ligeramente en el microondas antes de licuarla y omite el hielo."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 38484",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/48/4/38484.jpg",
-            "recipeId": "38484",
-            "recipeName": "Soy Delicious Strawberry Banana Shake or Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Unsplash",
+            "query": "batido de fresa y banano con leche de soya",
+            "title": "Strawberry shake in clear drinking glass",
+            "creator": "Denis",
+            "url": "https://images.unsplash.com/photo-1589734575451-8ddc34c5752b?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+            "sourcePage": "https://unsplash.com/photos/strawberry-shake-in-clear-drinking-glass-n73TTunlskE",
+            "license": "Unsplash License",
+            "licenseUrl": "https://unsplash.com/license"
+          },
+          "sourceRecipeName": "Soy Delicious Strawberry Banana Shake or Smoothie"
         },
         {
           "id": "recipe-4-7",
-          "name": "Batido tropical de maracuyá",
+          "name": "Batido de frutas tropicales",
           "image": "recipes/recipe-4-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -1467,28 +1990,32 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Mango",
+            "Papaya",
+            "Piña",
+            "Leche de soya con sabor a vainilla",
+            "Coco"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en una licuadora.",
+            "Licúa y sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 69576",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/69/57/6/picohyjgh.jpg",
-            "recipeId": "69576",
-            "recipeName": "Tropical Fruit Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "tropical fruit smoothie",
+            "title": "DFC 0873 Two colorful tropical smoothies - one strawberry-red one mango-yellow - each topped with a fun stirrer and straw ready to sip.jpg",
+            "creator": "PattayaPatrol",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/DFC_0873_Two_colorful_tropical_smoothies_-_one_strawberry-red_one_mango-yellow_-_each_topped_with_a_fun_stirrer_and_straw_ready_to_sip.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_0873_Two_colorful_tropical_smoothies_-_one_strawberry-red_one_mango-yellow_-_each_topped_with_a_fun_stirrer_and_straw_ready_to_sip.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          },
+          "sourceRecipeName": "Tropical Fruit Smoothie"
         },
         {
           "id": "recipe-4-8",
-          "name": "Batido de manzana y canela",
+          "name": "Batido de manzana",
           "image": "recipes/recipe-4-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -1497,28 +2024,32 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Compota de manzana",
+            "Sidra de manzana",
+            "Miel",
+            "Canela molida",
+            "Nuez moscada"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora y procesa hasta que la mezcla quede suave.",
+            "Vierte en vasos y, si quieres, decora con un poco más de canela."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 39402",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/40/2/picYCJxGC.jpg",
-            "recipeId": "39402",
-            "recipeName": "Apple Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Openverse / Flickr",
+            "query": "batido de manzana",
+            "title": "Apple Almondilla Smoothie",
+            "creator": "VegaTeam",
+            "url": "https://live.staticflickr.com/5183/5596281287_9cee21411c_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/59256189@N04/5596281287",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+          },
+          "sourceRecipeName": "Apple Smoothie"
         },
         {
           "id": "recipe-4-9",
-          "name": "Batido de café y avena",
+          "name": "Batido de café",
           "image": "recipes/recipe-4-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -1527,37 +2058,51 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Fruta madura",
-            "Yogur o avena",
-            "Cacao sin azúcar",
-            "Limón, canela o especias al gusto"
+            "Helado de vainilla sin grasa",
+            "Leche descremada",
+            "Azúcar morena",
+            "Café instantáneo descafeinado"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en la licuadora.",
+            "Procesa hasta que la mezcla quede espumosa.",
+            "Vierte en cuatro vasos y sirve de inmediato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 36701",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/36/70/1/pic3v1r2p.jpg",
-            "recipeId": "36701",
-            "recipeName": "Coffee Smoothie",
-            "recipeCategory": "Smoothies"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "coffee smoothie",
+            "title": "Instant coffee smoothie.jpg",
+            "creator": "Rusty Clark ~ 100K Photos from merritt usland FLA",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Instant_coffee_smoothie.jpg/1280px-Instant_coffee_smoothie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Instant_coffee_smoothie.jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "Coffee Smoothie"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Wikimedia Commons",
+        "query": "reused matching catalog photo",
+        "title": "Banana and strawberry smoothie.jpg",
+        "creator": "Frankie Roberto from London, UK\n\nbest blender for smoothies from Evakitchen",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Banana_and_strawberry_smoothie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Banana_and_strawberry_smoothie.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
     },
     {
       "id": "recipe-5",
       "name": "Postres saludables",
       "description": "Recetas sencillas con ingredientes nutritivos.",
-      "image": "recipes/recipe-5-0.jpg",
-      "source": "Dataset de referencia: Food.com Recipes and Reviews (Kaggle). Las recetas mostradas son semillas de demostración.",
+      "image": "recipes/recipe-5-5.jpg",
+      "source": "Food.com Recipes and Reviews · Kaggle",
       "items": [
         {
           "id": "recipe-5-0",
-          "name": "Manzana asada con canela",
+          "name": "Piña asada a la parrilla",
           "image": "recipes/recipe-5-0.jpg",
           "minutes": 15,
           "servings": 2,
@@ -1566,28 +2111,36 @@
           "carbs": 38,
           "fat": 9,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Piña",
+            "Azúcar",
+            "Ralladura de lima",
+            "Canela",
+            "Mantequilla sin sal"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el gratinador del horno. También puedes preparar la receta en una parrilla exterior.",
+            "Con un cuchillo grande y afilado, corta las hojas de la piña y un poco de la base para que quede estable. Pela la fruta de arriba hacia abajo, retirando los ojos.",
+            "Acuesta la piña y córtala en rodajas de aproximadamente 1 cm.",
+            "Retira el centro de cada rodaja con un cuchillo pequeño o un cortador.",
+            "Acomoda los anillos de piña en una bandeja cubierta con papel aluminio. También puedes escurrir piña enlatada y usar sus anillos.",
+            "Mezcla en un recipiente pequeño el azúcar, la ralladura de lima, la canela y la mantequilla.",
+            "Unta la mitad de la mezcla sobre la piña y gratina unos 2 minutos.",
+            "Voltea con cuidado las rodajas, úntalas con el resto del glaseado y gratina hasta que estén caramelizadas y burbujeantes.",
+            "Sirve."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 170551",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/17/05/51/pichR6K5r.jpg",
             "recipeId": "170551",
             "recipeName": "Pina Asada",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Pina Asada"
         },
         {
           "id": "recipe-5-1",
-          "name": "Mousse de cacao y aguacate",
+          "name": "Torta de mousse de chocolate blanco",
           "image": "recipes/recipe-5-1.jpg",
           "minutes": 20,
           "servings": 2,
@@ -1596,28 +2149,35 @@
           "carbs": 32,
           "fat": 14,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Mantequilla",
+            "Chocolate blanco",
+            "Azúcar glas",
+            "Cacao en polvo",
+            "Frambuesas",
+            "Galletas trituradas",
+            "Crema de leche"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Forra la base de un molde desmontable redondo de 23 cm con papel para hornear.",
+            "Derrite la mantequilla, mézclala con las migas de galleta, presiónalas en la base del molde y refrigera 15 minutos.",
+            "Parte el chocolate en trozos y ponlo en una olla con la mitad de la crema. Caliéntalo a fuego muy bajo, removiendo ocasionalmente, hasta que casi se derrita. No lo sobrecalientes porque puede endurecerse.",
+            "Pasa la mezcla a un recipiente y déjala enfriar unos 15 minutos, o hasta que empiece a espesar. Remueve de vez en cuando.",
+            "Bate el resto de la crema hasta que forme picos suaves e incorpórala con movimientos envolventes a la mezcla de chocolate fría.",
+            "Vierte la mousse sobre la base de galleta y refrigera al menos 3 horas, preferiblemente toda la noche. Espolvorea azúcar glas o cacao, corta en porciones y decora cada una con una frambuesa."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 144848",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/48/48/RQ0XXWnTReGJx5AqQ3PG_white%20chocolate%20mousse.JPG",
             "recipeId": "144848",
             "recipeName": "White Chocolate Mousse Torte",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "White Chocolate Mousse Torte"
         },
         {
           "id": "recipe-5-2",
-          "name": "Yogur helado de frutos rojos",
+          "name": "Fresas frescas con yogur (postre marroquí fácil)",
           "image": "recipes/recipe-5-2.jpg",
           "minutes": 25,
           "servings": 2,
@@ -1626,28 +2186,32 @@
           "carbs": 42,
           "fat": 8,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Fresas frescas",
+            "Yogur de vainilla",
+            "Azúcar",
+            "Extracto de vainilla"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Lava y corta las fresas en rodajas.",
+            "Mézclalas suavemente con el yogur, el azúcar y la vainilla. Tapa y refrigera durante una hora o más.",
+            "Si lo prefieres, deja que el postre vuelva a temperatura ambiente antes de servir."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 503681",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
-            "recipeId": "503681",
-            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
-            "recipeCategory": "Dessert"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "strawberries yogurt dessert",
+            "title": "Yogurt layers with fruit in tall personalized glasses raspberries blueberries strawberries in bowls on table (16380437271).jpg",
+            "creator": "Personal Creations",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Yogurt_layers_with_fruit_in_tall_personalized_glasses_raspberries_blueberries_strawberries_in_bowls_on_table_%2816380437271%29.jpg/1280px-Yogurt_layers_with_fruit_in_tall_personalized_glasses_raspberries_blueberries_strawberries_in_bowls_on_table_%2816380437271%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_layers_with_fruit_in_tall_personalized_glasses_raspberries_blueberries_strawberries_in_bowls_on_table_(16380437271).jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)"
         },
         {
           "id": "recipe-5-3",
-          "name": "Pudín de chía y mango",
+          "name": "Pudín de chía, mango y coco",
           "image": "recipes/recipe-5-3.jpg",
           "minutes": 30,
           "servings": 2,
@@ -1656,28 +2220,33 @@
           "carbs": 30,
           "fat": 10,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Leche de coco ligera",
+            "Semillas de chía",
+            "Miel",
+            "Extracto de vainilla",
+            "Mango",
+            "Fresas",
+            "Almendras laminadas",
+            "Hojuelas de coco"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "En una jarra medidora, mezcla la leche de coco, las semillas de chía, la miel y la vainilla. Refrigera una hora.",
+            "En cada uno de cuatro vasos pequeños, alterna una capa de pudín con una capa de mango; repite las capas tres veces.",
+            "Termina con una cucharada de fresas, almendras laminadas y una pizca de coco."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 494615",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/46/15/picC1msYw.jpg",
             "recipeId": "494615",
             "recipeName": "Mango-Coconut Chia Pudding",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Mango-Coconut Chia Pudding"
         },
         {
           "id": "recipe-5-4",
-          "name": "Galletas de avena y banano",
+          "name": "Galletas de avena, banano y arándanos",
           "image": "recipes/recipe-5-4.jpg",
           "minutes": 35,
           "servings": 2,
@@ -1686,28 +2255,44 @@
           "carbs": 28,
           "fat": 7,
           "ingredients": [
+            "Harina",
+            "Bicarbonato de sodio",
+            "Sal",
+            "Canela",
             "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Mantequilla",
+            "Azúcar blanca",
+            "Azúcar morena",
+            "Huevo",
+            "Miel",
+            "Bananos",
+            "Arándanos"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 175 °C.",
+            "Mezcla la harina, el bicarbonato, la sal, la canela y la avena en un recipiente grande. Reserva.",
+            "Bate la mantequilla con los dos tipos de azúcar hasta obtener una mezcla cremosa. Puedes hacerlo a mano con un batidor o usar una batidora.",
+            "Añade la miel y el huevo y mezcla bien con una cuchara firme.",
+            "Incorpora los bananos aplastados.",
+            "Agrega los ingredientes secos y mezcla.",
+            "Añade los arándanos. Si son congelados, descongélalos y escúrrelos bien para que las galletas no queden demasiado húmedas.",
+            "Con una cucharita, forma porciones redondeadas sobre bandejas engrasadas.",
+            "Hornea 10 minutos. Los bordes inferiores apenas se dorarán; aunque parezcan blandas, sácalas cuando estén firmes para que no se sequen.",
+            "Déjalas enfriar sobre una rejilla y guárdalas en un recipiente hermético, separando las capas con papel encerado o plástico."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 326115",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/32/61/15/piczS42eY.jpg",
             "recipeId": "326115",
             "recipeName": "Banana Oatmeal Blueberry Cookies",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Banana Oatmeal Blueberry Cookies"
         },
         {
           "id": "recipe-5-5",
-          "name": "Fresas con yogur griego",
+          "name": "Yogur helado ligero de fresa",
           "image": "recipes/recipe-5-5.jpg",
           "minutes": 18,
           "servings": 2,
@@ -1716,28 +2301,45 @@
           "carbs": 45,
           "fat": 11,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Fresas",
+            "Azúcar",
+            "Leche baja en grasa",
+            "Yogur natural descremado",
+            "Mezcla para cobertura batida"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon las fresas y el azúcar en una bolsa para congelador.",
+            "Ciérrala, expulsando el exceso de aire.",
+            "Aplasta las fresas con el azúcar dentro de la bolsa.",
+            "Añade la mezcla para cobertura batida y la leche; vuelve a cerrar y masajea para integrar.",
+            "Agrega el yogur, sella la bolsa y mezcla apretándola hasta que quede homogéneo.",
+            "Pon la bolsa en el congelador de 2 a 4 horas, hasta que la mezcla se endurezca.",
+            "Después de 2 horas, sácala del congelador.",
+            "Aprieta y masajea la mezcla para que quede más cremosa.",
+            "Sírvela con textura de helado suave o vuelve a ponerla en el congelador para que se endurezca más. Rinde aproximadamente 1 litro.",
+            "Para preparar fruta fresca para la mezcla o la cobertura, ponla en una bolsa para congelador, expulsa el aire y ciérrala.",
+            "Aplasta o masajea la fruta dentro de la bolsa para ablandarla.",
+            "Para triturar galletas o dulces, ponlos en una bolsa para congelador, expulsa el aire y ciérrala.",
+            "Pasa un rodillo por encima para triturarlos.",
+            "Para mantener la bolsa de pie mientras agregas ingredientes, dobla hacia afuera el borde del cierre para formar un puño.",
+            "Coloca la bolsa dentro de un recipiente pequeño."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 66304",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
-            "recipeId": "503681",
-            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
-            "recipeCategory": "Dessert"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "strawberry frozen yogurt",
+            "title": "Strawberry Frozen Yogurt (2552806737).jpg",
+            "creator": "thebittenword.com",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Strawberry_Frozen_Yogurt_%282552806737%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Strawberry_Frozen_Yogurt_(2552806737).jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+          },
+          "sourceRecipeName": "Angelic Strawberry Frozen Yogurt"
         },
         {
           "id": "recipe-5-6",
-          "name": "Brownie de fríjol negro",
+          "name": "Brownies de fríjol negro sin gluten",
           "image": "recipes/recipe-5-6.jpg",
           "minutes": 22,
           "servings": 2,
@@ -1746,28 +2348,36 @@
           "carbs": 34,
           "fat": 12,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Fríjoles negros",
+            "Huevos",
+            "Aceite",
+            "Cacao en polvo",
+            "Polvo para hornear",
+            "Sal",
+            "Vainilla",
+            "Azúcar",
+            "Chispas de chocolate"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 175 °C.",
+            "Engrasa ligeramente un molde cuadrado de 20 cm.",
+            "Pon los fríjoles, los huevos, el aceite, el cacao, el polvo para hornear, la sal, la vainilla y el azúcar en una licuadora. Procesa hasta que quede suave y vierte la mezcla en el molde. Espolvorea las chispas de chocolate encima o incorpóralas a la masa.",
+            "Hornea aproximadamente 30 minutos, hasta que la superficie esté seca y los bordes comiencen a separarse del molde.",
+            "Si quieres cubrirlos, pon las chispas restantes sobre los brownies recién salidos del horno. Cuando se derritan, extiéndelas con una espátula."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 418692",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/86/92/picPqp6hm.jpg",
             "recipeId": "418692",
             "recipeName": "Black Bean Brownies (Gluten Free)",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Black Bean Brownies (Gluten Free)"
         },
         {
           "id": "recipe-5-7",
-          "name": "Peras al horno con nueces",
+          "name": "Manzanas al horno con avellanas picadas",
           "image": "recipes/recipe-5-7.jpg",
           "minutes": 28,
           "servings": 2,
@@ -1776,28 +2386,44 @@
           "carbs": 37,
           "fat": 9,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Manzanas Granny Smith",
+            "Azúcar morena",
+            "Mantequilla",
+            "Avellanas",
+            "Pasas",
+            "Ralladura de naranja",
+            "Ralladura de limón",
+            "Canela molida",
+            "Jarabe de arce puro",
+            "Agua"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Precalienta el horno a 180 °C.",
+            "Retira el centro de las manzanas con un descorazonador. Si no tienes uno, usa un cuchillo y deja una abertura más ancha arriba que abajo. No es necesario pelarlas.",
+            "Mezcla en un recipiente el azúcar, la mantequilla, las avellanas, las pasas, la canela y las ralladuras.",
+            "Rellena firmemente las manzanas con la mezcla. Si sobra, apílala encima.",
+            "Acomoda las manzanas juntas en una fuente para horno para que no se caigan.",
+            "Pon una cucharadita de jarabe de arce sobre cada manzana y vierte el agua en el fondo de la fuente.",
+            "Hornea de 30 a 40 minutos, hasta que las manzanas estén suaves.",
+            "Sírvelas con el jarabe que quede en la fuente.",
+            "Si lo deseas, acompáñalas con crema, helado o natilla."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 237045",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/70/45/picFbaOSi.jpg",
-            "recipeId": "237045",
-            "recipeName": "Baked Apples (With Chopped Hazelnuts)",
-            "recipeCategory": "Dessert"
-          }
+            "dataset": "Wikimedia Commons",
+            "query": "reused matching catalog photo",
+            "title": "Beautiful red apple 01.jpg",
+            "creator": "آرمین",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Beautiful_red_apple_01.jpg/1280px-Beautiful_red_apple_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Beautiful_red_apple_01.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+          },
+          "sourceRecipeName": "Baked Apples (With Chopped Hazelnuts)"
         },
         {
           "id": "recipe-5-8",
-          "name": "Trufas de dátil y cacao",
+          "name": "Trufas de dátil (Madgooga)",
           "image": "recipes/recipe-5-8.jpg",
           "minutes": 32,
           "servings": 2,
@@ -1806,28 +2432,36 @@
           "carbs": 40,
           "fat": 8,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Dátiles sin semilla",
+            "Cardamomo molido",
+            "Cacao en polvo",
+            "Azúcar glas",
+            "Café molido",
+            "Semillas de sésamo",
+            "Semillas de anís",
+            "Canela",
+            "Aceite vegetal"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Pon todos los ingredientes en un recipiente.",
+            "Muele la mezcla finamente en una picadora de carne. Si los dátiles ya vienen molidos y sin semilla, puedes amasarlos con los demás ingredientes a mano.",
+            "Con las manos ligeramente aceitadas, forma bolitas de unos 2 cm; pueden quedar irregulares.",
+            "Pasa las trufas por la cobertura que prefieras y colócalas sobre papel para hornear o una bandeja.",
+            "Ponlas en capacillos pequeños y sírvelas en un plato."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 279165",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/27/91/65/picLb71Gm.jpg",
             "recipeId": "279165",
             "recipeName": "Date Truffles (Madgooga)",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Date Truffles (Madgooga)"
         },
         {
           "id": "recipe-5-9",
-          "name": "Copa de ricotta y fruta",
+          "name": "Postre de crema de ricotta y manzana al ron",
           "image": "recipes/recipe-5-9.jpg",
           "minutes": 12,
           "servings": 2,
@@ -1836,26 +2470,41 @@
           "carbs": 33,
           "fat": 10,
           "ingredients": [
-            "Avena",
-            "Yogur natural",
-            "Fruta fresca",
-            "Limón, canela o especias al gusto"
+            "Queso ricotta de leche entera",
+            "Queso ricotta parcialmente descremado",
+            "Crema de leche para batir",
+            "Leche",
+            "Sustituto de azúcar Splenda",
+            "Manzana",
+            "Extracto de ron"
           ],
           "steps": [
-            "Lava y prepara los ingredientes; corta las frutas o verduras.",
-            "Mezcla o cocina los ingredientes principales hasta alcanzar la textura deseada.",
-            "Sirve en dos porciones y ajusta las especias al gusto."
+            "Corta la manzana en rodajas y resérvala en un recipiente.",
+            "Bate a velocidad media-alta la ricotta, la crema de leche, Splenda y el extracto hasta que la mezcla quede bien integrada.",
+            "Vierte la crema sobre la manzana y sirve.",
+            "Rinde una o dos porciones."
           ],
-          "source": "Receta semilla FitTrack; calorías estimadas por porción.",
+          "source": "Food.com Recipes and Reviews · Kaggle · Recipe 71731",
           "imageSource": {
             "dataset": "Food.com Recipes and Reviews · Kaggle",
             "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/71/73/1/pic9KJup4.jpg",
             "recipeId": "71731",
             "recipeName": "Apple-Rum Ricotta Cream Dessert",
             "recipeCategory": "Dessert"
-          }
+          },
+          "sourceRecipeName": "Apple-Rum Ricotta Cream Dessert"
         }
-      ]
+      ],
+      "imageSource": {
+        "dataset": "Wikimedia Commons",
+        "query": "strawberry frozen yogurt",
+        "title": "Strawberry Frozen Yogurt (2552806737).jpg",
+        "creator": "thebittenword.com",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Strawberry_Frozen_Yogurt_%282552806737%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Strawberry_Frozen_Yogurt_(2552806737).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
     }
   ]
 }

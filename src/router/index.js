@@ -23,6 +23,12 @@ export const routes = [
     meta: { guestOnly: true },
   },
   {
+    path: '/personalization',
+    name: 'personalization',
+    component: () => import('@/views/PersonalizationView.vue'),
+    meta: { requiresAuth: true, onboardingOnly: true },
+  },
+  {
     path: '/forgot-password',
     name: 'forgot-password',
     component: () => import('@/views/auth/ForgotPasswordView.vue'),
@@ -72,10 +78,20 @@ export const routes = [
 export function installAuthGuard(router) {
   router.beforeEach((to) => {
     const auth = useAuthController()
-    if (to.matched.some((record) => record.meta.requiresAuth) && !auth.isAuthenticated) {
+    const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
+    const signupPersonalization = to.name === 'personalization' && Boolean(auth.pendingRegistration)
+    const profileCompleted = Boolean(auth.currentUser?.profileCompleted)
+
+    if (requiresAuth && !auth.isAuthenticated && !signupPersonalization) {
       return { name: 'login' }
     }
     if (to.meta.guestOnly && auth.isAuthenticated) {
+      return { name: profileCompleted ? 'home' : 'personalization' }
+    }
+    if (auth.isAuthenticated && requiresAuth && !profileCompleted && to.name !== 'personalization') {
+      return { name: 'personalization' }
+    }
+    if (to.name === 'personalization' && profileCompleted) {
       return { name: 'home' }
     }
     return true

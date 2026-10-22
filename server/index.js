@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import cors from 'cors'
 import express from 'express'
 
-import { initializeDatabase, query } from './db.js'
+import { initializeDatabase, query, transaction } from './db.js'
 import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
 
 const app = express()
@@ -43,13 +43,85 @@ function publicUser(row) {
     name: row.name,
     email: row.email,
     goal: row.goal,
+    profileCompleted: Boolean(row.profile_completed),
   }
 }
 
-async function createSession(userId) {
+const profileGoals = new Set(['lose_weight', 'gain_muscle', 'stay_fit', 'improve_health'])
+const activityLevels = new Set(['sedentary', 'light', 'moderate', 'active'])
+const trainingLocations = new Set(['home', 'outdoors', 'gym'])
+const profileArrayFields = ['injuries', 'jointPains', 'surgeries', 'chronicConditions', 'allergies']
+
+function profileIsComplete(profile) {
+  if (!profile) return false
+  const requiredFields = [
+    'goal', 'birth_date', 'weight_kg', 'height_cm', 'sport_experience',
+    'training_location', 'injuries', 'joint_pains', 'surgeries', 'chronic_conditions', 'allergies',
+  ]
+  return profileGoals.has(profile.goal)
+    && activityLevels.has(profile.sport_experience)
+    && trainingLocations.has(profile.training_location)
+    && requiredFields.every((field) => profile[field] !== null && profile[field] !== undefined)
+}
+
+function profilePayload(row) {
+  return {
+    goal: row.goal ?? '',
+    birthDate: row.birth_date ? String(row.birth_date).slice(0, 10) : '',
+    weightKg: row.weight_kg == null ? '' : Number(row.weight_kg),
+    heightCm: row.height_cm == null ? '' : Number(row.height_cm),
+    sportExperience: row.sport_experience ?? '',
+    trainingLocation: row.training_location ?? '',
+    injuries: row.injuries ?? null,
+    jointPains: row.joint_pains ?? null,
+    surgeries: row.surgeries ?? null,
+    chronicConditions: row.chronic_conditions ?? null,
+    allergies: row.allergies ?? null,
+  }
+}
+
+function normalizeProfileList(value) {
+  if (!Array.isArray(value) || value.length > 20) return null
+  if (value.some((item) => typeof item !== 'string' || item.trim().length === 0 || item.trim().length > 100)) {
+    return null
+  }
+  return [...new Set(value.map((item) => item.trim()))]
+}
+
+function validateProfile(body = {}) {
+  const arrays = Object.fromEntries(profileArrayFields.map((field) => [field, normalizeProfileList(body[field])]))
+  const birthDate = typeof body.birthDate === 'string' ? body.birthDate : ''
+  const weightKg = Number(body.weightKg)
+  const heightCm = Number(body.heightCm)
+  const dateIsValid = /^\d{4}-\d{2}-\d{2}$/.test(birthDate)
+    && !Number.isNaN(Date.parse(`${birthDate}T00:00:00Z`))
+    && new Date(`${birthDate}T00:00:00Z`).toISOString().slice(0, 10) === birthDate
+    && birthDate <= new Date().toISOString().slice(0, 10)
+
+  if (!profileGoals.has(body.goal)
+      || !dateIsValid
+      || !Number.isFinite(weightKg) || weightKg < 25 || weightKg > 350
+      || !Number.isFinite(heightCm) || heightCm < 100 || heightCm > 250
+      || !activityLevels.has(body.sportExperience)
+      || !trainingLocations.has(body.trainingLocation)
+      || Object.values(arrays).some((items) => items === null)) return null
+
+  return {
+    goal: body.goal,
+    birthDate,
+    weightKg,
+    heightCm,
+    sportExperience: body.sportExperience,
+    trainingLocation: body.trainingLocation,
+    ...arrays,
+  }
+}
+
+async function createSession(userId, connection = null) {
   const token = crypto.randomBytes(32).toString('hex')
   const tokenHash = crypto.createHash('sha256').update(token).digest('hex')
-  await query(
+  const runQuery = connection ? connection.query.bind(connection) : query
+  await runQuery(
     `INSERT INTO sessions (token_hash, user_id, expires_at)
      VALUES ($1, $2, NOW() + INTERVAL '30 days')`,
     [tokenHash, userId],
@@ -68,15 +140,16 @@ async function authenticate(request, response, next) {
 
     const tokenHash = crypto.createHash('sha256').update(token).digest('hex')
     const result = await query(
-      `SELECT u.id, u.name, u.email, u.goal
+      `SELECT u.id, u.name, u.email, p.*
        FROM sessions s
        JOIN app_users u ON u.id = s.user_id
+       LEFT JOIN user_profiles p ON p.user_id = u.id
        WHERE s.token_hash = $1 AND s.expires_at > NOW() AND u.is_active = TRUE`,
       [tokenHash],
     )
 
     if (!result.rows[0]) return response.status(401).json({ message: 'Sesión inválida o vencida' })
-    request.user = result.rows[0]
+    request.user = { ...result.rows[0], profile_completed: profileIsComplete(result.rows[0]) }
     return next()
   } catch (error) {
     return next(error)
@@ -151,19 +224,37 @@ app.post('/api/auth/register', async (request, response, next) => {
     const name = String(request.body?.name ?? '').trim()
     const email = normalizeEmail(request.body?.email)
     const password = String(request.body?.password ?? '')
+    const profile = validateProfile(request.body?.profile)
 
     if (!name || !email || password.length < 8) {
       return response.status(400).json({ status: 'invalidData' })
     }
+    if (!profile) return response.status(400).json({ status: 'invalidProfileData' })
 
-    const result = await query(
-      `INSERT INTO app_users (id, name, email, password_hash)
-       VALUES ($1, $2, $3, $4)
-       RETURNING id, name, email, goal`,
-      [createId(), name, email, hashPassword(password)],
-    )
+    const user = await transaction(async (client) => {
+      const createdUser = await client.query(
+        `INSERT INTO app_users (id, name, email, password_hash)
+         VALUES ($1, $2, $3, $4)
+         RETURNING id, name, email`,
+        [createId(), name, email, hashPassword(password)],
+      )
+      const created = createdUser.rows[0]
+      await client.query(
+        `INSERT INTO user_profiles (
+           user_id, goal, birth_date, weight_kg, height_cm, sport_experience, training_location,
+           injuries, joint_pains, surgeries, chronic_conditions, allergies
+         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        [created.id, profile.goal, profile.birthDate, profile.weightKg, profile.heightCm,
+          profile.sportExperience, profile.trainingLocation, profile.injuries, profile.jointPains,
+          profile.surgeries, profile.chronicConditions, profile.allergies],
+      )
+      return { ...created, goal: profile.goal, profile_completed: true }
+    })
 
-    return response.status(201).json({ status: 'success', user: publicUser(result.rows[0]) })
+    return response.status(201).json({
+      status: 'success',
+      user: publicUser(user),
+    })
   } catch (error) {
     if (error.code === '23505') return response.status(409).json({ status: 'emailAlreadyRegistered' })
     return next(error)
@@ -175,8 +266,10 @@ app.post('/api/auth/login', async (request, response, next) => {
     const email = normalizeEmail(request.body?.email)
     const password = String(request.body?.password ?? '')
     const result = await query(
-      `SELECT id, name, email, goal, password_hash, is_active
-       FROM app_users WHERE email = $1`,
+      `SELECT u.id, u.name, u.email, u.password_hash, u.is_active, p.*
+       FROM app_users u
+       LEFT JOIN user_profiles p ON p.user_id = u.id
+       WHERE u.email = $1`,
       [email],
     )
     const row = result.rows[0]
@@ -186,8 +279,66 @@ app.post('/api/auth/login', async (request, response, next) => {
     }
     if (!row.is_active) return response.status(403).json({ status: 'inactiveAccount' })
 
+    row.profile_completed = profileIsComplete(row)
     const token = await createSession(row.id)
     return response.json({ status: 'success', token, user: publicUser(row) })
+  } catch (error) {
+    return next(error)
+  }
+})
+
+app.get('/api/profile', authenticate, async (request, response, next) => {
+  try {
+    await query('INSERT INTO user_profiles (user_id) VALUES ($1) ON CONFLICT (user_id) DO NOTHING', [request.user.id])
+    const result = await query('SELECT * FROM user_profiles WHERE user_id = $1', [request.user.id])
+    const savedProfile = result.rows[0]
+    return response.json({ ...profilePayload(savedProfile), profileCompleted: profileIsComplete(savedProfile) })
+  } catch (error) {
+    return next(error)
+  }
+})
+
+app.put('/api/profile', authenticate, async (request, response, next) => {
+  try {
+    const body = request.body ?? {}
+    const profile = validateProfile(body)
+    if (!profile) return response.status(400).json({ status: 'invalidProfileData' })
+
+    const result = await query(
+      `INSERT INTO user_profiles (
+         user_id, goal, birth_date, weight_kg, height_cm, sport_experience, training_location,
+         injuries, joint_pains, surgeries, chronic_conditions, allergies
+       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+       ON CONFLICT (user_id) DO UPDATE SET
+         goal = EXCLUDED.goal,
+         birth_date = EXCLUDED.birth_date,
+         weight_kg = EXCLUDED.weight_kg,
+         height_cm = EXCLUDED.height_cm,
+         sport_experience = EXCLUDED.sport_experience,
+         training_location = EXCLUDED.training_location,
+         injuries = EXCLUDED.injuries,
+         joint_pains = EXCLUDED.joint_pains,
+         surgeries = EXCLUDED.surgeries,
+         chronic_conditions = EXCLUDED.chronic_conditions,
+         allergies = EXCLUDED.allergies
+       RETURNING *`,
+      [
+        request.user.id,
+        profile.goal,
+        profile.birthDate,
+        profile.weightKg,
+        profile.heightCm,
+        profile.sportExperience,
+        profile.trainingLocation,
+        profile.injuries,
+        profile.jointPains,
+        profile.surgeries,
+        profile.chronicConditions,
+        profile.allergies,
+      ],
+    )
+    const savedProfile = result.rows[0]
+    return response.json({ ...profilePayload(savedProfile), profileCompleted: profileIsComplete(savedProfile) })
   } catch (error) {
     return next(error)
   }

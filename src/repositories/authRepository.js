@@ -11,7 +11,7 @@ async function hashPassword(password) {
 }
 
 /**
- * Contrato: register({ name, email, password }), login({ email, password }),
+ * Contrato: registerWithProfile({ name, email, password, profile }), login({ email, password }),
  * requestPasswordReset(email). Todos devuelven promesas.
  */
 export class MockAuthRepository {
@@ -27,7 +27,8 @@ export class MockAuthRepository {
     const user = new AppUser({
       name: name.trim(),
       email: normalizedEmail,
-      goal: 'Definir objetivo',
+      goal: null,
+      profileCompleted: false,
     })
     this.#users.set(normalizedEmail, {
       user,
@@ -35,6 +36,20 @@ export class MockAuthRepository {
       isActive: true,
     })
     return new AuthResult({ status: AuthResultStatus.success, user })
+  }
+
+  async registerWithProfile({ name, email, password, profile }) {
+    const result = await this.register({ name, email, password })
+    if (result.isSuccess) {
+      const user = new AppUser({ ...result.user, goal: profile.goal, profileCompleted: true })
+      this.#users.set(email.trim().toLowerCase(), {
+        ...this.#users.get(email.trim().toLowerCase()),
+        user,
+        profile,
+      })
+      result.user = user
+    }
+    return result
   }
 
   async login({ email, password }) {
@@ -53,15 +68,29 @@ export class MockAuthRepository {
     await delay(250)
     // El MOCK no envía correos. Tampoco revela si una dirección existe.
   }
+
+  async getProfile() {
+    return {
+      goal: '', birthDate: '', weightKg: '', heightCm: '', sportExperience: '', trainingLocation: '',
+      injuries: null, jointPains: null, surgeries: null, chronicConditions: null, allergies: null,
+      profileCompleted: false,
+    }
+  }
+
+  async saveProfile(profile) {
+    return { ...profile, profileCompleted: true }
+  }
 }
 
 export class ApiAuthRepository {
-  async register({ name, email, password }) {
+  async registerWithProfile({ name, email, password, profile }) {
     try {
       const data = await apiRequest('/api/auth/register', {
         method: 'POST',
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, profile }),
       })
+      clearAccessToken()
+      localStorage.removeItem('fittrack_user')
       return new AuthResult({ status: data.status, user: new AppUser(data.user) })
     } catch (error) {
       return new AuthResult({ status: error.code ?? AuthResultStatus.backendUnavailable })
@@ -84,6 +113,17 @@ export class ApiAuthRepository {
 
   async requestPasswordReset(_email) {
     return undefined
+  }
+
+  async getProfile() {
+    return apiRequest('/api/profile')
+  }
+
+  async saveProfile(profile) {
+    return apiRequest('/api/profile', {
+      method: 'PUT',
+      body: JSON.stringify(profile),
+    })
   }
 
   getStoredUser() {

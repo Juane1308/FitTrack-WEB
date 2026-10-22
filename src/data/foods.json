@@ -21,13 +21,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-1.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pechuga de pollo contiene 31 g de proteína y solo 3.6 g de grasa; es una opción práctica para sumar proteína a las comidas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/95/38/3/DwebiNDPRcCTZWQfIWvT_WIN_20141004_200213.JPG",
-            "recipeId": "95383",
-            "recipeName": "Garlic Chicken Zucchini Stir Fry",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "chicken breast food",
+            "title": "Chicken breast, cheddar cheese, corn, and black pepper on puff paratha - Massachusetts.jpg",
+            "creator": "Daderot",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Chicken_breast%2C_cheddar_cheese%2C_corn%2C_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg/1280px-Chicken_breast%2C_cheddar_cheese%2C_corn%2C_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Chicken_breast,_cheddar_cheese,_corn,_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -42,13 +45,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-2.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pechuga de pavo contiene 29 g de proteína y solo 1.6 g de grasa; es una opción práctica para sumar proteína a las comidas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/38/85/picB1JcdI.jpg",
-            "recipeId": "313885",
-            "recipeName": "Swiss Turkey Wrap With Fresh Basil",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "turkey breast meat",
+            "title": "Cooked turkey breast - November 2023 - Sarah Stierch.jpg",
+            "creator": "Missvain",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Cooked_turkey_breast_-_November_2023_-_Sarah_Stierch.jpg/1280px-Cooked_turkey_breast_-_November_2023_-_Sarah_Stierch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Cooked_turkey_breast_-_November_2023_-_Sarah_Stierch.jpg",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -63,13 +69,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-3.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Atún contiene 28 g de proteína y solo 1 g de grasa; es una opción práctica para sumar proteína a las comidas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
-            "recipeId": "123153",
-            "recipeName": "Smoked Salmon and Caviar Salad",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "tuna steak food",
+            "title": "Ahi tuna steak, corn, peas - Massachusetts.jpg",
+            "creator": "Daderot",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Ahi_tuna_steak%2C_corn%2C_peas_-_Massachusetts.jpg/1280px-Ahi_tuna_steak%2C_corn%2C_peas_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ahi_tuna_steak,_corn,_peas_-_Massachusetts.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -84,13 +93,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-4.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Salmón aporta 20 g de proteína y 13 g de grasa, una combinación que permite preparar una comida completa y saciante.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
-            "recipeId": "43404",
-            "recipeName": "Baked Salmon Delight",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "salmon fillet food",
+            "title": "Frozen salmon fillet.jpg",
+            "creator": "Medicalfools / David Chancey",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Frozen_salmon_fillet.jpg/1280px-Frozen_salmon_fillet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Frozen_salmon_fillet.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -105,13 +117,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-5.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Huevo entero aporta 13 g de proteína, nutriente que el cuerpo utiliza para mantener y reparar tejidos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
+            "url": "https://images.unsplash.com/photo-1469006421268-dee2dd13f2e0?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+            "sourcePage": "https://unsplash.com/id/foto/telur-mentah-di-atas-mangkuk-_fBturNUtd8",
+            "title": "Raw eggs in a white bowl",
+            "creator": "Brina Blum",
+            "license": "Unsplash License",
+            "licenseUrl": "https://unsplash.com/license",
+            "dataset": "Unsplash",
+            "query": "Huevo entero"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -126,13 +141,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-6.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Claras de huevo aporta 11 g de proteína, nutriente que el cuerpo utiliza para mantener y reparar tejidos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "egg whites",
+            "title": "Egg whites and fruit 1 2023-04-24.jpeg",
+            "creator": "FASTILY",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Egg_whites_and_fruit_1_2023-04-24.jpeg/1280px-Egg_whites_and_fruit_1_2023-04-24.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Egg_whites_and_fruit_1_2023-04-24.jpeg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -147,13 +165,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-7.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Yogur griego natural aporta 10 g de proteína, nutriente que el cuerpo utiliza para mantener y reparar tejidos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/07/66/picHXHeeN.jpg",
-            "recipeId": "130766",
-            "recipeName": "A Breakfast Yogurt Parfait (Granola)",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "yogurt",
+            "title": "Yogurt citrus slices.jpg",
+            "creator": "Fumikas Sagisavas",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Yogurt_citrus_slices.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_citrus_slices.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -168,13 +189,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-8.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Tofu firme aporta 17 g de proteína y 9 g de grasa, una combinación que permite preparar una comida completa y saciante.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/96/05/picqorflh.jpg",
-            "recipeId": "309605",
-            "recipeName": "Savory Tofu and Vegetables over Tomato Couscous",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "tofu food",
+            "title": "Udon Tofu.jpg",
+            "creator": "Mantelmoewe",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Udon_Tofu.jpg/1280px-Udon_Tofu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Udon_Tofu.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -189,13 +213,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-9.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Lentejas cocidas combina 9 g de proteína con 7.9 g de fibra, nutrientes que contribuyen a una comida más saciante.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked lentils bowl",
+            "title": "Liat Portal for Foodie Disorder - Cooked Lentils with Caramelized Onions.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -210,23 +237,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/proteins-10.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Camarones contiene 24 g de proteína y solo 0.3 g de grasa; es una opción práctica para sumar proteína a las comidas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/26/51/6/kTaETJG5RTWNeCpVok9o_FT%204%20-%20final_2.jpg",
-            "recipeId": "26516",
-            "recipeName": "Fish Tacos",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked shrimp bowl",
+            "title": "Liat Portal for Foodie Disorder - Cocktail Shrimp Plate with Sauce.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Liat_Portal_for_Foodie_Disorder_-_Cocktail_Shrimp_Plate_with_Sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cocktail_Shrimp_Plate_with_Sauce.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/95/38/3/DwebiNDPRcCTZWQfIWvT_WIN_20141004_200213.JPG",
-        "recipeId": "95383",
-        "recipeName": "Garlic Chicken Zucchini Stir Fry",
-        "recipeCategory": "One Dish Meal"
+        "dataset": "Wikimedia Commons",
+        "query": "chicken breast food",
+        "title": "Chicken breast, cheddar cheese, corn, and black pepper on puff paratha - Massachusetts.jpg",
+        "creator": "Daderot",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Chicken_breast%2C_cheddar_cheese%2C_corn%2C_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg/1280px-Chicken_breast%2C_cheddar_cheese%2C_corn%2C_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chicken_breast,_cheddar_cheese,_corn,_and_black_pepper_on_puff_paratha_-_Massachusetts.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
       }
     },
     {
@@ -247,13 +280,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-1.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Avena aporta 66.3 g de carbohidratos, fuente de energía para las actividades diarias, y 10.6 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-            "recipeId": "196347",
-            "recipeName": "Strawberries and Cream Oatmeal",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "oatmeal bowl",
+            "title": "Oatmeal (1).jpg",
+            "creator": "Renee Comet (Photographer)",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Oatmeal_%281%29.jpg/1280px-Oatmeal_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Oatmeal_(1).jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -268,13 +304,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-2.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Arroz integral cocido aporta 25.6 g de carbohidratos, fuente de energía para las actividades diarias, y 1.6 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/70/11/picihWLSk.jpg",
-            "recipeId": "137011",
-            "recipeName": "Low-Sodium Whole-Grain Crackers",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "brown rice cooked bowl",
+            "title": "Bowl of Cooked Brown Rice.jpg",
+            "creator": "Ceeseven",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Bowl_of_Cooked_Brown_Rice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Bowl_of_Cooked_Brown_Rice.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -289,13 +328,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-3.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Quinua cocida aporta 21.3 g de carbohidratos, fuente de energía para las actividades diarias, y 2.8 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/65/71/mWougfgSESR9RBAnnRjw_quinoa-chicken-tenders-6700.jpg",
-            "recipeId": "416571",
-            "recipeName": "Quinoa Crusted Chicken Fingers",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked quinoa",
+            "title": "Liat Portal for Foodie Disorder - Stuffed Cabbage with Meat and Quinoa.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Liat_Portal_for_Foodie_Disorder_-_Stuffed_Cabbage_with_Meat_and_Quinoa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Stuffed_Cabbage_with_Meat_and_Quinoa.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -310,13 +352,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-4.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Papa cocida aporta 20.1 g de carbohidratos, fuente de energía para las actividades diarias, y 1.8 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/52/66/pic1oHIHg.jpg",
-            "recipeId": "245266",
-            "recipeName": "Easiest  Crispy Jacket Baked Potato for Lazy Busy People",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "boiled potatoes food",
+            "title": "Boiled potatoes with salt - Massachusetts.jpg",
+            "creator": "Daderot",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Boiled_potatoes_with_salt_-_Massachusetts.jpg/1280px-Boiled_potatoes_with_salt_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Boiled_potatoes_with_salt_-_Massachusetts.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -331,13 +376,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-5.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Camote aporta 20.1 g de carbohidratos, fuente de energía para las actividades diarias, y 3 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/36/42/50/picdFkTs2.jpg",
-            "recipeId": "364250",
-            "recipeName": "Roasted Sweet Potato Fries",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "baked sweet potato",
+            "title": "A mobile peddler selling baked sweet potato steamed punuts and buffalo nuts in New Taipei City2.jpg",
+            "creator": "ThomasYehYeh",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/A_mobile_peddler_selling_baked_sweet_potato_steamed_punuts_and_buffalo_nuts_in_New_Taipei_City2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:A_mobile_peddler_selling_baked_sweet_potato_steamed_punuts_and_buffalo_nuts_in_New_Taipei_City2.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -352,13 +400,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-6.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pan integral aporta 41 g de carbohidratos, fuente de energía para las actividades diarias, y 7 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
-            "recipeId": "358497",
-            "recipeName": "Poached Eggs &amp; Avocado Toasts",
-            "recipeCategory": "Breakfast"
+            "url": "https://images.unsplash.com/photo-1723475762962-c1d3e957b313?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+            "sourcePage": "https://unsplash.com/photos/a-loaf-of-bread-sitting-on-top-of-a-wooden-table-iAwKWtoPh6g",
+            "title": "A loaf of bread sitting on top of a wooden table",
+            "creator": "Emma Miller",
+            "license": "Unsplash License",
+            "licenseUrl": "https://unsplash.com/license",
+            "dataset": "Unsplash",
+            "query": "Pan integral"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -373,13 +424,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-7.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pasta integral cocida aporta 30 g de carbohidratos, fuente de energía para las actividades diarias, y 4.5 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/45/2/scmIxe0oTkIF6B8mo9hg_image.jpeg",
-            "recipeId": "13452",
-            "recipeName": "White Bean and Pasta Soup With Sun-Dried Tomatoes",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "whole wheat pasta cooked",
+            "title": "Whole wheat penne, cooked and uncooked.jpg",
+            "creator": "Ragesoss",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Whole_wheat_penne%2C_cooked_and_uncooked.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Whole_wheat_penne,_cooked_and_uncooked.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -394,13 +448,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-8.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Maíz dulce aporta 19 g de carbohidratos, fuente de energía para las actividades diarias, y 2.7 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/26/51/6/kTaETJG5RTWNeCpVok9o_FT%204%20-%20final_2.jpg",
-            "recipeId": "26516",
-            "recipeName": "Fish Tacos",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "sweet corn food",
+            "title": "Boiled Sweet Corn.jpg",
+            "creator": "Kasyap",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Boiled_Sweet_Corn.jpg/1280px-Boiled_Sweet_Corn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Boiled_Sweet_Corn.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -415,13 +472,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-9.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Cebada cocida aporta 28.2 g de carbohidratos, fuente de energía para las actividades diarias, y 3.8 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-            "recipeId": "196347",
-            "recipeName": "Strawberries and Cream Oatmeal",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked barley food",
+            "title": "Barley and rice (3333874304).jpg",
+            "creator": "Miia Ranta from Finland",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Barley_and_rice_%283333874304%29.jpg/1280px-Barley_and_rice_%283333874304%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Barley_and_rice_(3333874304).jpg",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -436,23 +496,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/carbs-10.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Tortilla de maíz aporta 44.6 g de carbohidratos, fuente de energía para las actividades diarias, y 6.3 g de fibra, que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/66/99/0/picrFKe50.jpg",
-            "recipeId": "66990",
-            "recipeName": "Chipotle Chicken Salad Tacos",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "corn tortillas food",
+            "title": "Stacks of corn tortillas and flour tortillas, top view.jpg",
+            "creator": "Vigilantcosmicpenguin",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Stacks_of_corn_tortillas_and_flour_tortillas%2C_top_view.jpg/1280px-Stacks_of_corn_tortillas_and_flour_tortillas%2C_top_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Stacks_of_corn_tortillas_and_flour_tortillas,_top_view.jpg",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-        "recipeId": "196347",
-        "recipeName": "Strawberries and Cream Oatmeal",
-        "recipeCategory": "Breakfast"
+        "dataset": "Wikimedia Commons",
+        "query": "oatmeal bowl",
+        "title": "Oatmeal (1).jpg",
+        "creator": "Renee Comet (Photographer)",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Oatmeal_%281%29.jpg/1280px-Oatmeal_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Oatmeal_(1).jpg",
+        "license": "Public domain",
+        "licenseUrl": ""
       }
     },
     {
@@ -473,13 +539,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-1.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Aguacate aporta 14.7 g de grasa y 6.7 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
-            "recipeId": "358497",
-            "recipeName": "Poached Eggs &amp; Avocado Toasts",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "avocado fruit",
+            "title": "Avocados sold in supermarkets.jpg",
+            "creator": "Fumikas Sagisavas",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Avocados_sold_in_supermarkets.jpg/1280px-Avocados_sold_in_supermarkets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Avocados_sold_in_supermarkets.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -494,13 +563,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-2.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Almendras aporta 49.9 g de grasa y 12.5 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "almonds bowl",
+            "title": "Almonds in a bowl.jpg",
+            "creator": "Tochiprecious",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Almonds_in_a_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Almonds_in_a_bowl.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -515,13 +587,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-3.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Nueces aporta 65.2 g de grasa y 6.7 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "walnuts bowl",
+            "title": "Hubert van Ravesteyn - White flask, glass, rose and walnuts in a bowl on a stone slab d5649653a.jpg",
+            "creator": "Hubert van Ravesteyn",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Hubert_van_Ravesteyn_-_White_flask%2C_glass%2C_rose_and_walnuts_in_a_bowl_on_a_stone_slab_d5649653a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Hubert_van_Ravesteyn_-_White_flask,_glass,_rose_and_walnuts_in_a_bowl_on_a_stone_slab_d5649653a.jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -536,13 +611,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-4.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Semillas de chía aporta 30.7 g de grasa y 34.4 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/46/15/picC1msYw.jpg",
-            "recipeId": "494615",
-            "recipeName": "Mango-Coconut Chia Pudding",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "chia seeds bowl",
+            "title": "Liat Portal for Foodie Disorder - Yogurt Bowl with Figs, Nuts, Chia Seeds, and Seaweed.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Liat_Portal_for_Foodie_Disorder_-_Yogurt_Bowl_with_Figs%2C_Nuts%2C_Chia_Seeds%2C_and_Seaweed.jpg/1280px-Liat_Portal_for_Foodie_Disorder_-_Yogurt_Bowl_with_Figs%2C_Nuts%2C_Chia_Seeds%2C_and_Seaweed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Yogurt_Bowl_with_Figs,_Nuts,_Chia_Seeds,_and_Seaweed.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -557,13 +635,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-5.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Semillas de linaza aporta 42.2 g de grasa y 27.3 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/06/19/picBrBPLc.jpg",
-            "recipeId": "310619",
-            "recipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "flax seeds",
+            "title": "Large groups of flax seeds, pods and blossoms - NARA - 283904.jpg",
+            "creator": "Unknown authorUnknown author or not provided",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Large_groups_of_flax_seeds%2C_pods_and_blossoms_-_NARA_-_283904.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Large_groups_of_flax_seeds,_pods_and_blossoms_-_NARA_-_283904.jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -578,13 +659,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-6.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Mantequilla de maní aporta 50 g de grasa y 6 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/12/05/picF2UbRD.jpg",
-            "recipeId": "111205",
-            "recipeName": "Grilled Cheddar and Apple Butter Sandwich",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Openverse / Flickr",
+            "query": "mantequilla de maní",
+            "title": "Peanut Butter",
+            "creator": "",
+            "url": "https://live.staticflickr.com/8004/7104016311_f08df2b54b_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/56041749@N02/7104016311",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -599,13 +683,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-7.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Aceite de oliva aporta 100 g de grasa, por lo que añade energía y sabor en cantidades pequeñas a tus preparaciones.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
-            "recipeId": "358497",
-            "recipeName": "Poached Eggs &amp; Avocado Toasts",
-            "recipeCategory": "Breakfast"
+            "dataset": "Openverse / Flickr",
+            "query": "aceite de oliva",
+            "title": "Herbed Olive Oil",
+            "creator": "jshontz",
+            "url": "https://live.staticflickr.com/6181/6145646390_b3c39e6669_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/29332685@N07/6145646390",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -620,13 +707,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-8.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Semillas de calabaza aporta 49 g de grasa y 6 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "pumpkin seeds bowl",
+            "title": "Portrait of a Bowl of Pumpkin Seeds.jpg",
+            "creator": "Christopher Sessums",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Portrait_of_a_Bowl_of_Pumpkin_Seeds.jpg/1280px-Portrait_of_a_Bowl_of_Pumpkin_Seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_Bowl_of_Pumpkin_Seeds.jpg",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -641,13 +731,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-9.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pistachos aporta 45.3 g de grasa y 10.6 g de fibra; combina energía concentrada con fibra que contribuye a la saciedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "pistachios bowl",
+            "title": "Sitting around waiting for the PA to bring us a bowl of bolivian pistachios rinsed in fiji water (2988126902).jpg",
+            "creator": "eric molina from New York City, United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Sitting_around_waiting_for_the_PA_to_bring_us_a_bowl_of_bolivian_pistachios_rinsed_in_fiji_water_%282988126902%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Sitting_around_waiting_for_the_PA_to_bring_us_a_bowl_of_bolivian_pistachios_rinsed_in_fiji_water_(2988126902).jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -662,23 +755,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fats-10.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Aceitunas aporta 15.3 g de grasa, por lo que añade energía y sabor en cantidades pequeñas a tus preparaciones.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
-            "recipeId": "123153",
-            "recipeName": "Smoked Salmon and Caviar Salad",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "green olives bowl",
+            "title": "Wild strawberries in a porcelain bowl with carnations, a stoneware flagon, a roemer, a bread roll, a knife, green olives(112332).jpg",
+            "creator": "Jacob van Es",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Wild_strawberries_in_a_porcelain_bowl_with_carnations%2C_a_stoneware_flagon%2C_a_roemer%2C_a_bread_roll%2C_a_knife%2C_green_olives%28112332%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Wild_strawberries_in_a_porcelain_bowl_with_carnations,_a_stoneware_flagon,_a_roemer,_a_bread_roll,_a_knife,_green_olives(112332).jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/35/84/97/kHUPFH9bTMmWY3pajaiD_avocado-toast-2.jpg",
-        "recipeId": "358497",
-        "recipeName": "Poached Eggs &amp; Avocado Toasts",
-        "recipeCategory": "Breakfast"
+        "dataset": "Wikimedia Commons",
+        "query": "avocado fruit",
+        "title": "Avocados sold in supermarkets.jpg",
+        "creator": "Fumikas Sagisavas",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Avocados_sold_in_supermarkets.jpg/1280px-Avocados_sold_in_supermarkets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Avocados_sold_in_supermarkets.jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
       }
     },
     {
@@ -699,13 +798,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-1.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Banano aporta 22.8 g de carbohidratos y 2.6 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/84/35/2/piciqaxiR.jpg",
-            "recipeId": "84352",
-            "recipeName": "Banana, Raisin, and Oatmeal Pancakes",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "ripe bananas bunch",
+            "title": "DFC 4184 Bunches of ripe bananas neatly arranged at a bustling market stall ready for shoppers.jpg",
+            "creator": "PattayaPatrol",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -720,13 +822,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-2.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Manzana aporta 13.8 g de carbohidratos y 2.4 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/40/2/picYCJxGC.jpg",
-            "recipeId": "39402",
-            "recipeName": "Apple Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "red apple fruit",
+            "title": "Beautiful red apple 01.jpg",
+            "creator": "آرمین",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Beautiful_red_apple_01.jpg/1280px-Beautiful_red_apple_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Beautiful_red_apple_01.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -741,13 +846,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-3.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Arándanos aporta 14.5 g de carbohidratos y 2.4 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/51/8/piczfGJ08.jpg",
-            "recipeId": "31518",
-            "recipeName": "Berry Yogurt Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh blueberries bowl",
+            "title": "Azure Indulgence Fresh Blueberries in Tranquil Harmony by Raju C Reddy.jpg",
+            "creator": "rajucreddy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Azure_Indulgence_Fresh_Blueberries_in_Tranquil_Harmony_by_Raju_C_Reddy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Azure_Indulgence_Fresh_Blueberries_in_Tranquil_Harmony_by_Raju_C_Reddy.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -762,13 +870,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-4.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Fresas aporta 7.7 g de carbohidratos y 2 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
-            "recipeId": "503681",
-            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh strawberries",
+            "title": "Fresh strawberries from Blagaj, Bosnia and Herzegovina.jpg",
+            "creator": "Minja Klarić",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Fresh_strawberries_from_Blagaj%2C_Bosnia_and_Herzegovina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_strawberries_from_Blagaj,_Bosnia_and_Herzegovina.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -783,13 +894,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-5.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Naranja aporta 11.8 g de carbohidratos y 2.4 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/57/46/0/piceRG5xD.jpg",
-            "recipeId": "57460",
-            "recipeName": "Papaya Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "orange fruit",
+            "title": "Ambersweet oranges.jpg",
+            "creator": "",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Ambersweet_oranges.jpg/1280px-Ambersweet_oranges.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambersweet_oranges.jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -804,13 +918,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-6.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Mango aporta 15 g de carbohidratos y 1.6 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/35/7/picysWpki.jpg",
-            "recipeId": "29357",
-            "recipeName": "Mango Orange Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "ripe mango fruit",
+            "title": "Ripe Mango from Nicaragua.jpg",
+            "creator": "Zenia Nuñez from Nicaragua",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ripe_Mango_from_Nicaragua.jpg/1280px-Ripe_Mango_from_Nicaragua.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ripe_Mango_from_Nicaragua.jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -825,13 +942,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-7.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Papaya aporta 10.8 g de carbohidratos y 1.7 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/57/46/0/piceRG5xD.jpg",
-            "recipeId": "57460",
-            "recipeName": "Papaya Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "cut papaya fruit",
+            "title": "Fresh Cut Papaya With Zillions of Seeds (33812163615).jpg",
+            "creator": "Chic Bee",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Fresh_Cut_Papaya_With_Zillions_of_Seeds_%2833812163615%29.jpg/1280px-Fresh_Cut_Papaya_With_Zillions_of_Seeds_%2833812163615%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Cut_Papaya_With_Zillions_of_Seeds_(33812163615).jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -846,13 +966,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-8.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Piña aporta 13.1 g de carbohidratos y 1.4 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/69/57/6/picohyjgh.jpg",
-            "recipeId": "69576",
-            "recipeName": "Tropical Fruit Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh pineapple cut",
+            "title": "FRESH CUTS OF KENYAN GROWN PINEAPPLES.jpg",
+            "creator": "Joysal",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/FRESH_CUTS_OF_KENYAN_GROWN_PINEAPPLES.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:FRESH_CUTS_OF_KENYAN_GROWN_PINEAPPLES.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -867,13 +990,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-9.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pera aporta 15.2 g de carbohidratos y 3.1 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/70/45/picFbaOSi.jpg",
-            "recipeId": "237045",
-            "recipeName": "Baked Apples (With Chopped Hazelnuts)",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh pear fruit",
+            "title": "Fresh Pear.jpg",
+            "creator": "Hajia Hijjah",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Fresh_Pear.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Pear.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -888,23 +1014,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/fruits-10.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Kiwi aporta 14.7 g de carbohidratos y 3 g de fibra. Su sabor y textura permiten añadir fruta a desayunos o meriendas.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/29/1/pichZ5Gak.jpg",
-            "recipeId": "41291",
-            "recipeName": "Blueberry Yogurt Pancakes",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "kiwi fruit",
+            "title": "Kiwis in a pile.jpg",
+            "creator": "Apinanaivot",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Kiwis_in_a_pile.jpg/1280px-Kiwis_in_a_pile.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Kiwis_in_a_pile.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/84/35/2/piciqaxiR.jpg",
-        "recipeId": "84352",
-        "recipeName": "Banana, Raisin, and Oatmeal Pancakes",
-        "recipeCategory": "Breakfast"
+        "dataset": "Wikimedia Commons",
+        "query": "ripe bananas bunch",
+        "title": "DFC 4184 Bunches of ripe bananas neatly arranged at a bustling market stall ready for shoppers.jpg",
+        "creator": "PattayaPatrol",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
       }
     },
     {
@@ -925,13 +1057,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-1.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Espinaca aporta 23 kcal y 2.2 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh spinach leaves",
+            "title": "Fresh Spinach leaves.jpg",
+            "creator": "Charipearl",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Fresh_Spinach_leaves.jpg/1280px-Fresh_Spinach_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Spinach_leaves.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -946,13 +1081,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-2.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Brócoli aporta 34 kcal y 2.6 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
-            "recipeId": "43404",
-            "recipeName": "Baked Salmon Delight",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh broccoli",
+            "title": "Fresh Broccoli.jpg",
+            "creator": "Rukkyah",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Fresh_Broccoli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Broccoli.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -967,13 +1105,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-3.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Zanahoria aporta 41 kcal y 2.8 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Unsplash",
+            "query": "zanahorias frescas",
+            "title": "A pile of carrots sitting next to each other",
+            "creator": "Nick Fewings",
+            "url": "https://images.unsplash.com/photo-1639086495429-d60e72c53c81?auto=format&fit=crop&fm=jpg&q=85&w=1280",
+            "sourcePage": "https://unsplash.com/photos/a-pile-of-carrots-sitting-next-to-each-other-d9gDUaDpnes",
+            "license": "Unsplash License",
+            "licenseUrl": "https://unsplash.com/license"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -988,13 +1129,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-4.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Tomate aporta 18 kcal y 1.2 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/96/05/picqorflh.jpg",
-            "recipeId": "309605",
-            "recipeName": "Savory Tofu and Vegetables over Tomato Couscous",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh tomatoes closeup",
+            "title": "Homegrown Tomatoes (115760639).jpeg",
+            "creator": "Faldrian",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Homegrown_Tomatoes_%28115760639%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Homegrown_Tomatoes_(115760639).jpeg",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1009,13 +1153,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-5.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pepino aporta 15 kcal y 0.5 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
-            "recipeId": "123153",
-            "recipeName": "Smoked Salmon and Caviar Salad",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cucumber closeup",
+            "title": "CLOSEUP VIEW OF CUCUMBERS INSIDE ONE OF THE SOLAR GREENHOUSES AT THE UNIVERSITY OF ARIZONA ENVIRONMENTAL RESEARCH... - NARA - 555358.jpg",
+            "creator": "Boyd Norton",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/CLOSEUP_VIEW_OF_CUCUMBERS_INSIDE_ONE_OF_THE_SOLAR_GREENHOUSES_AT_THE_UNIVERSITY_OF_ARIZONA_ENVIRONMENTAL_RESEARCH..._-_NARA_-_555358.jpg/1280px-CLOSEUP_VIEW_OF_CUCUMBERS_INSIDE_ONE_OF_THE_SOLAR_GREENHOUSES_AT_THE_UNIVERSITY_OF_ARIZONA_ENVIRONMENTAL_RESEARCH..._-_NARA_-_555358.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:CLOSEUP_VIEW_OF_CUCUMBERS_INSIDE_ONE_OF_THE_SOLAR_GREENHOUSES_AT_THE_UNIVERSITY_OF_ARIZONA_ENVIRONMENTAL_RESEARCH..._-_NARA_-_555358.jpg",
+            "license": "Public domain",
+            "licenseUrl": ""
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1030,13 +1177,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-6.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Pimentón rojo aporta 31 kcal y 2.1 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/11/52/3/pic05jFaP.jpg",
-            "recipeId": "11523",
-            "recipeName": "Turkey Stuffed Yellow &amp; Red Bell Peppers",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "red bell pepper",
+            "title": "Red bell peppers for sale at Safeway.jpg",
+            "creator": "Grendelkhan",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Red_bell_peppers_for_sale_at_Safeway.jpg/1280px-Red_bell_peppers_for_sale_at_Safeway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Red_bell_peppers_for_sale_at_Safeway.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1051,13 +1201,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-7.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Coliflor aporta 25 kcal y 2 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cauliflower head",
+            "title": "Cauliflower heads on a shelf.jpg",
+            "creator": "Jeffery Martin",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Cauliflower_heads_on_a_shelf.jpg/1280px-Cauliflower_heads_on_a_shelf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Cauliflower_heads_on_a_shelf.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1072,13 +1225,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-8.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Calabacín aporta 17 kcal y 1 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/95/38/3/DwebiNDPRcCTZWQfIWvT_WIN_20141004_200213.JPG",
-            "recipeId": "95383",
-            "recipeName": "Garlic Chicken Zucchini Stir Fry",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh zucchini squash",
+            "title": "Chili and zucchini.jpg",
+            "creator": "Tiia Monto",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Chili_and_zucchini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Chili_and_zucchini.jpg",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1093,13 +1249,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-9.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Kale aporta 35 kcal y 4.1 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/06/19/picBrBPLc.jpg",
-            "recipeId": "310619",
-            "recipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "fresh kale leaves",
+            "title": "Fresh Spinach and Kale harvest at the farm.jpg",
+            "creator": "Anitah Pezz",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Fresh_Spinach_and_Kale_harvest_at_the_farm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Spinach_and_Kale_harvest_at_the_farm.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1114,23 +1273,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/vegetables-10.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Champiñones aporta 22 kcal y 1 g de fibra; ayuda a dar volumen, textura y variedad a platos cotidianos.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/20/93/6/SYE3YhCLTyu5YqXaqMCH_7%20(1%20of%201).jpg",
-            "recipeId": "20936",
-            "recipeName": "Bacon Potato Frittata",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "mushrooms food",
+            "title": "Edible mushrooms in baskets 2022 G1.jpg",
+            "creator": "George Chernilevsky",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Edible_mushrooms_in_baskets_2022_G1.jpg/1280px-Edible_mushrooms_in_baskets_2022_G1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Edible_mushrooms_in_baskets_2022_G1.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-        "recipeId": "56875",
-        "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-        "recipeCategory": "Breakfast"
+        "dataset": "Wikimedia Commons",
+        "query": "fresh spinach leaves",
+        "title": "Fresh Spinach leaves.jpg",
+        "creator": "Charipearl",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Fresh_Spinach_leaves.jpg/1280px-Fresh_Spinach_leaves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Spinach_leaves.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
       }
     },
     {
@@ -1151,13 +1316,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-1.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Fríjoles negros cocidos aporta 8.9 g de proteína y 8.7 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/86/92/picPqp6hm.jpg",
-            "recipeId": "418692",
-            "recipeName": "Black Bean Brownies (Gluten Free)",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "black beans bowl",
+            "title": "Blackbeanstew.jpg",
+            "creator": "Badagnani",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Blackbeanstew.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Blackbeanstew.jpg",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1172,13 +1340,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-2.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Garbanzos cocidos aporta 8.9 g de proteína y 7.6 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/58/1/picCw7na3.jpg",
-            "recipeId": "30581",
-            "recipeName": "Garlic, Chickpea &amp; Spinach Soup",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked chickpeas bowl",
+            "title": "Liat Portal for Foodie Disorder - Hummus with spiced chickpeas.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Liat_Portal_for_Foodie_Disorder_-_Hummus_with_spiced_chickpeas.jpg/1280px-Liat_Portal_for_Foodie_Disorder_-_Hummus_with_spiced_chickpeas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Hummus_with_spiced_chickpeas.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1193,13 +1364,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-3.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Lentejas cocidas aporta 9 g de proteína y 7.9 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked lentils bowl",
+            "title": "Liat Portal for Foodie Disorder - Cooked Lentils with Caramelized Onions.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg/1280px-Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1214,13 +1388,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-4.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Fríjoles rojos cocidos aporta 8.7 g de proteína y 6.4 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/20/3/picahmqDz.jpg",
-            "recipeId": "10203",
-            "recipeName": "Quick Homemade Chili Con Carne With Beans",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "red kidney beans",
+            "title": "Red kidney beans.jpg",
+            "creator": "Fumikas Sagisavas",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Red_kidney_beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Red_kidney_beans.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1235,13 +1412,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-5.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Arvejas cocidas aporta 5.4 g de proteína y 5.5 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "green peas bowl cooked",
+            "title": "Liat Portal for Foodie Disorder - Homemade salmon with snow peas.jpg",
+            "creator": "HaJunkiyada",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Liat_Portal_for_Foodie_Disorder_-_Homemade_salmon_with_snow_peas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Homemade_salmon_with_snow_peas.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1256,13 +1436,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-6.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Edamame aporta 12 g de proteína y 5.2 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/14/24/2/pic6PNSDE.jpg",
-            "recipeId": "14242",
-            "recipeName": "Lemon Asparagus",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "edamame beans",
+            "title": "Shelled edamame beans.jpg",
+            "creator": "Fumikas Sagisavas",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Shelled_edamame_beans.jpg/1280px-Shelled_edamame_beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Shelled_edamame_beans.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1277,13 +1460,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-7.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Habas cocidas aporta 7.6 g de proteína y 5.4 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "fava beans",
+            "title": "Fava beans at the Sonoma Farmer's Market - Sarah Stierch.jpg",
+            "creator": "Sarah Stierch",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Fava_beans_at_the_Sonoma_Farmer%27s_Market_-_Sarah_Stierch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Fava_beans_at_the_Sonoma_Farmer%27s_Market_-_Sarah_Stierch.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1298,13 +1484,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-8.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Fríjol blanco cocido aporta 9.7 g de proteína y 6.3 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/45/2/scmIxe0oTkIF6B8mo9hg_image.jpeg",
-            "recipeId": "13452",
-            "recipeName": "White Bean and Pasta Soup With Sun-Dried Tomatoes",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "white beans bowl",
+            "title": "White Beans without tomato sauce.jpg",
+            "creator": "cookbookman17",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/White_Beans_without_tomato_sauce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:White_Beans_without_tomato_sauce.jpg",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1319,13 +1508,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-9.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Soja cocida aporta 18.2 g de proteína y 6 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/30/96/05/picqorflh.jpg",
-            "recipeId": "309605",
-            "recipeName": "Savory Tofu and Vegetables over Tomato Couscous",
-            "recipeCategory": "One Dish Meal"
+            "dataset": "Wikimedia Commons",
+            "query": "cooked soybeans",
+            "title": "Cooked soybeans on plate.jpg",
+            "creator": "rawpixel",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Cooked_soybeans_on_plate.jpg/1280px-Cooked_soybeans_on_plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Cooked_soybeans_on_plate.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1340,23 +1532,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/legumes-10.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Hummus aporta 7.9 g de proteína y 6 g de fibra, una combinación vegetal que contribuye a la saciedad y complementa cereales y verduras.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "hummus bowl",
+            "title": "Winter Hummus (Unsplash).jpg",
+            "creator": "Brooke Lark brookelark",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Winter_Hummus_%28Unsplash%29.jpg/1280px-Winter_Hummus_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Winter_Hummus_(Unsplash).jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/86/92/picPqp6hm.jpg",
-        "recipeId": "418692",
-        "recipeName": "Black Bean Brownies (Gluten Free)",
-        "recipeCategory": "Dessert"
+        "dataset": "Wikimedia Commons",
+        "query": "black beans bowl",
+        "title": "Blackbeanstew.jpg",
+        "creator": "Badagnani",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Blackbeanstew.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Blackbeanstew.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
       }
     },
     {
@@ -1377,13 +1575,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-1.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Leche baja en grasa aporta 3.4 g de proteína, además de 5 g de carbohidratos y 1 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-            "recipeId": "196347",
-            "recipeName": "Strawberries and Cream Oatmeal",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "milk in glass",
+            "title": "Milk in a glass.JPG",
+            "creator": "Meganbeckett27",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Milk_in_a_glass.JPG/1280px-Milk_in_a_glass.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Milk_in_a_glass.JPG",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1398,13 +1599,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-2.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Yogur natural aporta 3.5 g de proteína, además de 4.7 g de carbohidratos y 3.3 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/07/66/picHXHeeN.jpg",
-            "recipeId": "130766",
-            "recipeName": "A Breakfast Yogurt Parfait (Granola)",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "reused matching catalog photo",
+            "title": "Yogurt fruit bowl.jpg",
+            "creator": "Jumbocombo0811",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Yogurt_fruit_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_fruit_bowl.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1419,13 +1623,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-3.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Queso cottage aporta 11.1 g de proteína, además de 3.4 g de carbohidratos y 4.3 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/71/73/1/pic9KJup4.jpg",
-            "recipeId": "71731",
-            "recipeName": "Apple-Rum Ricotta Cream Dessert",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "cottage cheese bowl",
+            "title": "Cottagecheese200px.jpg",
+            "creator": "FASTILY (TALK)",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Cottagecheese200px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Cottagecheese200px.jpg",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1440,13 +1647,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-4.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Kéfir natural aporta 3.8 g de proteína, además de 4.8 g de carbohidratos y 2 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/29/35/7/picysWpki.jpg",
-            "recipeId": "29357",
-            "recipeName": "Mango Orange Smoothie",
-            "recipeCategory": "Smoothies"
+            "url": "https://live.staticflickr.com/4010/4368815740_f1546c3473_b.jpg",
+            "sourcePage": "https://www.flickr.com/photos/25834786@N03/4368815740",
+            "title": "kefir",
+            "creator": "secretlondon123",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+            "dataset": "Openverse / Flickr",
+            "query": "Kéfir natural"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1461,13 +1671,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-5.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Leche de soya sin azúcar aporta 3.3 g de proteína, además de 0.7 g de carbohidratos y 1.8 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/48/4/38484.jpg",
-            "recipeId": "38484",
-            "recipeName": "Soy Delicious Strawberry Banana Shake or Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "soy milk glass drink",
+            "title": "Soy-rice milk 2.jpg",
+            "creator": "User:Alex Ex",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Soy-rice_milk_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Soy-rice_milk_2.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1482,13 +1695,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-6.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Bebida de almendras sin azúcar aporta 0.6 g de proteína, además de 0.3 g de carbohidratos y 1.2 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/48/4/38484.jpg",
-            "recipeId": "38484",
-            "recipeName": "Soy Delicious Strawberry Banana Shake or Smoothie",
-            "recipeCategory": "Smoothies"
+            "dataset": "Wikimedia Commons",
+            "query": "almond milk glass",
+            "title": "Alpro almond milk.jpg",
+            "creator": "Mx. Granger",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Alpro_almond_milk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Alpro_almond_milk.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1503,13 +1719,17 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-7.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Queso mozzarella aporta 28 g de proteína, además de 3.1 g de carbohidratos y 17 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Buffalo_Mozzarella.jpg/1280px-Buffalo_Mozzarella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Buffalo_Mozzarella.jpg",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Buffalo_Mozzarella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "title": "Buffalo Mozzarella.jpg",
+            "creator": "Punch Pizza",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "dataset": "Wikimedia Commons",
+            "query": "Queso mozzarella"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1524,13 +1744,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-8.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Ricotta aporta 11.3 g de proteína, además de 3 g de carbohidratos y 13 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/10/14/35/picHGrbjm.jpg",
-            "recipeId": "101435",
-            "recipeName": "Italian Sausage Spinach and Ricotta Toasts",
-            "recipeCategory": "Lunch/Snacks"
+            "dataset": "Wikimedia Commons",
+            "query": "ricotta cheese",
+            "title": "Ricotta cheese - Wiki Loves Sicilia 2024 19.jpg",
+            "creator": "Auregann",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Ricotta_cheese_-_Wiki_Loves_Sicilia_2024_19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ricotta_cheese_-_Wiki_Loves_Sicilia_2024_19.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1545,13 +1768,16 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-9.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Yogur griego bajo en grasa aporta 10 g de proteína, además de 3.9 g de carbohidratos y 2 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/50/36/81/picGkdF3V.jpg",
-            "recipeId": "503681",
-            "recipeName": "Fresh Strawberries With Yogurt (Easy Moroccan Dessert)",
-            "recipeCategory": "Dessert"
+            "dataset": "Wikimedia Commons",
+            "query": "Yogur griego bajo en grasa",
+            "title": "Yogurt fruit bowl.jpg",
+            "creator": "Jumbocombo0811",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Yogurt_fruit_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_fruit_bowl.jpg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         },
@@ -1566,249 +1792,29 @@
           "serving": "100 g",
           "source": "USDA FoodData Central",
           "image": "foods/dairy-10.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
+          "benefits": "Una porción de 100 g de Leche sin lactosa aporta 3.4 g de proteína, además de 5 g de carbohidratos y 1 g de grasa, para completar desayunos o meriendas según la variedad.",
           "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-            "recipeId": "196347",
-            "recipeName": "Strawberries and Cream Oatmeal",
-            "recipeCategory": "Breakfast"
+            "dataset": "Wikimedia Commons",
+            "query": "lactose free milk",
+            "title": "Lactose-free milk, BKK, 2021-09-30.jpg",
+            "creator": "21janvier1793",
+            "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Lactose-free_milk%2C_BKK%2C_2021-09-30.jpg/1280px-Lactose-free_milk%2C_BKK%2C_2021-09-30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Lactose-free_milk,_BKK,_2021-09-30.jpg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
           },
           "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
         }
       ],
       "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/63/47/picH6Ud1f.jpg",
-        "recipeId": "196347",
-        "recipeName": "Strawberries and Cream Oatmeal",
-        "recipeCategory": "Breakfast"
-      }
-    },
-    {
-      "id": "vitamins",
-      "name": "Vitaminas y minerales",
-      "description": "Alimentos con micronutrientes para una dieta diversa.",
-      "image": "foods/vitamins-1.jpg",
-      "source": "USDA FoodData Central",
-      "items": [
-        {
-          "id": "vitamins-1",
-          "name": "Brócoli",
-          "calories": 34,
-          "protein": 2.8,
-          "carbs": 6.6,
-          "fat": 0.4,
-          "fiber": 2.6,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-1.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
-            "recipeId": "43404",
-            "recipeName": "Baked Salmon Delight",
-            "recipeCategory": "One Dish Meal"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-2",
-          "name": "Espinaca",
-          "calories": 23,
-          "protein": 2.9,
-          "carbs": 3.6,
-          "fat": 0.4,
-          "fiber": 2.2,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-2.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/56/87/5/picjMswCi.jpg",
-            "recipeId": "56875",
-            "recipeName": "French Omelet With Spinach &amp; Swiss Cheese",
-            "recipeCategory": "Breakfast"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-3",
-          "name": "Semillas de calabaza",
-          "calories": 559,
-          "protein": 30.2,
-          "carbs": 10.7,
-          "fat": 49,
-          "fiber": 6,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-3.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-4",
-          "name": "Yogur natural",
-          "calories": 61,
-          "protein": 3.5,
-          "carbs": 4.7,
-          "fat": 3.3,
-          "fiber": 0,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-4.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/07/66/picHXHeeN.jpg",
-            "recipeId": "130766",
-            "recipeName": "A Breakfast Yogurt Parfait (Granola)",
-            "recipeCategory": "Breakfast"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-5",
-          "name": "Lentejas cocidas",
-          "calories": 116,
-          "protein": 9,
-          "carbs": 20.1,
-          "fat": 0.4,
-          "fiber": 7.9,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-5.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/13/50/4/D6kTLDsRe2juV5nRyoCQ_Stuffed%20pumpkin.JPG",
-            "recipeId": "13504",
-            "recipeName": "Roasted Harvest Vegetables in a Baked Pumpkin",
-            "recipeCategory": "Lunch/Snacks"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-6",
-          "name": "Naranja",
-          "calories": 47,
-          "protein": 0.9,
-          "carbs": 11.8,
-          "fat": 0.1,
-          "fiber": 2.4,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-6.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/57/46/0/piceRG5xD.jpg",
-            "recipeId": "57460",
-            "recipeName": "Papaya Smoothie",
-            "recipeCategory": "Smoothies"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-7",
-          "name": "Sardinas",
-          "calories": 208,
-          "protein": 24.6,
-          "carbs": 0,
-          "fat": 11.5,
-          "fiber": 0,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-7.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/31/53/picUrw3me.jpg",
-            "recipeId": "123153",
-            "recipeName": "Smoked Salmon and Caviar Salad",
-            "recipeCategory": "Lunch/Snacks"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-8",
-          "name": "Kale",
-          "calories": 35,
-          "protein": 2.9,
-          "carbs": 4.4,
-          "fat": 1.5,
-          "fiber": 4.1,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-8.jpg",
-          "benefits": "Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/31/06/19/picBrBPLc.jpg",
-            "recipeId": "310619",
-            "recipeName": "Flax Berry Smoothie (W/Spinach - Shhh,they Won't Know!)",
-            "recipeCategory": "Smoothies"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-9",
-          "name": "Almendras",
-          "calories": 579,
-          "protein": 21.2,
-          "carbs": 21.6,
-          "fat": 49.9,
-          "fiber": 12.5,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-9.jpg",
-          "benefits": "Aporta proteína para complementar las comidas. Su fibra contribuye a la saciedad. Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/73/46/picaonG03.jpg",
-            "recipeId": "197346",
-            "recipeName": "Mixed Nuts With Rosemary",
-            "recipeCategory": "Lunch/Snacks"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        },
-        {
-          "id": "vitamins-10",
-          "name": "Champiñones",
-          "calories": 22,
-          "protein": 3.1,
-          "carbs": 3.3,
-          "fat": 0.3,
-          "fiber": 1,
-          "serving": "100 g",
-          "source": "USDA FoodData Central",
-          "image": "foods/vitamins-10.jpg",
-          "benefits": "Inclúyelo dentro de una alimentación variada.",
-          "imageSource": {
-            "dataset": "Food.com Recipes and Reviews · Kaggle",
-            "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/20/93/6/SYE3YhCLTyu5YqXaqMCH_7%20(1%20of%201).jpg",
-            "recipeId": "20936",
-            "recipeName": "Bacon Potato Frittata",
-            "recipeCategory": "One Dish Meal"
-          },
-          "sourceUrl": "https://fdc.nal.usda.gov/download-datasets/"
-        }
-      ],
-      "imageSource": {
-        "dataset": "Food.com Recipes and Reviews · Kaggle",
-        "url": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/43/40/4/CqNCHTI1Sk6j8iIakweU_VZM.IMG_20151203_110535.jpg",
-        "recipeId": "43404",
-        "recipeName": "Baked Salmon Delight",
-        "recipeCategory": "One Dish Meal"
+        "dataset": "Wikimedia Commons",
+        "query": "milk in glass",
+        "title": "Milk in a glass.JPG",
+        "creator": "Meganbeckett27",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Milk_in_a_glass.JPG/1280px-Milk_in_a_glass.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Milk_in_a_glass.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
       }
     }
   ]

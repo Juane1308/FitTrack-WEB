@@ -1,9 +1,8 @@
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 
 import * as Validators from '@/core/validators'
 import { useAuthController } from './authController'
-import { authErrorMessage } from './authMessages'
 import { useSnackbarController } from './snackbarController'
 
 export function useRegisterController() {
@@ -19,7 +18,6 @@ export function useRegisterController() {
     acceptTerms: false,
   })
   const errors = reactive({ name: null, email: null, password: null, confirmation: null })
-  const showSuccessDialog = ref(false)
   const isLoading = computed(() => auth.isLoading)
 
   function validate() {
@@ -37,26 +35,17 @@ export function useRegisterController() {
       return
     }
 
-    const result = await auth.register({
+    auth.beginRegistration({
       name: form.name,
       email: form.email,
       password: form.password,
     })
-    if (!result.isSuccess) {
-      snackbar.show(authErrorMessage(result.status))
-      return
-    }
-    showSuccessDialog.value = true
-  }
-
-  function confirmSuccess() {
-    showSuccessDialog.value = false
-    router.replace({ name: 'login' })
+    await router.replace({ name: 'personalization' })
   }
 
   function goBack() {
     router.back()
   }
 
-  return { form, errors, isLoading, showSuccessDialog, register, confirmSuccess, goBack }
+  return { form, errors, isLoading, register, goBack }
 }
