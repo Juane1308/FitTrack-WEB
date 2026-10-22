@@ -1,0 +1,511 @@
+[
+  {
+    "id": "full-body",
+    "name": "Full Body",
+    "level": "Principiante",
+    "durationMinutes": 30,
+    "durationWeeks": 4,
+    "goal": "Mantenerse en forma",
+    "muscleGroup": "Cuerpo completo",
+    "location": "Casa",
+    "equipment": [
+      "Colchoneta",
+      "Pared"
+    ],
+    "imageKey": "full-body",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "squat",
+        "sets": 2,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "wall-push-up",
+        "sets": 2,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "glute-bridge",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "bird-dog",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": true
+      },
+      {
+        "order": 5,
+        "exerciseId": "march",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 60,
+        "restSeconds": 45,
+        "perSide": false
+      }
+    ]
+  },
+  {
+    "id": "hypertrophy",
+    "name": "Hipertrofia",
+    "level": "Intermedio",
+    "durationMinutes": 45,
+    "durationWeeks": 8,
+    "goal": "Ganar masa muscular",
+    "muscleGroup": "Cuerpo completo",
+    "location": "Gimnasio",
+    "equipment": [
+      "Mancuernas",
+      "Banco",
+      "Polea"
+    ],
+    "imageKey": "hypertrophy",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "goblet-squat",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "dumbbell-press",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "dumbbell-row",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": true
+      },
+      {
+        "order": 4,
+        "exerciseId": "dumbbell-rdl",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 5,
+        "exerciseId": "biceps-curl",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      }
+    ]
+  },
+  {
+    "id": "fat-loss",
+    "name": "Pérdida de grasa",
+    "level": "Intermedio",
+    "durationMinutes": 35,
+    "durationWeeks": 8,
+    "goal": "Perder peso",
+    "muscleGroup": "Cuerpo completo",
+    "location": "Aire libre",
+    "equipment": [
+      "Colchoneta"
+    ],
+    "imageKey": "fat-loss",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "walk",
+        "sets": 1,
+        "repetitions": null,
+        "durationSeconds": 300,
+        "restSeconds": 45,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "squat",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "push-up",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "reverse-lunge",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": true
+      },
+      {
+        "order": 5,
+        "exerciseId": "step-jack",
+        "sets": 3,
+        "repetitions": null,
+        "durationSeconds": 45,
+        "restSeconds": 45,
+        "perSide": false
+      },
+      {
+        "order": 6,
+        "exerciseId": "mountain-climber",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 20,
+        "restSeconds": 45,
+        "perSide": false
+      }
+    ]
+  },
+  {
+    "id": "strength",
+    "name": "Fuerza",
+    "level": "Avanzado",
+    "durationMinutes": 50,
+    "durationWeeks": 8,
+    "goal": "Ganar masa muscular",
+    "muscleGroup": "Piernas, pecho y espalda",
+    "location": "Gimnasio",
+    "equipment": [
+      "Barra",
+      "Banco",
+      "Soporte de seguridad",
+      "Polea"
+    ],
+    "imageKey": "strength",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "barbell-squat",
+        "sets": 3,
+        "repetitions": 6,
+        "durationSeconds": null,
+        "restSeconds": 120,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "bench-press",
+        "sets": 3,
+        "repetitions": 6,
+        "durationSeconds": null,
+        "restSeconds": 120,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "seated-row",
+        "sets": 3,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 90,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "leg-press",
+        "sets": 3,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 90,
+        "perSide": false
+      }
+    ]
+  },
+  {
+    "id": "home-starter",
+    "name": "Inicio activo en casa",
+    "level": "Principiante",
+    "durationMinutes": 25,
+    "durationWeeks": 4,
+    "goal": "Mejorar salud",
+    "muscleGroup": "Cuerpo completo",
+    "location": "Casa",
+    "equipment": [
+      "Silla estable",
+      "Pared",
+      "Colchoneta"
+    ],
+    "imageKey": "full-body",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "march",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 60,
+        "restSeconds": 45,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "chair-squat",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "wall-push-up",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "calf-raise",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 5,
+        "exerciseId": "dead-bug",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": true
+      }
+    ]
+  },
+  {
+    "id": "upper-body",
+    "name": "Tren superior",
+    "level": "Intermedio",
+    "durationMinutes": 40,
+    "durationWeeks": 6,
+    "goal": "Ganar masa muscular",
+    "muscleGroup": "Pecho, espalda, hombros y brazos",
+    "location": "Gimnasio",
+    "equipment": [
+      "Mancuernas",
+      "Banco",
+      "Polea"
+    ],
+    "imageKey": "hypertrophy",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "dumbbell-press",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "lat-pulldown",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "shoulder-press",
+        "sets": 2,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "lateral-raise",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 5,
+        "exerciseId": "biceps-curl",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 6,
+        "exerciseId": "triceps-pushdown",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      }
+    ]
+  },
+  {
+    "id": "lower-body",
+    "name": "Piernas y estabilidad",
+    "level": "Intermedio",
+    "durationMinutes": 35,
+    "durationWeeks": 6,
+    "goal": "Mantenerse en forma",
+    "muscleGroup": "Piernas, glúteos y abdomen",
+    "location": "Casa",
+    "equipment": [
+      "Mancuernas",
+      "Colchoneta"
+    ],
+    "imageKey": "strength",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "goblet-squat",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "dumbbell-rdl",
+        "sets": 3,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "reverse-lunge",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": true
+      },
+      {
+        "order": 4,
+        "exerciseId": "glute-bridge",
+        "sets": 2,
+        "repetitions": 12,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 5,
+        "exerciseId": "side-plank",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 20,
+        "restSeconds": 45,
+        "perSide": true
+      }
+    ]
+  },
+  {
+    "id": "outdoor-active",
+    "name": "Actividad al aire libre",
+    "level": "Principiante",
+    "durationMinutes": 30,
+    "durationWeeks": 4,
+    "goal": "Mejorar salud",
+    "muscleGroup": "Cuerpo completo",
+    "location": "Aire libre",
+    "equipment": [
+      "Banco estable",
+      "Colchoneta"
+    ],
+    "imageKey": "fat-loss",
+    "exercises": [
+      {
+        "order": 1,
+        "exerciseId": "walk",
+        "sets": 1,
+        "repetitions": null,
+        "durationSeconds": 600,
+        "restSeconds": 45,
+        "perSide": false
+      },
+      {
+        "order": 2,
+        "exerciseId": "squat",
+        "sets": 2,
+        "repetitions": 10,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 3,
+        "exerciseId": "incline-push-up",
+        "sets": 2,
+        "repetitions": 8,
+        "durationSeconds": null,
+        "restSeconds": 60,
+        "perSide": false
+      },
+      {
+        "order": 4,
+        "exerciseId": "step-jack",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 45,
+        "restSeconds": 45,
+        "perSide": false
+      },
+      {
+        "order": 5,
+        "exerciseId": "plank",
+        "sets": 2,
+        "repetitions": null,
+        "durationSeconds": 20,
+        "restSeconds": 45,
+        "perSide": false
+      }
+    ]
+  }
+]

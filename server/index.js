@@ -6,6 +6,7 @@ import cors from 'cors'
 import express from 'express'
 
 import { initializeDatabase, query } from './db.js'
+import { getTrainingCatalog } from './trainingCatalog.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -239,6 +240,15 @@ app.get('/api/progress/weekly', authenticate, async (request, response, next) =>
     })
   } catch (error) {
     return next(error)
+  }
+})
+
+// General catalog contains no personal information and is also used by the local preview.
+app.get('/api/routines', async (_request, response, next) => {
+  try {
+    response.json({ routines: await getTrainingCatalog(query) })
+  } catch (error) {
+    next(error)
   }
 })
 

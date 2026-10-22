@@ -4,6 +4,11 @@ import { AppSection } from '@/core/constants'
 import { useAuthController } from '@/controllers/authController'
 
 export const routes = [
+  ...(import.meta.env.DEV ? [{
+    path: '/preview/training',
+    name: 'training-preview',
+    component: () => import('@/views/sections/TrainingView.vue'),
+  }] : []),
   { path: '/', name: 'splash', component: () => import('@/views/SplashView.vue') },
   {
     path: '/login',

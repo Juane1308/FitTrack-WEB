@@ -1,9 +1,11 @@
 <script setup>
+import { onMounted } from 'vue'
 import { CalendarDays, Dumbbell } from 'lucide-vue-next'
 import AppCard from '@/components/AppCard.vue'
 import { useTrainingController } from '@/controllers/useTrainingController'
 
-const { routines } = useTrainingController()
+const { routines, isLoading, error, loadRoutines } = useTrainingController()
+onMounted(loadRoutines)
 </script>
 
 <template>
@@ -19,17 +21,23 @@ const { routines } = useTrainingController()
 
     <div class="catalog-heading">
       <h2>Rutinas</h2>
-      <span class="muted">{{ routines.length }} disponibles</span>
+      <span v-if="!isLoading && !error" class="muted">{{ routines.length }} disponibles</span>
     </div>
 
-    <ul v-if="routines.length" class="routine-grid" aria-label="Catálogo de rutinas">
+    <p v-if="isLoading" role="status">Cargando rutinas…</p>
+    <AppCard v-else-if="error" class="empty-state">
+      <p role="alert">{{ error }}</p>
+      <button type="button" @click="loadRoutines">Reintentar</button>
+    </AppCard>
+    <ul v-else-if="routines.length" class="routine-grid" aria-label="Catálogo de rutinas">
       <li v-for="routine in routines" :key="routine.id">
         <AppCard class="routine-card" padding="0">
           <img :src="routine.image" alt="" class="routine-image" width="361" height="298" />
           <div class="routine-info">
             <span class="level">{{ routine.level }}</span>
             <h3>{{ routine.name }}</h3>
-            <p class="duration">
+            <p class="duration">{{ routine.durationMinutes }} min por sesión · {{ routine.location }}</p>
+            <p v-if="routine.durationWeeks" class="duration">
               <CalendarDays :size="16" aria-hidden="true" />
               Programa de {{ routine.durationWeeks }} semanas
             </p>

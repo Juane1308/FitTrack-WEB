@@ -8,7 +8,7 @@ export const useAppStateController = defineStore('appState', () => {
   return {
     currentUser: repository.currentUser,
     dashboard: repository.dashboard,
-    routines: repository.routines,
+    routines: [],
     foods: repository.foods,
     recipes: repository.recipes,
     progress: repository.progress,

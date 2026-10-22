@@ -5,10 +5,11 @@
   "type": "module",
   "description": "Seguimiento del entrenamiento, alimentación y progreso físico.",
   "scripts": {
+    "dataset:import": "node --env-file-if-exists=.env server/importTrainingDataset.js",
     "dev": "vite",
-    "dev:api": "node --watch server/index.js",
+    "dev:api": "node --env-file-if-exists=.env --watch server/index.js",
     "build": "vite build",
-    "start": "node server/index.js",
+    "start": "node --env-file-if-exists=.env server/index.js",
     "preview": "vite preview",
     "test": "vitest run"
   },

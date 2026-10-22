@@ -1,26 +1,41 @@
-import { describe, expect, it } from 'vitest'
-import { mount } from '@vue/test-utils'
-import { createPinia, setActivePinia } from 'pinia'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { flushPromises, mount } from '@vue/test-utils'
+import { createPinia } from 'pinia'
 import TrainingView from '@/views/sections/TrainingView.vue'
-import { useAppStateController } from '@/controllers/appStateController'
+import routines from '@/data/routines.json'
 
-describe('Catálogo de rutinas RF27', () => {
-  it('muestra todas las rutinas del repositorio', () => {
-    const pinia = createPinia()
-    const wrapper = mount(TrainingView, { global: { plugins: [pinia] } })
-    expect(wrapper.findAll('li')).toHaveLength(4)
-    for (const name of ['Full Body', 'Hipertrofia', 'Pérdida de grasa', 'Fuerza']) {
-      expect(wrapper.text()).toContain(name)
-    }
+afterEach(() => vi.unstubAllGlobals())
+const reply = entries => new Response(JSON.stringify({ routines: entries }), { headers: { 'Content-Type': 'application/json' } })
+const render = () => mount(TrainingView, { global: { plugins: [createPinia()] } })
+
+describe('Catálogo de rutinas RF27 desde API', () => {
+  it('carga y muestra todas las rutinas recibidas', async () => {
+    const fetch = vi.fn().mockResolvedValue(reply(routines.map(r => ({ ...r, image: r.imageKey }))))
+    vi.stubGlobal('fetch', fetch)
+    const wrapper = render()
+    expect(wrapper.get('[role="status"]').text()).toContain('Cargando')
+    await flushPromises()
+    expect(fetch.mock.calls[0][0]).toBe('/api/routines')
+    expect(wrapper.findAll('li')).toHaveLength(routines.length)
+    for (const routine of routines) expect(wrapper.text()).toContain(routine.name)
     expect(wrapper.findAll('img').every(image => Boolean(image.attributes('src')))).toBe(true)
   })
-
-  it('muestra un mensaje cuando el catálogo está vacío', () => {
-    const pinia = createPinia()
-    setActivePinia(pinia)
-    useAppStateController().routines = []
-    const wrapper = mount(TrainingView, { global: { plugins: [pinia] } })
-    expect(wrapper.findAll('li')).toHaveLength(0)
+  it('muestra un catálogo vacío', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(reply([])))
+    const wrapper = render()
+    await flushPromises()
     expect(wrapper.text()).toContain('Aún no hay rutinas disponibles')
+    expect(wrapper.find('[role="alert"]').exists()).toBe(false)
+  })
+  it('permite reintentar un fallo sin mostrar datos locales de respaldo', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValueOnce(new Error('Sin conexión')).mockResolvedValueOnce(reply([{ id: 'db-only', name: 'Rutina desde PostgreSQL', level: 'Principiante', durationMinutes: 20 }])))
+    const wrapper = render()
+    await flushPromises()
+    expect(wrapper.get('[role="alert"]').text()).toContain('No fue posible cargar')
+    expect(wrapper.findAll('li')).toHaveLength(0)
+    await wrapper.get('button').trigger('click')
+    await flushPromises()
+    expect(wrapper.text()).toContain('Rutina desde PostgreSQL')
+    expect(wrapper.find('[role="alert"]').exists()).toBe(false)
   })
 })
