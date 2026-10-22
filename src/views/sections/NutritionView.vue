@@ -1,15 +1,13 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { ArrowLeft, Clock3, Flame, Utensils, X } from 'lucide-vue-next'
-import { foodCategories, recipeCategories, nutritionSources } from '@/data/nutritionCatalog'
 import { useNutritionController } from '@/controllers/useNutritionController'
 
-const { activeTab, selectedCategory, selectedItem, items, selectTab, openCategory, backToCategories, openItem, closeItem } = useNutritionController()
+const { activeTab, selectedCategory, selectedItem, items, categories, sourceUrl, isLoading, error, loadCatalogs, selectTab, openCategory, backToCategories, openItem, closeItem } = useNutritionController()
+onMounted(loadCatalogs)
 const query = ref('')
-const categories = computed(() => activeTab.value === 'foods' ? foodCategories : recipeCategories)
 const filteredCategories = computed(() => categories.value.filter((category) => category.name.toLowerCase().includes(query.value.toLowerCase())))
 const filteredItems = computed(() => items.value.filter((item) => item.name.toLowerCase().includes(query.value.toLowerCase())))
-const sourceUrl = computed(() => activeTab.value === 'foods' ? nutritionSources.foods : nutritionSources.recipes)
 const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) closeItem() }
 </script>
 
@@ -44,7 +42,12 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
     </div>
 
     <div id="nutrition-content" role="tabpanel" :aria-labelledby="activeTab === 'foods' ? 'tab-foods' : 'tab-recipes'">
-      <ul v-if="!selectedCategory" class="category-grid" aria-label="Categorías">
+      <div v-if="isLoading" class="empty-state" role="status"><p>Cargando catálogo de alimentación…</p></div>
+      <div v-else-if="error" class="empty-state" role="alert">
+        <p>{{ error }}</p>
+        <button type="button" class="btn btn-filled" @click="loadCatalogs">Reintentar</button>
+      </div>
+      <ul v-else-if="!selectedCategory" class="category-grid" aria-label="Categorías">
         <li v-for="category in filteredCategories" :key="category.id">
           <button class="category-card" type="button" @click="openCategory(category)">
             <img :src="category.image" :alt="`Preparación de ${category.name.toLowerCase()}`" loading="lazy" />

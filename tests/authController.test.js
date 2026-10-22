@@ -14,11 +14,12 @@ describe('authController', () => {
     const auth = useAuthController()
     auth.setRepository(new MockAuthRepository())
 
-    const registration = await auth.register({
+    auth.beginRegistration({
       name: 'Ana',
       email: 'ana@example.com',
       password: 'ClaveSegura123',
     })
+    const registration = await auth.completeRegistration({ goal: 'stay_fit' })
 
     expect(registration.isSuccess).toBe(true)
     expect(auth.isAuthenticated).toBe(false)
