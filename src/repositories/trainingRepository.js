@@ -13,6 +13,12 @@ const images = {
 }
 
 export class TrainingRepository {
+  async getExercises() {
+    const data = await apiRequest('/api/exercises')
+    if (!Array.isArray(data?.exercises)) throw new Error('Respuesta de ejercicios inválida')
+    return data.exercises
+  }
+
   async getRoutines() {
     const data = await apiRequest('/api/routines')
     if (!Array.isArray(data?.routines)) throw new Error('Respuesta de catálogo inválida')

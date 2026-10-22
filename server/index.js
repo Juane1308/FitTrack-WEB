@@ -6,7 +6,7 @@ import cors from 'cors'
 import express from 'express'
 
 import { initializeDatabase, query } from './db.js'
-import { getTrainingCatalog } from './trainingCatalog.js'
+import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -247,6 +247,14 @@ app.get('/api/progress/weekly', authenticate, async (request, response, next) =>
 app.get('/api/routines', async (_request, response, next) => {
   try {
     response.json({ routines: await getTrainingCatalog(query) })
+  } catch (error) {
+    next(error)
+  }
+})
+
+app.get('/api/exercises', async (_request, response, next) => {
+  try {
+    response.json({ exercises: await getExerciseCatalog(query) })
   } catch (error) {
     next(error)
   }

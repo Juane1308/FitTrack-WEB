@@ -1,11 +1,13 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { CalendarDays, Clock, Dumbbell } from 'lucide-vue-next'
 import AppCard from '@/components/AppCard.vue'
+import ExerciseCatalog from '@/components/ExerciseCatalog.vue'
 import { useTrainingController } from '@/controllers/useTrainingController'
 
 const { routines, isLoading, error, loadRoutines } = useTrainingController()
 onMounted(loadRoutines)
+const selectedCatalog = ref('routines')
 </script>
 
 <template>
@@ -14,11 +16,17 @@ onMounted(loadRoutines)
       <div>
         <p class="eyebrow">TU ESPACIO DE ENTRENAMIENTO</p>
         <h1 id="training-title">Entrenamientos</h1>
-        <p class="muted introduction">Explora el catálogo y conoce nuestras rutinas de entrenamiento.</p>
+        <p class="muted introduction">Explora nuestras rutinas y conoce los ejercicios de la plataforma.</p>
       </div>
       <Dumbbell class="header-icon" :size="38" aria-hidden="true" />
     </header>
 
+    <div class="catalog-navigation" role="group" aria-label="Seleccionar catálogo">
+      <button type="button" :aria-pressed="selectedCatalog === 'routines'" @click="selectedCatalog = 'routines'">Rutinas</button>
+      <button type="button" :aria-pressed="selectedCatalog === 'exercises'" @click="selectedCatalog = 'exercises'">Ejercicios</button>
+    </div>
+    <ExerciseCatalog v-if="selectedCatalog === 'exercises'" />
+    <div v-show="selectedCatalog === 'routines'">
     <div class="catalog-heading">
       <h2>Rutinas</h2>
       <span v-if="!isLoading && !error" class="muted">{{ routines.length }} disponibles</span>
@@ -62,6 +70,7 @@ onMounted(loadRoutines)
       <h3>Aún no hay rutinas disponibles</h3>
       <p class="muted">Vuelve más adelante para consultar el catálogo.</p>
     </AppCard>
+    </div>
   </section>
 </template>
 
@@ -72,6 +81,10 @@ onMounted(loadRoutines)
 h1 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -1px; }
 .introduction { margin-top: 12px; line-height: 1.6; max-width: 520px; }
 .header-icon { color: var(--color-primary); flex-shrink: 0; }
+.catalog-navigation { display: flex; gap: 12px; margin: 28px 0; border-bottom: 1px solid var(--color-card-border); }
+.catalog-navigation button { background: transparent; border: 0; border-bottom: 3px solid transparent; color: var(--color-muted-text); padding: 14px 18px; font: inherit; cursor: pointer; }
+.catalog-navigation button[aria-pressed="true"] { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.catalog-navigation button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
 .catalog-heading { display: flex; align-items: center; justify-content: space-between; margin: 36px 0 24px; border-bottom: 1px solid var(--color-card-border); }
 .catalog-heading h2 { color: var(--color-primary); font-size: 20px; padding: 0 8px 16px; border-bottom: 3px solid var(--color-primary); }
 .catalog-heading span { font-size: 13px; padding-bottom: 16px; }
