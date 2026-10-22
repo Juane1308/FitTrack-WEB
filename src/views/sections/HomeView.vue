@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Clock3, Flame, Trophy } from 'lucide-vue-next'
+import { Clock3, Dumbbell, Flame, Play, Trophy } from 'lucide-vue-next'
 
 import AppCard from '@/components/AppCard.vue'
 import { useHomeController } from '@/controllers/useHomeController'
@@ -8,20 +8,22 @@ import { useHomeController } from '@/controllers/useHomeController'
 const {
   user,
   weeklyProgress,
+  metrics,
+  todayRoutine,
   progressPercent,
   isLoading,
   error,
-  loadWeeklyProgress,
+  loadHomeDashboard,
 } = useHomeController()
 
-onMounted(loadWeeklyProgress)
+onMounted(loadHomeDashboard)
 </script>
 
 <template>
   <section class="section-page home-page" aria-labelledby="home-title">
     <header class="welcome-header">
       <p class="eyebrow">INICIO</p>
-      <h1 id="home-title">Hola, {{ user.name }} </h1>
+      <h1 id="home-title">Hola, {{ user?.name ?? 'atleta' }} 👋</h1>
       <p class="muted">Disciplina hoy, resultados mañana.</p>
     </header>
 
@@ -31,7 +33,7 @@ onMounted(loadWeeklyProgress)
 
     <AppCard v-else-if="error" class="state-card error-card">
       <p>{{ error }}</p>
-      <button type="button" class="btn btn-filled" @click="loadWeeklyProgress">
+      <button type="button" class="btn btn-filled" @click="loadHomeDashboard">
         Reintentar
       </button>
     </AppCard>
@@ -56,12 +58,11 @@ onMounted(loadWeeklyProgress)
           <span :style="{ width: `${progressPercent}%` }"></span>
         </div>
 
-        <p>
-          {{ weeklyProgress.completedWorkouts }}
-          de
-          {{ weeklyProgress.weeklyGoal }}
-          entrenamientos completados
+        <p v-if="weeklyProgress.weeklyGoal != null">
+          {{ weeklyProgress.completedWorkouts }} de {{ weeklyProgress.weeklyGoal }} entrenamientos
+          completados
         </p>
+        <p v-else>Meta semanal sin configurar</p>
       </div>
     </AppCard>
 
@@ -69,20 +70,49 @@ onMounted(loadWeeklyProgress)
       <p>No hay datos de progreso semanal disponibles.</p>
     </AppCard>
 
-    <section class="metric-grid" aria-label="Métricas semanales pendientes de datos">
+    <AppCard v-if="todayRoutine" class="routine-card">
+      <div class="routine-heading">
+        <Dumbbell :size="28" aria-hidden="true" />
+        <div>
+          <p class="eyebrow">ENTRENAMIENTO DE HOY</p>
+          <h2>{{ todayRoutine.name }}</h2>
+        </div>
+      </div>
+      <p class="muted">
+        {{ todayRoutine.durationMinutes ?? '--' }} min
+        <span v-if="todayRoutine.difficulty"> · {{ todayRoutine.difficulty }}</span>
+      </p>
+      <RouterLink class="btn btn-filled routine-action" :to="{ name: 'training' }">
+        <Play :size="18" fill="currentColor" aria-hidden="true" />
+        Ver entrenamiento
+      </RouterLink>
+    </AppCard>
+
+    <AppCard v-else class="routine-card empty-routine-card">
+      <Dumbbell :size="28" aria-hidden="true" />
+      <div>
+        <h2>No hay entrenamiento programado hoy</h2>
+        <p class="muted">Cuando exista una rutina en tu cuenta aparecerá aquí.</p>
+      </div>
+    </AppCard>
+
+    <section class="metric-grid" aria-label="Métricas semanales">
       <AppCard class="metric-card">
         <Flame :size="30" aria-hidden="true" />
         <h2>Calorías semanales</h2>
+        <strong>{{ metrics?.calories ?? '--' }}<small v-if="metrics?.calories != null"> kcal</small></strong>
       </AppCard>
 
       <AppCard class="metric-card">
         <Clock3 :size="30" aria-hidden="true" />
         <h2>Tiempo semanal</h2>
+        <strong>{{ metrics?.exerciseMinutes ?? '--' }}<small v-if="metrics?.exerciseMinutes != null"> min</small></strong>
       </AppCard>
 
       <AppCard class="metric-card">
         <Trophy :size="30" aria-hidden="true" />
         <h2>Racha</h2>
+        <strong>{{ metrics?.activeStreak ?? '--' }}<small v-if="metrics?.activeStreak != null"> días</small></strong>
       </AppCard>
     </section>
   </section>
@@ -137,6 +167,60 @@ header > .muted {
 
 .metric-card h2 {
   font-size: 17px;
+}
+
+.metric-card strong {
+  font-size: 28px;
+}
+
+.metric-card small {
+  color: var(--color-muted-text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.routine-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 24px;
+  margin-top: 24px;
+  padding: 24px 28px;
+}
+
+.routine-heading {
+  display: flex;
+  flex: 1 1 320px;
+  align-items: center;
+  gap: 14px;
+}
+
+.routine-heading svg,
+.empty-routine-card > svg {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+}
+
+.routine-heading .eyebrow {
+  margin-bottom: 6px;
+}
+
+.routine-heading h2,
+.empty-routine-card h2 {
+  font-size: 22px;
+}
+
+.routine-card > .muted {
+  flex: 0 0 auto;
+}
+
+.routine-action {
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.empty-routine-card {
+  flex-wrap: nowrap;
 }
 
 .progress-card {
@@ -227,6 +311,15 @@ header > .muted {
   }
 
   .progress-content {
+    width: 100%;
+  }
+
+  .routine-card,
+  .empty-routine-card {
+    align-items: flex-start;
+  }
+
+  .routine-action {
     width: 100%;
   }
 }

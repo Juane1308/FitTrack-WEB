@@ -1,5 +1,6 @@
 export class AppUser {
-  constructor({ name, email, goal }) {
+  constructor({ id = null, name, email, goal }) {
+    this.id = id
     this.name = name
     this.email = email
     this.goal = goal

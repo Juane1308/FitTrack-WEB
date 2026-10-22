@@ -1,7 +1,7 @@
 import { computed, ref, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 
-import { MockAuthRepository } from '@/repositories/authRepository'
+import { ApiAuthRepository } from '@/repositories/authRepository'
 
 export const AuthStatus = Object.freeze({
   loggedOut: 'loggedOut',
@@ -10,9 +10,11 @@ export const AuthStatus = Object.freeze({
 })
 
 export const useAuthController = defineStore('auth', () => {
-  const repository = shallowRef(new MockAuthRepository())
-  const status = ref(AuthStatus.loggedOut)
-  const currentUser = ref(null)
+  const defaultRepository = new ApiAuthRepository()
+  const repository = shallowRef(defaultRepository)
+  const storedUser = defaultRepository.getStoredUser()
+  const status = ref(storedUser ? AuthStatus.authenticated : AuthStatus.loggedOut)
+  const currentUser = ref(storedUser)
 
   const isAuthenticated = computed(() => status.value === AuthStatus.authenticated)
   const isLoading = computed(() => status.value === AuthStatus.loading)
@@ -45,6 +47,7 @@ export const useAuthController = defineStore('auth', () => {
   }
 
   function logout() {
+    repository.value.logout?.()
     currentUser.value = null
     status.value = AuthStatus.loggedOut
   }
