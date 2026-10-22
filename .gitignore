@@ -18,3 +18,8 @@ npm-debug.log*
 .idea/
 .DS_Store
 *.swp
+
+# Datasets crudos e intermedios (no versionar)
+data-prep/
+datasets/preparation/
+src/data/preparation/

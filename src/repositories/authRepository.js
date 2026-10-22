@@ -1,5 +1,7 @@
 import { AppUser, AuthResult, AuthResultStatus } from '@/models'
 
+import { ACCESS_TOKEN_KEY, apiRequest, clearAccessToken } from './apiClient'
+
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 async function hashPassword(password) {
@@ -50,5 +52,51 @@ export class MockAuthRepository {
   async requestPasswordReset(_email) {
     await delay(250)
     // El MOCK no envía correos. Tampoco revela si una dirección existe.
+  }
+}
+
+export class ApiAuthRepository {
+  async register({ name, email, password }) {
+    try {
+      const data = await apiRequest('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, password }),
+      })
+      return new AuthResult({ status: data.status, user: new AppUser(data.user) })
+    } catch (error) {
+      return new AuthResult({ status: error.code ?? AuthResultStatus.backendUnavailable })
+    }
+  }
+
+  async login({ email, password }) {
+    try {
+      const data = await apiRequest('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+      })
+      localStorage.setItem(ACCESS_TOKEN_KEY, data.token)
+      localStorage.setItem('fittrack_user', JSON.stringify(data.user))
+      return new AuthResult({ status: data.status, user: new AppUser(data.user) })
+    } catch (error) {
+      return new AuthResult({ status: error.code ?? AuthResultStatus.backendUnavailable })
+    }
+  }
+
+  async requestPasswordReset(_email) {
+    return undefined
+  }
+
+  getStoredUser() {
+    try {
+      const storedUser = localStorage.getItem('fittrack_user')
+      return storedUser ? new AppUser(JSON.parse(storedUser)) : null
+    } catch (_error) {
+      return null
+    }
+  }
+
+  logout() {
+    clearAccessToken()
+    localStorage.removeItem('fittrack_user')
   }
 }

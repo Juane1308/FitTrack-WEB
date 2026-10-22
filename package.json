@@ -6,12 +6,17 @@
   "description": "Seguimiento del entrenamiento, alimentación y progreso físico.",
   "scripts": {
     "dev": "vite",
+    "dev:api": "node --watch server/index.js",
     "build": "vite build",
+    "start": "node server/index.js",
     "preview": "vite preview",
     "test": "vitest run"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
     "lucide-vue-next": "^1.0.0",
+    "pg": "^8.23.1",
     "pinia": "^4.0.3",
     "vue": "^3.5.43",
     "vue-router": "^5.4.0"
