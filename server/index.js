@@ -252,6 +252,37 @@ app.get('/api/routines', async (_request, response, next) => {
   }
 })
 
+app.get('/api/me/routines', authenticate, async (request, response, next) => {
+  try {
+    response.json({ routines: await getTrainingCatalog(query, request.user.id) })
+  } catch (error) { next(error) }
+})
+
+function validateRoutineId(request, response, next) {
+  if (!/^[1-9]\d{0,18}$/.test(request.params.id)
+    || BigInt(request.params.id) > 9223372036854775807n) {
+    return response.status(400).json({ message: 'Identificador de rutina inválido' })
+  }
+  next()
+}
+
+app.post('/api/me/routines/:id', authenticate, validateRoutineId, async (request, response, next) => {
+  try {
+    const routine = await query('SELECT id FROM fittrack.rutinas WHERE id=$1 AND activa=TRUE', [request.params.id])
+    if (!routine.rowCount) return response.status(404).json({ message: 'Rutina no disponible' })
+    await query(`INSERT INTO public.user_routines (user_id,routine_id,origin)
+      VALUES ($1,$2,'saved') ON CONFLICT (user_id,routine_id) DO NOTHING`, [request.user.id,request.params.id])
+    response.json({ status: 'saved' })
+  } catch (error) { next(error) }
+})
+
+app.delete('/api/me/routines/:id', authenticate, validateRoutineId, async (request, response, next) => {
+  try {
+    await query(`DELETE FROM public.user_routines WHERE user_id=$1 AND routine_id=$2 AND origin='saved'`, [request.user.id,request.params.id])
+    response.status(204).end()
+  } catch (error) { next(error) }
+})
+
 app.get('/api/exercises', async (_request, response, next) => {
   try {
     response.json({ exercises: await getExerciseCatalog(query) })

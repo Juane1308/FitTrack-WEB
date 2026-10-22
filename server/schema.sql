@@ -60,3 +60,13 @@ CREATE TABLE IF NOT EXISTS nutrition_logs (
 
 CREATE INDEX IF NOT EXISTS nutrition_logs_user_date_idx
   ON nutrition_logs(user_id, logged_at);
+
+-- Accounts authenticated by this API use public.app_users (TEXT ids), while
+-- fittrack.usuario_rutinas references the separate fittrack.usuarios accounts.
+CREATE TABLE IF NOT EXISTS public.user_routines (
+  user_id TEXT NOT NULL REFERENCES public.app_users(id) ON DELETE CASCADE,
+  routine_id BIGINT NOT NULL REFERENCES fittrack.rutinas(id) ON DELETE CASCADE,
+  origin TEXT NOT NULL DEFAULT 'saved' CHECK (origin IN ('saved', 'assigned')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY (user_id, routine_id)
+);

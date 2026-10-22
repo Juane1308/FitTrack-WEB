@@ -1,13 +1,15 @@
-export async function getTrainingCatalog(query) {
+export async function getTrainingCatalog(query, userId = null) {
   const result = await query(`SELECT r.id::TEXT AS id, r.nombre AS name,
     n.nombre AS level, r.duracion_estimada_min AS "durationMinutes",
     r.duracion_semanas AS "durationWeeks", r.imagen_url AS image,
     o.nombre AS goal, l.nombre AS location, COALESCE(r.equipo, '{}') AS equipment
+    ${userId === null ? '' : ', ur.origin AS origin'}
     FROM fittrack.rutinas r
     JOIN fittrack.niveles_dificultad n ON n.id=r.nivel_id
     LEFT JOIN fittrack.objetivos o ON o.id=r.objetivo_id
     LEFT JOIN fittrack.lugares_entrenamiento l ON l.id=r.lugar_entrenamiento_id
-    WHERE r.activa=TRUE ORDER BY r.id`)
+    ${userId === null ? '' : 'JOIN public.user_routines ur ON ur.routine_id=r.id AND ur.user_id=$1'}
+    WHERE r.activa=TRUE ORDER BY r.id`, userId === null ? [] : [userId])
   return result.rows
 }
 
