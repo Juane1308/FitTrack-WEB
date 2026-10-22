@@ -1,16 +1,8 @@
 import { defineStore } from 'pinia'
 
-import { MockRepository } from '@/repositories/mockRepository'
-
+// Estado compartido entre pantallas. Los datos vienen siempre de la API.
 export const useAppStateController = defineStore('appState', () => {
-  const repository = new MockRepository()
-
   return {
-    currentUser: repository.currentUser,
-    dashboard: repository.dashboard,
     routines: [],
-    foods: repository.foods,
-    recipes: repository.recipes,
-    progress: repository.progress,
   }
 })

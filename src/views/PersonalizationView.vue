@@ -3,21 +3,18 @@ import { computed, onMounted, reactive, ref } from 'vue'
 import {
   ArrowLeft,
   ArrowRight,
-  Building2,
   CalendarDays,
   Check,
   Dumbbell,
-  HeartPulse,
-  House,
   LogOut,
   Scale,
   Target,
-  Trees,
   Ruler,
 } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 
 import logo from '@/assets/images/fittrack_logo.png'
+import { activityLevels, goals, healthGroups, locations } from '@/core/profileOptions'
 import { useAuthController } from '@/controllers/authController'
 
 const router = useRouter()
@@ -33,34 +30,6 @@ const steps = [
   { number: 2, label: 'Datos personales' },
   { number: 3, label: 'Tus hábitos' },
   { number: 4, label: 'Salud y alergias' },
-]
-
-const goals = [
-  { value: 'lose_weight', label: 'Perder peso', detail: 'Construye hábitos y avanza a tu ritmo.', icon: Scale },
-  { value: 'gain_muscle', label: 'Ganar masa muscular', detail: 'Entrena y aliméntate para crecer.', icon: Dumbbell },
-  { value: 'stay_fit', label: 'Mantenerme en forma', detail: 'Conserva una rutina activa y equilibrada.', icon: Target },
-  { value: 'improve_health', label: 'Mejorar mi salud', detail: 'Prioriza tu bienestar integral.', icon: HeartPulse },
-]
-
-const activityLevels = [
-  { value: 'sedentary', label: 'Poco activo', detail: 'Paso la mayor parte del día sentado.' },
-  { value: 'light', label: 'Actividad ligera', detail: 'Me muevo o entreno algunos días.' },
-  { value: 'moderate', label: 'Actividad moderada', detail: 'Hago ejercicio varias veces por semana.' },
-  { value: 'active', label: 'Muy activo', detail: 'Entreno o me muevo casi todos los días.' },
-]
-
-const locations = [
-  { value: 'home', label: 'En casa', icon: House },
-  { value: 'outdoors', label: 'Al aire libre', icon: Trees },
-  { value: 'gym', label: 'Gimnasio', icon: Building2 },
-]
-
-const healthGroups = [
-  { key: 'injuries', label: 'Lesiones previas', options: ['Rodilla', 'Espalda', 'Hombro', 'Tobillo', 'Muñeca'] },
-  { key: 'jointPains', label: 'Dolores articulares', options: ['Rodillas', 'Espalda', 'Hombros', 'Cadera', 'Cuello'] },
-  { key: 'surgeries', label: 'Cirugías', options: ['Rodilla', 'Cadera', 'Hombro', 'Columna'] },
-  { key: 'chronicConditions', label: 'Condiciones crónicas', options: ['Hipertensión', 'Diabetes', 'Asma', 'Condición cardíaca'] },
-  { key: 'allergies', label: 'Alergias alimentarias', options: ['Lácteos', 'Huevo', 'Frutos secos', 'Gluten', 'Soja', 'Mariscos'] },
 ]
 
 const answers = reactive({

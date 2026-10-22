@@ -59,13 +59,15 @@ export const useAuthController = defineStore('auth', () => {
 
   async function saveProfile(profile) {
     const savedProfile = await repository.value.saveProfile(profile)
-    currentUser.value = new currentUser.value.constructor({
-      ...currentUser.value,
-      goal: savedProfile.goal,
-      profileCompleted: savedProfile.profileCompleted,
-    })
-    localStorage.setItem('fittrack_user', JSON.stringify(currentUser.value))
+    updateUser({ goal: savedProfile.goal, profileCompleted: savedProfile.profileCompleted })
     return savedProfile
+  }
+
+  // Refleja en la sesión local los cambios hechos desde Perfil (nombre, objetivo...).
+  function updateUser(changes) {
+    if (!currentUser.value) return
+    currentUser.value = new currentUser.value.constructor({ ...currentUser.value, ...changes })
+    localStorage.setItem('fittrack_user', JSON.stringify(currentUser.value))
   }
 
   function requestPasswordReset(email) {
@@ -90,6 +92,7 @@ export const useAuthController = defineStore('auth', () => {
     login,
     getProfile,
     saveProfile,
+    updateUser,
     requestPasswordReset,
     logout,
   }

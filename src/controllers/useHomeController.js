@@ -1,15 +1,13 @@
 import { computed, ref } from 'vue'
 
 import { fetchHomeDashboard } from '@/repositories/weeklyProgressRepository'
-import { useAppStateController } from './appStateController'
 import { useAuthController } from './authController'
 
 export function useHomeController() {
-  const appState = useAppStateController()
   const auth = useAuthController()
 
-  const user = computed(() => auth.currentUser ?? appState.currentUser)
   const dashboard = ref(null)
+  const user = computed(() => dashboard.value?.user ?? auth.currentUser)
   const isLoading = ref(false)
   const error = ref('')
 

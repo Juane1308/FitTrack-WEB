@@ -6,6 +6,7 @@
   "description": "Seguimiento del entrenamiento, alimentación y progreso físico.",
   "scripts": {
     "dataset:import": "node --env-file-if-exists=.env server/importTrainingDataset.js",
+    "nutrition:import": "node --env-file-if-exists=.env server/importNutritionDataset.js",
     "dev": "vite",
     "dev:api": "node --env-file=.env --watch server/index.js",
     "build": "vite build",

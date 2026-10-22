@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 const { query } = vi.hoisted(() => ({ query: vi.fn() }))
-vi.mock('../server/db.js', () => ({ query, initializeDatabase: vi.fn() }))
+vi.mock('../server/db.js', () => ({ query, transaction: vi.fn(), initializeDatabase: vi.fn() }))
 import { app } from '../server/index.js'
 
 let server

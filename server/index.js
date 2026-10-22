@@ -6,6 +6,9 @@ import cors from 'cors'
 import express from 'express'
 
 import { initializeDatabase, query, transaction } from './db.js'
+import { getFoodCatalog, getRecipeCatalog } from './nutritionCatalog.js'
+import { hashPassword, hashToken, verifyPassword } from './passwords.js'
+import { createProfileRouter } from './profile.js'
 import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
 
 const app = express()
@@ -22,19 +25,6 @@ function createId() {
 
 function normalizeEmail(email) {
   return String(email ?? '').trim().toLowerCase()
-}
-
-function hashPassword(password, salt = crypto.randomBytes(16).toString('hex')) {
-  const passwordHash = crypto.scryptSync(String(password), salt, 64).toString('hex')
-  return `${salt}:${passwordHash}`
-}
-
-function verifyPassword(password, storedHash) {
-  const [salt, expectedHash] = String(storedHash).split(':')
-  if (!salt || !expectedHash) return false
-
-  const actualHash = crypto.scryptSync(String(password), salt, 64).toString('hex')
-  return crypto.timingSafeEqual(Buffer.from(actualHash, 'hex'), Buffer.from(expectedHash, 'hex'))
 }
 
 function publicUser(row) {
@@ -64,10 +54,17 @@ function profileIsComplete(profile) {
     && requiredFields.every((field) => profile[field] !== null && profile[field] !== undefined)
 }
 
+// pg devuelve las columnas DATE como Date en hora local; se formatean como YYYY-MM-DD.
+function formatDate(value) {
+  if (!(value instanceof Date)) return String(value).slice(0, 10)
+  const pad = (number) => String(number).padStart(2, '0')
+  return `${value.getFullYear()}-${pad(value.getMonth() + 1)}-${pad(value.getDate())}`
+}
+
 function profilePayload(row) {
   return {
     goal: row.goal ?? '',
-    birthDate: row.birth_date ? String(row.birth_date).slice(0, 10) : '',
+    birthDate: row.birth_date ? formatDate(row.birth_date) : '',
     weightKg: row.weight_kg == null ? '' : Number(row.weight_kg),
     heightCm: row.height_cm == null ? '' : Number(row.height_cm),
     sportExperience: row.sport_experience ?? '',
@@ -117,9 +114,18 @@ function validateProfile(body = {}) {
   }
 }
 
+// Guarda el peso del día en el historial; si ya hay uno hoy, lo reemplaza.
+function logWeight(client, userId, weightKg) {
+  return client.query(
+    `INSERT INTO weight_logs (user_id, logged_on, weight_kg) VALUES ($1, CURRENT_DATE, $2)
+     ON CONFLICT (user_id, logged_on) DO UPDATE SET weight_kg = EXCLUDED.weight_kg`,
+    [userId, weightKg],
+  )
+}
+
 async function createSession(userId, connection = null) {
   const token = crypto.randomBytes(32).toString('hex')
-  const tokenHash = crypto.createHash('sha256').update(token).digest('hex')
+  const tokenHash = hashToken(token)
   const runQuery = connection ? connection.query.bind(connection) : query
   await runQuery(
     `INSERT INTO sessions (token_hash, user_id, expires_at)
@@ -138,7 +144,7 @@ async function authenticate(request, response, next) {
 
     if (!token) return response.status(401).json({ message: 'Autenticación requerida' })
 
-    const tokenHash = crypto.createHash('sha256').update(token).digest('hex')
+    const tokenHash = hashToken(token)
     const result = await query(
       `SELECT u.id, u.name, u.email, p.*
        FROM sessions s
@@ -150,6 +156,7 @@ async function authenticate(request, response, next) {
 
     if (!result.rows[0]) return response.status(401).json({ message: 'Sesión inválida o vencida' })
     request.user = { ...result.rows[0], profile_completed: profileIsComplete(result.rows[0]) }
+    request.tokenHash = tokenHash
     return next()
   } catch (error) {
     return next(error)
@@ -160,11 +167,14 @@ async function getWeeklyData(userId) {
   const result = await query(
     `SELECT
        COUNT(*) FILTER (WHERE ws.completed = TRUE)::INTEGER AS completed_workouts,
-       (
-         SELECT wg.target_workouts
-         FROM weekly_goals wg
-         WHERE wg.user_id = $1
-           AND wg.week_start = date_trunc('week', CURRENT_DATE)::DATE
+       COALESCE(
+         (
+           SELECT wg.target_workouts
+           FROM weekly_goals wg
+           WHERE wg.user_id = $1
+             AND wg.week_start = date_trunc('week', CURRENT_DATE)::DATE
+         ),
+         (SELECT ug.weekly_workouts FROM user_goals ug WHERE ug.user_id = $1)
        )::INTEGER AS weekly_goal,
        COALESCE(SUM(ws.duration_minutes) FILTER (WHERE ws.completed = TRUE), 0)::INTEGER AS exercise_minutes,
        SUM(ws.calories_burned) FILTER (WHERE ws.completed = TRUE)::INTEGER AS calories
@@ -248,6 +258,7 @@ app.post('/api/auth/register', async (request, response, next) => {
           profile.sportExperience, profile.trainingLocation, profile.injuries, profile.jointPains,
           profile.surgeries, profile.chronicConditions, profile.allergies],
       )
+      await logWeight(client, created.id, profile.weightKg)
       return { ...created, goal: profile.goal, profile_completed: true }
     })
 
@@ -287,6 +298,15 @@ app.post('/api/auth/login', async (request, response, next) => {
   }
 })
 
+app.post('/api/auth/logout', authenticate, async (request, response, next) => {
+  try {
+    await query('DELETE FROM sessions WHERE token_hash = $1', [request.tokenHash])
+    return response.status(204).end()
+  } catch (error) {
+    return next(error)
+  }
+})
+
 app.get('/api/profile', authenticate, async (request, response, next) => {
   try {
     await query('INSERT INTO user_profiles (user_id) VALUES ($1) ON CONFLICT (user_id) DO NOTHING', [request.user.id])
@@ -304,39 +324,43 @@ app.put('/api/profile', authenticate, async (request, response, next) => {
     const profile = validateProfile(body)
     if (!profile) return response.status(400).json({ status: 'invalidProfileData' })
 
-    const result = await query(
-      `INSERT INTO user_profiles (
-         user_id, goal, birth_date, weight_kg, height_cm, sport_experience, training_location,
-         injuries, joint_pains, surgeries, chronic_conditions, allergies
-       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
-       ON CONFLICT (user_id) DO UPDATE SET
-         goal = EXCLUDED.goal,
-         birth_date = EXCLUDED.birth_date,
-         weight_kg = EXCLUDED.weight_kg,
-         height_cm = EXCLUDED.height_cm,
-         sport_experience = EXCLUDED.sport_experience,
-         training_location = EXCLUDED.training_location,
-         injuries = EXCLUDED.injuries,
-         joint_pains = EXCLUDED.joint_pains,
-         surgeries = EXCLUDED.surgeries,
-         chronic_conditions = EXCLUDED.chronic_conditions,
-         allergies = EXCLUDED.allergies
-       RETURNING *`,
-      [
-        request.user.id,
-        profile.goal,
-        profile.birthDate,
-        profile.weightKg,
-        profile.heightCm,
-        profile.sportExperience,
-        profile.trainingLocation,
-        profile.injuries,
-        profile.jointPains,
-        profile.surgeries,
-        profile.chronicConditions,
-        profile.allergies,
-      ],
-    )
+    const result = await transaction(async (client) => {
+      const saved = await client.query(
+        `INSERT INTO user_profiles (
+           user_id, goal, birth_date, weight_kg, height_cm, sport_experience, training_location,
+           injuries, joint_pains, surgeries, chronic_conditions, allergies
+         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+         ON CONFLICT (user_id) DO UPDATE SET
+           goal = EXCLUDED.goal,
+           birth_date = EXCLUDED.birth_date,
+           weight_kg = EXCLUDED.weight_kg,
+           height_cm = EXCLUDED.height_cm,
+           sport_experience = EXCLUDED.sport_experience,
+           training_location = EXCLUDED.training_location,
+           injuries = EXCLUDED.injuries,
+           joint_pains = EXCLUDED.joint_pains,
+           surgeries = EXCLUDED.surgeries,
+           chronic_conditions = EXCLUDED.chronic_conditions,
+           allergies = EXCLUDED.allergies
+         RETURNING *`,
+        [
+          request.user.id,
+          profile.goal,
+          profile.birthDate,
+          profile.weightKg,
+          profile.heightCm,
+          profile.sportExperience,
+          profile.trainingLocation,
+          profile.injuries,
+          profile.jointPains,
+          profile.surgeries,
+          profile.chronicConditions,
+          profile.allergies,
+        ],
+      )
+      await logWeight(client, request.user.id, profile.weightKg)
+      return saved
+    })
     const savedProfile = result.rows[0]
     return response.json({ ...profilePayload(savedProfile), profileCompleted: profileIsComplete(savedProfile) })
   } catch (error) {
@@ -441,6 +465,24 @@ app.get('/api/exercises', async (_request, response, next) => {
     next(error)
   }
 })
+
+app.get('/api/nutrition/foods', async (_request, response, next) => {
+  try {
+    response.json(await getFoodCatalog(query))
+  } catch (error) {
+    next(error)
+  }
+})
+
+app.get('/api/nutrition/recipes', async (_request, response, next) => {
+  try {
+    response.json(await getRecipeCatalog(query))
+  } catch (error) {
+    next(error)
+  }
+})
+
+app.use('/api', createProfileRouter({ query, transaction, authenticate }))
 
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.get(/.*/, (_request, response) => {

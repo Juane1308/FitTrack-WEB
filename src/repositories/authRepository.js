@@ -1,6 +1,6 @@
 import { AppUser, AuthResult, AuthResultStatus } from '@/models'
 
-import { ACCESS_TOKEN_KEY, apiRequest, clearAccessToken } from './apiClient'
+import { ACCESS_TOKEN_KEY, apiRequest, clearAccessToken, getAccessToken } from './apiClient'
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -136,6 +136,10 @@ export class ApiAuthRepository {
   }
 
   logout() {
+    // Cierra la sesión en el servidor; aunque falle, el token local se borra igual.
+    if (getAccessToken()) {
+      apiRequest('/api/auth/logout', { method: 'POST' }).catch(() => undefined)
+    }
     clearAccessToken()
     localStorage.removeItem('fittrack_user')
   }
