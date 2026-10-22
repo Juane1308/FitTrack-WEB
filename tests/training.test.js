@@ -15,9 +15,16 @@ describe('Catálogo de rutinas RF27 desde API', () => {
     const wrapper = render()
     expect(wrapper.get('[role="status"]').text()).toContain('Cargando')
     await flushPromises()
-    expect(fetch.mock.calls[0][0]).toBe('/api/routines')
+    expect(new URL(fetch.mock.calls[0][0], 'http://localhost').pathname).toBe('/api/routines')
     expect(wrapper.findAll('li')).toHaveLength(routines.length)
-    for (const routine of routines) expect(wrapper.text()).toContain(routine.name)
+    wrapper.findAll('li').forEach((card, index) => {
+      const routine = routines[index]
+      expect(card.get('h3').text()).toBe(routine.name)
+      expect(card.findAll('dt').map(label => label.text())).toEqual(['Nivel de dificultad', 'Duración estimada'])
+      expect(card.get('.level').text()).toBe(routine.level)
+      expect(card.get('.session-duration').text()).toBe(`${routine.durationMinutes} min por sesión`)
+      expect(card.text()).toContain(`Programa de ${routine.durationWeeks} semanas`)
+    })
     expect(wrapper.findAll('img').every(image => Boolean(image.attributes('src')))).toBe(true)
   })
   it('muestra un catálogo vacío', async () => {

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import { CalendarDays, Dumbbell } from 'lucide-vue-next'
+import { CalendarDays, Clock, Dumbbell } from 'lucide-vue-next'
 import AppCard from '@/components/AppCard.vue'
 import { useTrainingController } from '@/controllers/useTrainingController'
 
@@ -34,9 +34,21 @@ onMounted(loadRoutines)
         <AppCard class="routine-card" padding="0">
           <img :src="routine.image" alt="" class="routine-image" width="361" height="298" />
           <div class="routine-info">
-            <span class="level">{{ routine.level }}</span>
             <h3>{{ routine.name }}</h3>
-            <p class="duration">{{ routine.durationMinutes }} min por sesión · {{ routine.location }}</p>
+            <dl class="routine-classification">
+              <div>
+                <dt>Nivel de dificultad</dt>
+                <dd class="level">{{ routine.level }}</dd>
+              </div>
+              <div>
+                <dt>Duración estimada</dt>
+                <dd class="duration session-duration">
+                  <Clock :size="16" aria-hidden="true" />
+                  {{ routine.durationMinutes }} min por sesión
+                </dd>
+              </div>
+            </dl>
+            <p v-if="routine.location" class="duration">{{ routine.location }}</p>
             <p v-if="routine.durationWeeks" class="duration">
               <CalendarDays :size="16" aria-hidden="true" />
               Programa de {{ routine.durationWeeks }} semanas
@@ -65,10 +77,14 @@ h1 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -1px; }
 .catalog-heading span { font-size: 13px; padding-bottom: 16px; }
 .routine-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .routine-card { height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, #0b1713, #050907); }
-.routine-image { width: 42%; height: 200px; object-fit: cover; flex-shrink: 0; }
+.routine-image { width: 36%; align-self: stretch; height: auto; min-height: 240px; object-fit: cover; flex-shrink: 0; }
 .routine-info { padding: 20px; min-width: 0; }
 .level { display: inline-block; color: var(--color-accent); background: var(--color-indicator); border-radius: 6px; padding: 5px 8px; font-size: 12px; }
-h3 { margin: 12px 0; font-size: 22px; }
+h3 { margin: 0 0 16px; font-size: 22px; overflow-wrap: anywhere; }
+.routine-classification { margin: 0 0 14px; display: grid; gap: 12px; }
+.routine-classification dt { color: var(--color-muted-text); font-size: 12px; margin-bottom: 5px; }
+.routine-classification dd { margin: 0; }
+.session-duration { color: var(--color-text, #fff); font-weight: 600; }
 .duration { color: var(--color-muted-text); font-size: 13px; line-height: 1.6; display: flex; align-items: center; gap: 7px; }
 .duration svg { flex-shrink: 0; }
 .empty-state { text-align: center; }
@@ -76,7 +92,7 @@ h3 { margin: 12px 0; font-size: 22px; }
 @media (max-width: 760px) {
   .routine-grid { grid-template-columns: 1fr; gap: 16px; }
   .training-page { padding-top: 28px; }
-  .routine-image { width: 36%; height: 170px; }
+  .routine-image { width: 30%; min-height: 240px; }
   .routine-info { padding: 16px; }
   h3 { font-size: 20px; }
   .header-icon { display: none; }
