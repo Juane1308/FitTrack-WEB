@@ -19,6 +19,21 @@ export function historyInPeriod(history, days, today = new Date()) {
   return history.filter((entry) => entry.date >= from)
 }
 
+// Puntos del gráfico: los registros del periodo más el último peso conocido extendido hasta
+// el inicio del periodo y hasta hoy. Así una cuenta con un solo registro ve una línea y no un
+// punto suelto. Los puntos extendidos guardan en recordedOn la fecha real del registro.
+export function chartSeries(history, days, today = new Date()) {
+  if (!history.length) return []
+  const from = new Date(today.getTime() - days * DAY_MS).toISOString().slice(0, 10)
+  const todayDate = today.toISOString().slice(0, 10)
+  const inPeriod = history.filter((entry) => entry.date >= from).map((entry) => ({ ...entry, recordedOn: entry.date }))
+  const previous = history.filter((entry) => entry.date < from).at(-1)
+  const series = previous ? [{ date: from, weightKg: previous.weightKg, recordedOn: previous.date }, ...inPeriod] : inPeriod
+  const last = series.at(-1)
+  if (last.date < todayDate) series.push({ date: todayDate, weightKg: last.weightKg, recordedOn: last.recordedOn })
+  return series
+}
+
 export function useProgressController(repository = new ProgressRepository()) {
   const snackbar = useSnackbarController()
   const progress = ref(null)
@@ -31,7 +46,7 @@ export function useProgressController(repository = new ProgressRepository()) {
 
   const periodHistory = computed(() => {
     const days = PROGRESS_PERIODS.find((option) => option.key === period.value)?.days ?? 30
-    return historyInPeriod(progress.value?.history ?? [], days)
+    return chartSeries(progress.value?.history ?? [], days)
   })
 
   async function loadProgress() {

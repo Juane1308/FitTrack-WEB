@@ -2,7 +2,8 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const props = defineProps({
-  // [{ date: 'YYYY-MM-DD', value: Number }] ordenados por fecha
+  // [{ date: 'YYYY-MM-DD', value: Number, recordedOn?: 'YYYY-MM-DD' }] ordenados por fecha.
+  // recordedOn distinto de date indica un peso arrastrado desde un registro anterior.
   points: { type: Array, required: true },
   goal: { type: Number, default: null },
   unit: { type: String, default: 'kg' },
@@ -63,7 +64,8 @@ const xRange = computed(() => {
 })
 
 const x = (date) => {
-  if (props.points.length === 1) return (plot.value.left + plot.value.right) / 2
+  // Un solo registro va a la derecha, donde siempre está el dato más reciente
+  if (props.points.length === 1) return plot.value.right
   return plot.value.left + ((dayOf(date) - xRange.value.first) / xRange.value.span) * (plot.value.right - plot.value.left)
 }
 const y = (value) => {
@@ -88,6 +90,12 @@ const xTicks = computed(() => {
 })
 
 const last = computed(() => coords.value.at(-1))
+// Solo los días con un registro real llevan punto; los extendidos son parte de la línea
+const recordedPoints = computed(() => coords.value.filter((point) => !point.recordedOn || point.recordedOn === point.date))
+const recordedNote = (point) =>
+  point.recordedOn && point.recordedOn !== point.date
+    ? `Último registro: ${longDate.format(new Date(dayOf(point.recordedOn)))}`
+    : longDate.format(new Date(dayOf(point.date)))
 const active = computed(() => (activeIndex.value == null ? null : coords.value[activeIndex.value]))
 
 function nearestIndex(event) {
@@ -152,8 +160,26 @@ const summary = computed(() => {
         <text :x="plot.right + 10" :y="y(goal)">Objetivo {{ formatValue(goal) }}</text>
       </g>
 
+      <line
+        v-if="coords.length === 1"
+        :x1="plot.left"
+        :x2="plot.right"
+        :y1="coords[0].cy"
+        :y2="coords[0].cy"
+        class="single-level"
+        aria-hidden="true"
+      />
       <path v-if="areaPath" :d="areaPath" class="area" aria-hidden="true" />
       <path :d="linePath" class="line" aria-hidden="true" />
+      <circle
+        v-for="point in recordedPoints"
+        :key="`registro-${point.date}`"
+        :cx="point.cx"
+        :cy="point.cy"
+        r="3.5"
+        class="record-dot"
+        aria-hidden="true"
+      />
 
       <g v-if="last" aria-hidden="true">
         <circle :cx="last.cx" :cy="last.cy" r="5" class="end-dot" />
@@ -173,7 +199,7 @@ const summary = computed(() => {
       role="status"
     >
       <strong>{{ formatValue(active.value) }}</strong>
-      <span>{{ longDate.format(new Date(dayOf(active.date))) }}</span>
+      <span>{{ recordedNote(active) }}</span>
     </div>
 
     <table class="sr-only">
@@ -181,7 +207,7 @@ const summary = computed(() => {
       <thead><tr><th scope="col">Fecha</th><th scope="col">Valor</th></tr></thead>
       <tbody>
         <tr v-for="point in points" :key="point.date">
-          <td>{{ longDate.format(new Date(dayOf(point.date))) }}</td>
+          <td>{{ recordedNote(point) }}</td>
           <td>{{ formatValue(point.value) }}</td>
         </tr>
       </tbody>
@@ -248,6 +274,19 @@ svg:focus-visible {
   stroke-width: 2;
   stroke-linejoin: round;
   stroke-linecap: round;
+}
+
+.single-level {
+  stroke: var(--color-primary);
+  stroke-opacity: 0.55;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.record-dot {
+  fill: var(--color-primary);
+  stroke: #111111;
+  stroke-width: 2;
 }
 
 .end-dot,

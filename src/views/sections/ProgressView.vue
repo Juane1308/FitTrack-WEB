@@ -52,6 +52,7 @@ const chartPoints = computed(() => {
   const heightM = (progress.value?.heightCm ?? 0) / 100
   return periodHistory.value.map((entry) => ({
     date: entry.date,
+    recordedOn: entry.recordedOn,
     value: metric.value === 'bmi' && heightM ? Math.round((entry.weightKg / (heightM * heightM)) * 10) / 10 : entry.weightKg,
   }))
 })
@@ -164,7 +165,7 @@ const formatPhotoDate = (date) => photoDate.format(new Date(`${date}T00:00:00`))
           :label="metric === 'bmi' ? 'Evolución del IMC' : 'Evolución del peso'"
         />
         <p v-else class="empty">No hay registros de peso en este periodo. Elige un periodo más largo o guarda tu peso de hoy.</p>
-        <p v-if="chartPoints.length === 1" class="hint">Guarda tu peso en otros días para ver la línea de evolución.</p>
+        <p v-if="(progress.history?.length ?? 0) < 2" class="hint">Aún tienes un solo registro de peso. Guarda tu peso en otros días para ver cómo cambia.</p>
       </section>
 
       <section class="card goal-card" aria-labelledby="goal-title">
