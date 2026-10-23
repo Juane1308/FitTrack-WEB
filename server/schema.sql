@@ -33,7 +33,10 @@ ALTER TABLE user_profiles
   ADD COLUMN IF NOT EXISTS joint_pains TEXT[],
   ADD COLUMN IF NOT EXISTS surgeries TEXT[],
   ADD COLUMN IF NOT EXISTS chronic_conditions TEXT[],
-  ADD COLUMN IF NOT EXISTS allergies TEXT[];
+  ADD COLUMN IF NOT EXISTS allergies TEXT[],
+  -- Perfil > foto: el navegador la recorta en cuadrado y la comprime antes de subirla.
+  ADD COLUMN IF NOT EXISTS avatar_data BYTEA,
+  ADD COLUMN IF NOT EXISTS avatar_mime_type TEXT;
 
 ALTER TABLE user_profiles
   DROP COLUMN IF EXISTS onboarding_completed,
