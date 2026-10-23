@@ -9,6 +9,7 @@ import { initializeDatabase, query, transaction } from './db.js'
 import { getFoodCatalog, getRecipeCatalog } from './nutritionCatalog.js'
 import { hashPassword, hashToken, verifyPassword } from './passwords.js'
 import { createProfileRouter } from './profile.js'
+import { createProgressRouter } from './progress.js'
 import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
 
 const app = express()
@@ -483,6 +484,7 @@ app.get('/api/nutrition/recipes', async (_request, response, next) => {
 })
 
 app.use('/api', createProfileRouter({ query, transaction, authenticate }))
+app.use('/api', createProgressRouter({ query, transaction, authenticate }))
 
 app.use(express.static(path.resolve(__dirname, '../dist')))
 app.get(/.*/, (_request, response) => {

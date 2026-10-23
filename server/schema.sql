@@ -163,6 +163,18 @@ JOIN app_users u ON u.id = p.user_id
 WHERE p.weight_kg IS NOT NULL
   AND NOT EXISTS (SELECT 1 FROM weight_logs w WHERE w.user_id = p.user_id);
 
+-- Progreso > fotos de progreso. El navegador las recorta y comprime antes de subirlas.
+CREATE TABLE IF NOT EXISTS progress_photos (
+  id BIGSERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES app_users(id) ON DELETE CASCADE,
+  image_data BYTEA NOT NULL,
+  mime_type TEXT NOT NULL CHECK (mime_type IN ('image/jpeg', 'image/png', 'image/webp')),
+  taken_on DATE NOT NULL DEFAULT CURRENT_DATE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS progress_photos_user_idx ON progress_photos(user_id, taken_on);
+
 -- Perfil > Notificaciones y Privacidad.
 CREATE TABLE IF NOT EXISTS user_settings (
   user_id TEXT PRIMARY KEY REFERENCES app_users(id) ON DELETE CASCADE,
