@@ -114,6 +114,11 @@ CREATE TABLE IF NOT EXISTS workout_sessions (
 CREATE INDEX IF NOT EXISTS workout_sessions_user_date_idx
   ON workout_sessions(user_id, performed_at);
 
+ALTER TABLE workout_sessions ADD COLUMN IF NOT EXISTS routine_id BIGINT REFERENCES fittrack.rutinas(id);
+ALTER TABLE workout_sessions ADD COLUMN IF NOT EXISTS started_at TIMESTAMPTZ;
+CREATE UNIQUE INDEX IF NOT EXISTS workout_sessions_one_active_idx
+  ON workout_sessions(user_id) WHERE completed=FALSE AND started_at IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS nutrition_logs (
   id TEXT PRIMARY KEY,
   user_id TEXT NOT NULL REFERENCES app_users(id) ON DELETE CASCADE,

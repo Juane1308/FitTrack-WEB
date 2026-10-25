@@ -13,6 +13,14 @@ const images = {
 }
 
 export class TrainingRepository {
+  async getRoutine(id) {
+    const data = await apiRequest(`/api/routines/${encodeURIComponent(id)}`)
+    if (!data?.routine || !Array.isArray(data.routine.exercises)) throw new Error('Detalle de rutina inválido')
+    return data.routine
+  }
+  getActiveWorkout() { return apiRequest('/api/me/workouts/active') }
+  startWorkout(id) { return apiRequest(`/api/me/routines/${encodeURIComponent(id)}/start`, { method: 'POST' }) }
+  finishWorkout(id) { return apiRequest(`/api/me/workouts/${encodeURIComponent(id)}/finish`, { method: 'POST' }) }
   async getMyRoutines() {
     const data = await apiRequest('/api/me/routines')
     if (!Array.isArray(data?.routines)) throw new Error('Respuesta de mis rutinas inválida')

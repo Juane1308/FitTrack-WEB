@@ -3,11 +3,13 @@ import { computed, onMounted, ref } from 'vue'
 import { Bookmark, BookmarkCheck, BookmarkMinus, CalendarDays, Clock, Dumbbell, LoaderCircle } from 'lucide-vue-next'
 import AppCard from '@/components/AppCard.vue'
 import ExerciseCatalog from '@/components/ExerciseCatalog.vue'
+import RoutineSession from '@/components/RoutineSession.vue'
 import { useTrainingController } from '@/controllers/useTrainingController'
 
 const { routines, isLoading, error, loadRoutines, myRoutines, myLoading, myError, actionError, pendingIds, savedIds, canManageRoutines, loadMyRoutines, changeSavedRoutine } = useTrainingController()
 onMounted(() => { loadRoutines(); loadMyRoutines() })
 const selectedCatalog = ref('routines')
+const selectedRoutineId = ref(null)
 const isMyCatalog = computed(() => selectedCatalog.value === 'mine')
 const displayedRoutines = computed(() => isMyCatalog.value ? myRoutines.value : routines.value)
 const loading = computed(() => isMyCatalog.value ? myLoading.value : isLoading.value)
@@ -28,6 +30,8 @@ const bookmarkLabel = routine => routineOrigin(routine) === 'assigned' ? `${rout
       <Dumbbell class="header-icon" :size="38" aria-hidden="true" />
     </header>
 
+    <RoutineSession :routine-id="selectedRoutineId" @close="selectedRoutineId = null" @select="selectedRoutineId = $event" />
+    <div v-show="!selectedRoutineId">
     <div class="catalog-navigation" role="group" aria-label="Seleccionar catálogo">
       <button type="button" :aria-pressed="selectedCatalog === 'routines'" @click="selectedCatalog = 'routines'">Rutinas</button>
       <button type="button" :aria-pressed="selectedCatalog === 'exercises'" @click="selectedCatalog = 'exercises'">Ejercicios</button>
@@ -56,6 +60,7 @@ const bookmarkLabel = routine => routineOrigin(routine) === 'assigned' ? `${rout
           <img :src="routine.image" alt="" class="routine-image" width="361" height="298" />
           <div class="routine-info">
             <h3>{{ routine.name }}</h3>
+            <button type="button" class="save-routine" @click="selectedRoutineId = routine.id">Ver detalle de {{ routine.name }}</button>
             <p v-if="isMyCatalog" class="origin">{{ routine.origin === 'assigned' ? 'Asignada' : 'Guardada' }}</p>
             <dl class="routine-classification">
               <div>
@@ -96,6 +101,7 @@ const bookmarkLabel = routine => routineOrigin(routine) === 'assigned' ? `${rout
       <p class="muted">{{ isMyCatalog ? 'Guarda una rutina del catálogo para encontrarla aquí.' : 'Vuelve más adelante para consultar el catálogo.' }}</p>
       <button v-if="isMyCatalog" type="button" class="save-routine" @click="selectedCatalog = 'routines'">Explorar rutinas</button>
     </AppCard>
+    </div>
     </div>
   </section>
 </template>

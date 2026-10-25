@@ -11,6 +11,7 @@ import { hashPassword, hashToken, verifyPassword } from './passwords.js'
 import { createProfileRouter } from './profile.js'
 import { createProgressRouter } from './progress.js'
 import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
+import { createTrainingSessionsRouter } from './trainingSessions.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -483,6 +484,7 @@ app.get('/api/nutrition/recipes', async (_request, response, next) => {
   }
 })
 
+app.use('/api', createTrainingSessionsRouter({ query, authenticate, validateRoutineId }))
 app.use('/api', createProfileRouter({ query, transaction, authenticate }))
 app.use('/api', createProgressRouter({ query, transaction, authenticate }))
 
