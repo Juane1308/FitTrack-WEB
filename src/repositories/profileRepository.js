@@ -11,6 +11,14 @@ export class ProfileRepository {
     return apiRequest('/api/me', json('PATCH', { name }))
   }
 
+  uploadAvatar(image) {
+    return apiRequest('/api/me/avatar', json('PUT', { image }))
+  }
+
+  removeAvatar() {
+    return apiRequest('/api/me/avatar', { method: 'DELETE' })
+  }
+
   getPersonalData() {
     return apiRequest('/api/profile')
   }

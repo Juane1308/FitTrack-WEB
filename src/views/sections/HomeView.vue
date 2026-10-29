@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onEnter } from '@/controllers/onEnter'
 import { Clock3, Dumbbell, Flame, Play, Trophy } from 'lucide-vue-next'
 
 import AppCard from '@/components/AppCard.vue'
@@ -16,7 +16,7 @@ const {
   loadHomeDashboard,
 } = useHomeController()
 
-onMounted(loadHomeDashboard)
+onEnter(loadHomeDashboard)
 </script>
 
 <template>

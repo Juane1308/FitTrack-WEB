@@ -61,6 +61,19 @@ function settingsPayload(row) {
   return { ...settings, reminderTime: row.reminder_time ? String(row.reminder_time).slice(0, 5) : null }
 }
 
+const AVATAR_MAX_BYTES = 512 * 1024
+const AVATAR_PATTERN = /^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/]+={0,2})$/
+
+export function parseImageDataUrl(value) {
+  const match = AVATAR_PATTERN.exec(String(value ?? ''))
+  if (!match) return null
+  const data = Buffer.from(match[2], 'base64')
+  if (data.length === 0 || data.length > AVATAR_MAX_BYTES) return null
+  return { mimeType: match[1], data }
+}
+
+export const toDataUrl = (mimeType, data) => `data:${mimeType};base64,${Buffer.from(data).toString('base64')}`
+
 export function weeksSince(createdAt, now = new Date()) {
   return Math.max(1, Math.ceil((now - new Date(createdAt)) / (7 * DAY_MS)))
 }
@@ -72,7 +85,7 @@ export function createProfileRouter({ query, transaction, authenticate }) {
   router.get('/me/overview', authenticate, async (request, response, next) => {
     try {
       const result = await query(
-        `SELECT u.name, u.email, u.created_at, p.goal, p.weight_kg,
+        `SELECT u.name, u.email, u.created_at, p.goal, p.weight_kg, p.avatar_data, p.avatar_mime_type,
            (SELECT COUNT(*) FROM workout_sessions ws WHERE ws.user_id = u.id AND ws.completed = TRUE)::INTEGER AS workouts,
            (SELECT w.weight_kg FROM weight_logs w WHERE w.user_id = u.id ORDER BY w.logged_on ASC LIMIT 1) AS first_weight,
            (SELECT w.weight_kg FROM weight_logs w WHERE w.user_id = u.id ORDER BY w.logged_on DESC LIMIT 1) AS last_weight
@@ -93,7 +106,35 @@ export function createProfileRouter({ query, transaction, authenticate }) {
         completedWorkouts: row.workouts,
         currentWeightKg: last ?? toNumber(row.weight_kg),
         weightChangeKg: first === null || last === null ? null : roundOne(last - first),
+        avatar: row.avatar_data ? toDataUrl(row.avatar_mime_type, row.avatar_data) : null,
       })
+    } catch (error) {
+      return next(error)
+    }
+  })
+
+  // Foto de perfil: llega como data URL ya recortada y comprimida por el navegador.
+  router.put('/me/avatar', authenticate, async (request, response, next) => {
+    try {
+      const image = parseImageDataUrl(request.body?.image)
+      if (!image) return response.status(400).json({ status: 'invalidImage' })
+      await query(
+        'UPDATE user_profiles SET avatar_data = $2, avatar_mime_type = $3 WHERE user_id = $1',
+        [request.user.id, image.data, image.mimeType],
+      )
+      return response.json({ avatar: toDataUrl(image.mimeType, image.data) })
+    } catch (error) {
+      return next(error)
+    }
+  })
+
+  router.delete('/me/avatar', authenticate, async (request, response, next) => {
+    try {
+      await query(
+        'UPDATE user_profiles SET avatar_data = NULL, avatar_mime_type = NULL WHERE user_id = $1',
+        [request.user.id],
+      )
+      return response.json({ avatar: null })
     } catch (error) {
       return next(error)
     }

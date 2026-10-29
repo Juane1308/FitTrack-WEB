@@ -33,7 +33,10 @@ ALTER TABLE user_profiles
   ADD COLUMN IF NOT EXISTS joint_pains TEXT[],
   ADD COLUMN IF NOT EXISTS surgeries TEXT[],
   ADD COLUMN IF NOT EXISTS chronic_conditions TEXT[],
-  ADD COLUMN IF NOT EXISTS allergies TEXT[];
+  ADD COLUMN IF NOT EXISTS allergies TEXT[],
+  -- Perfil > foto: el navegador la recorta en cuadrado y la comprime antes de subirla.
+  ADD COLUMN IF NOT EXISTS avatar_data BYTEA,
+  ADD COLUMN IF NOT EXISTS avatar_mime_type TEXT;
 
 ALTER TABLE user_profiles
   DROP COLUMN IF EXISTS onboarding_completed,
@@ -111,6 +114,11 @@ CREATE TABLE IF NOT EXISTS workout_sessions (
 CREATE INDEX IF NOT EXISTS workout_sessions_user_date_idx
   ON workout_sessions(user_id, performed_at);
 
+ALTER TABLE workout_sessions ADD COLUMN IF NOT EXISTS routine_id BIGINT REFERENCES fittrack.rutinas(id);
+ALTER TABLE workout_sessions ADD COLUMN IF NOT EXISTS started_at TIMESTAMPTZ;
+CREATE UNIQUE INDEX IF NOT EXISTS workout_sessions_one_active_idx
+  ON workout_sessions(user_id) WHERE completed=FALSE AND started_at IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS nutrition_logs (
   id TEXT PRIMARY KEY,
   user_id TEXT NOT NULL REFERENCES app_users(id) ON DELETE CASCADE,
@@ -159,6 +167,18 @@ FROM user_profiles p
 JOIN app_users u ON u.id = p.user_id
 WHERE p.weight_kg IS NOT NULL
   AND NOT EXISTS (SELECT 1 FROM weight_logs w WHERE w.user_id = p.user_id);
+
+-- Progreso > fotos de progreso. El navegador las recorta y comprime antes de subirlas.
+CREATE TABLE IF NOT EXISTS progress_photos (
+  id BIGSERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES app_users(id) ON DELETE CASCADE,
+  image_data BYTEA NOT NULL,
+  mime_type TEXT NOT NULL CHECK (mime_type IN ('image/jpeg', 'image/png', 'image/webp')),
+  taken_on DATE NOT NULL DEFAULT CURRENT_DATE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS progress_photos_user_idx ON progress_photos(user_id, taken_on);
 
 -- Perfil > Notificaciones y Privacidad.
 CREATE TABLE IF NOT EXISTS user_settings (
