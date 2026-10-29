@@ -484,7 +484,7 @@ app.get('/api/nutrition/recipes', async (_request, response, next) => {
   }
 })
 
-app.use('/api', createTrainingSessionsRouter({ query, authenticate, validateRoutineId }))
+app.use('/api', createTrainingSessionsRouter({ query, transaction, authenticate, validateRoutineId }))
 app.use('/api', createProfileRouter({ query, transaction, authenticate }))
 app.use('/api', createProgressRouter({ query, transaction, authenticate }))
 

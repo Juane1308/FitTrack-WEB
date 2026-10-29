@@ -120,7 +120,7 @@ onEnter(loadHomeDashboard)
 
 <style scoped>
 .home-page {
-  max-width: 1180px;
+  max-width: none;
 }
 
 .welcome-header {
@@ -136,7 +136,7 @@ onEnter(loadHomeDashboard)
 }
 
 h1 {
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(26px, 2.8vw, 34px);
 }
 
 header > .muted {
@@ -156,7 +156,7 @@ header > .muted {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 150px;
+  min-height: 124px;
   gap: 14px;
   text-align: center;
 }
@@ -170,7 +170,7 @@ header > .muted {
 }
 
 .metric-card strong {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .metric-card small {

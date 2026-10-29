@@ -48,6 +48,13 @@ export function useTrainingController() {
       actionError.value = exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : 'No fue posible actualizar tus rutinas. Intenta nuevamente.'
     } finally { pendingIds.value.delete(id) }
   }
+  async function removeCustomRoutine(id) {
+    if (!auth.isAuthenticated || pendingIds.value.has(id)) return
+    pendingIds.value.add(id); actionError.value = ''
+    try { await repository.removeCustomRoutine(id); await loadMyRoutines() }
+    catch (exception) { actionError.value = exception.status === 409 ? exception.message : exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : 'No fue posible eliminar la rutina. Intenta nuevamente.' }
+    finally { pendingIds.value.delete(id) }
+  }
   const routines = computed(() => state.routines)
   const isLoading = ref(true)
   const error = ref('')
@@ -63,5 +70,5 @@ export function useTrainingController() {
       isLoading.value = false
     }
   }
-  return { routines, isLoading, error, loadRoutines, myRoutines, myLoading, myError, actionError, pendingIds, savedIds, canManageRoutines, loadMyRoutines, changeSavedRoutine }
+  return { routines, isLoading, error, loadRoutines, myRoutines, myLoading, myError, actionError, pendingIds, savedIds, canManageRoutines, loadMyRoutines, changeSavedRoutine, removeCustomRoutine }
 }

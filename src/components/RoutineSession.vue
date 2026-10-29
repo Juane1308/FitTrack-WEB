@@ -1,71 +1,120 @@
 <script setup>
+import { watch } from 'vue'
+import { ArrowLeft, ArrowRight, Check, Clock3, Dumbbell, Pause, Play, Timer } from 'lucide-vue-next'
 import { useRoutineSessionController } from '@/controllers/useRoutineSessionController'
 import { onEnter } from '@/controllers/onEnter'
+
 const props = defineProps({ routineId: { type: [String, Number], default: null } })
 const emit = defineEmits(['close', 'select'])
-import { watch } from 'vue'
 const c = useRoutineSessionController()
-const { detail, selectedId, loading, busy, error, session, completedExercises, result, isActiveRoutine, canFinish, authenticated } = c
+const { detail, selectedId, loading, busy, error, session, completedSets, completedExercises, result, isActiveRoutine, canFinish, currentExercise, currentExerciseIndex, currentExerciseSetGoal, currentExerciseCompletedSets, formattedTime, timerPaused, resumeRoutineId, authenticated } = c
 watch(() => props.routineId, id => { if (id != null) c.openRoutine(id) }, { immediate: true })
 onEnter(c.restoreSession)
 function close() { c.close(); emit('close') }
-function resume() { emit('select', session.value.routineId) }
+function resume() { if (resumeRoutineId.value) emit('select', resumeRoutineId.value) }
+function exerciseImage(exercise) { return exercise?.imageUrl || exercise?.image || null }
 </script>
 
 <template>
   <aside v-if="session && !selectedId" class="active-banner" aria-label="Rutina en curso">
-    <p>Tienes una rutina en curso. Puedes retomarla y registrar tu entrenamiento.</p>
-    <button type="button" @click="resume">Retomar rutina</button>
+    <div><strong>Entrenamiento en curso</strong><p>Tiempo activo: {{ formattedTime }}</p></div>
+    <div class="banner-actions">
+      <button type="button" class="secondary-button" @click="c.toggleTimer"><Pause v-if="!timerPaused" :size="16" /><Play v-else :size="16" /> {{ timerPaused ? 'Reanudar' : 'Pausar' }}</button>
+      <button type="button" class="primary-button" @click="resume">Retomar rutina</button>
+    </div>
   </aside>
+
   <section v-if="selectedId" class="routine-detail" aria-label="Detalle de rutina" :aria-busy="loading">
-    <button type="button" class="back" :disabled="busy" @click="close">← Volver al catálogo</button>
-    <p v-if="loading" role="status">Cargando detalle…</p>
-    <p v-if="error" role="alert">{{ error }}</p>
-    <button v-if="!loading && !detail" type="button" @click="c.openRoutine(selectedId)">Reintentar</button>
+    <button type="button" class="back-button" :disabled="busy" @click="close"><ArrowLeft :size="17" /> Volver a rutinas</button>
+    <p v-if="loading" role="status">Cargando rutina…</p>
+    <p v-if="error" class="error-message" role="alert">{{ error }}</p>
+    <button v-if="!loading && !detail" type="button" class="primary-button" @click="c.openRoutine(selectedId)">Reintentar</button>
     <template v-if="detail">
-      <p class="eyebrow">{{ isActiveRoutine ? 'SESIÓN ACTIVA' : 'TU PRÓXIMO ENTRENAMIENTO' }}</p>
-      <h2>{{ detail.name }}</h2>
-      <dl class="facts">
-        <div><dt>Objetivo</dt><dd>{{ detail.goal || 'No especificado' }}</dd></div>
-        <div><dt>Nivel</dt><dd>{{ detail.level }}</dd></div>
-        <div><dt>Duración estimada</dt><dd>{{ detail.durationMinutes }} min</dd></div>
-        <div><dt>Grupo muscular</dt><dd>{{ detail.muscleGroup || 'No especificado' }}</dd></div>
-      </dl>
-      <p v-if="isActiveRoutine" role="status">Marca cada ejercicio al terminarlo: {{ completedExercises.length }} de {{ detail.exercises.length }} completados.</p>
-      <ol class="exercises">
-        <li v-for="exercise in detail.exercises" :key="exercise.id">
-          <h3>{{ exercise.name }}</h3>
-          <p class="prescription">{{ exercise.sets }} series · {{ exercise.repetitions != null ? `${exercise.repetitions} repeticiones` : `${exercise.durationSeconds} segundos` }}{{ exercise.perSide ? ' por lado' : '' }}</p>
-          <p>{{ exercise.technique || 'Técnica no disponible.' }}</p>
-          <p class="muted">Descanso entre series: {{ exercise.restSeconds ?? 0 }} segundos</p>
-          <label v-if="isActiveRoutine"><input v-model="completedExercises" type="checkbox" :value="exercise.id" :disabled="busy" /> Ejercicio completado</label>
-        </li>
-      </ol>
-      <p v-if="!detail.exercises.length">Esta rutina aún no tiene ejercicios disponibles.</p>
-      <div v-if="result" class="success" role="status">
-        <h3>¡Entrenamiento registrado!</h3>
-        <p>Duración: {{ result.durationMinutes }} min. Tus indicadores de Inicio y Perfil se actualizaron.</p>
-        <a href="/app/home">Ver mi progreso semanal</a>
+      <header class="detail-header">
+        <div><p class="eyebrow">{{ isActiveRoutine ? 'ENTRENAMIENTO EN CURSO' : 'DETALLE DE RUTINA' }}</p><h2>{{ detail.name }}</h2><p v-if="detail.description" class="muted">{{ detail.description }}</p></div>
+        <span class="duration-chip"><Clock3 :size="17" /> {{ detail.durationMinutes }} min</span>
+      </header>
+      <div class="routine-facts">
+        <div><small>Objetivo</small><strong>{{ detail.goal || 'No especificado' }}</strong></div>
+        <div><small>Nivel</small><strong>{{ detail.level || 'No especificado' }}</strong></div>
+        <div><small>Grupos musculares</small><strong>{{ detail.muscleGroup || 'No especificado' }}</strong></div>
+        <div><small>Ejercicios</small><strong>{{ detail.exercises.length }}</strong></div>
       </div>
-      <template v-else-if="authenticated">
-        <button v-if="isActiveRoutine" type="button" :disabled="busy || !canFinish" @click="c.finish">{{ busy ? 'Registrando…' : 'Finalizar entrenamiento' }}</button>
-        <template v-else-if="session"><p>Termina la sesión en curso antes de comenzar otra.</p><button type="button" @click="resume">Retomar rutina activa</button></template>
-        <button v-else type="button" :disabled="busy || !detail.exercises.length" @click="c.start">{{ busy ? 'Comenzando…' : 'Comenzar rutina' }}</button>
-      </template>
-      <a v-else href="/login">Inicia sesión para comenzar la rutina</a>
+
+      <div v-if="isActiveRoutine" class="session-layout">
+        <section class="workout-player" aria-label="Ejercicio actual">
+          <div class="player-topline">
+            <div><p class="eyebrow">EJERCICIO {{ currentExerciseIndex + 1 }} DE {{ detail.exercises.length }}</p><p class="muted">{{ completedExercises.length }} ejercicios completados</p></div>
+            <div class="stopwatch" :class="{ paused: timerPaused }" role="timer"><Timer :size="20" /><strong>{{ formattedTime }}</strong></div>
+          </div>
+          <div class="player-image">
+            <img v-if="exerciseImage(currentExercise)" :src="exerciseImage(currentExercise)" :alt="`Demostración de ${currentExercise.name}`" />
+            <Dumbbell v-else :size="46" />
+          </div>
+          <div v-if="currentExercise" class="player-content">
+            <h3>{{ currentExercise.name }}</h3>
+            <p class="prescription">{{ currentExercise.sets }} series · {{ currentExercise.repetitions != null ? `${currentExercise.repetitions} repeticiones` : `${currentExercise.durationSeconds} segundos` }}{{ currentExercise.perSide ? ' por lado' : '' }}</p>
+            <p class="muted">Descanso sugerido: {{ currentExercise.restSeconds ?? 0 }} segundos</p>
+            <div class="set-tracker">
+              <div class="tracker-label"><span>Series completadas</span><strong>{{ currentExerciseCompletedSets }} / {{ currentExerciseSetGoal }}</strong></div>
+              <div class="set-buttons" role="group" aria-label="Series completadas">
+                <button v-for="set in currentExerciseSetGoal" :key="set" type="button" class="set-button" :class="{ done: set <= currentExerciseCompletedSets, next: set === currentExerciseCompletedSets + 1 }" :aria-pressed="set <= currentExerciseCompletedSets" :disabled="set > currentExerciseCompletedSets + 1" @click="set <= currentExerciseCompletedSets ? c.undoSet() : c.completeSet()">
+                  <Check v-if="set <= currentExerciseCompletedSets" :size="15" />{{ set }}
+                </button>
+              </div>
+              <button v-if="currentExerciseCompletedSets < currentExerciseSetGoal" type="button" class="complete-set-button" @click="c.completeSet">Completar serie {{ currentExerciseCompletedSets + 1 }} de {{ currentExerciseSetGoal }} <Check :size="16" /></button>
+              <p v-else class="complete-note"><Check :size="16" /> Ejercicio completado</p>
+            </div>
+            <div v-if="currentExercise.technique" class="technique-box"><h4>Técnica</h4><p>{{ currentExercise.technique }}</p></div>
+            <div class="player-controls">
+              <button type="button" class="secondary-button" @click="c.toggleTimer"><Pause v-if="!timerPaused" :size="17" /><Play v-else :size="17" /> {{ timerPaused ? 'Reanudar cronómetro' : 'Pausar cronómetro' }}</button>
+              <div class="exercise-nav-controls">
+                <button type="button" class="secondary-button" aria-label="Ejercicio anterior" :disabled="currentExerciseIndex <= 0" @click="c.selectExercise(currentExerciseIndex - 1)"><ArrowLeft :size="17" /></button>
+                <button type="button" class="primary-button" :disabled="currentExerciseIndex >= detail.exercises.length - 1" @click="c.selectExercise(currentExerciseIndex + 1)">{{ currentExerciseCompletedSets >= currentExerciseSetGoal ? 'Siguiente ejercicio' : 'Terminar ejercicio y continuar' }} <ArrowRight :size="17" /></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="exercise-queue"><header><h3>Lista de ejercicios</h3><span>{{ completedExercises.length }}/{{ detail.exercises.length }}</span></header>
+          <button v-for="(exercise,index) in detail.exercises" :key="exercise.id" type="button" class="queue-exercise" :class="{ selected:index===currentExerciseIndex,completed:completedExercises.includes(exercise.id) }" @click="c.selectExercise(index)">
+            <span class="queue-number"><Check v-if="completedExercises.includes(exercise.id)" :size="15" /><template v-else>{{ String(index+1).padStart(2,'0') }}</template></span>
+            <img v-if="exerciseImage(exercise)" :src="exerciseImage(exercise)" alt="" />
+            <span class="queue-copy"><strong>{{ exercise.name }}</strong><small>{{ completedSets[exercise.id] || 0 }}/{{ exercise.sets }} series</small></span>
+          </button>
+        </aside>
+      </div>
+      <div v-else class="routine-exercise-preview"><h3>Ejercicios de la rutina</h3><ol class="preview-list">
+        <li v-for="(exercise,index) in detail.exercises" :key="exercise.id" class="preview-exercise">
+          <span class="preview-index">{{ String(index+1).padStart(2,'0') }}</span><img v-if="exerciseImage(exercise)" :src="exerciseImage(exercise)" :alt="`Demostración de ${exercise.name}`" loading="lazy" /><span v-else class="preview-image-fallback"><Dumbbell :size="20" /></span>
+          <div><h4>{{ exercise.name }}</h4><p>{{ exercise.sets }} series · {{ exercise.repetitions != null ? `${exercise.repetitions} repeticiones` : `${exercise.durationSeconds} segundos` }}{{ exercise.perSide ? ' por lado' : '' }}</p><small>Descanso: {{ exercise.restSeconds ?? 0 }} s</small></div>
+        </li>
+      </ol></div>
+      <div v-if="result" class="success-message" role="status"><Check :size="22" /><div><h3>¡Rutina terminada!</h3><p>Tiempo activo: {{ result.durationMinutes }} min. Tu progreso se actualizó.</p></div><a href="/app/home">Ver progreso</a></div>
+      <div v-else class="routine-actions">
+        <p v-if="session && !isActiveRoutine" class="muted">Ya tienes otra rutina activa. Retómala antes de iniciar esta.</p>
+        <template v-if="authenticated">
+          <button v-if="isActiveRoutine" type="button" class="primary-button finish-button" :disabled="busy || !canFinish" @click="c.finish">{{ busy ? 'Guardando…' : canFinish ? 'Finalizar rutina' : `Completa las series (${completedExercises.length}/${detail.exercises.length})` }}</button>
+          <button v-else-if="session" type="button" class="primary-button" @click="resume">Retomar rutina activa</button>
+          <button v-else type="button" class="primary-button" :disabled="busy || !detail.exercises.length" @click="c.start"><Play :size="17" /> {{ busy ? 'Iniciando…' : 'Comenzar rutina' }}</button>
+        </template>
+        <a v-else href="/login">Inicia sesión para comenzar la rutina</a>
+      </div>
     </template>
   </section>
 </template>
 
 <style scoped>
-.routine-detail,.active-banner { border:1px solid var(--color-card-border); border-radius:16px; padding:clamp(18px,4vw,32px); margin:24px 0; background:var(--color-card,#0b1713); }
-h2 { font-size:clamp(26px,4vw,36px); margin:12px 0 24px; } h3 { margin-bottom:10px; }
-.facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-bottom:28px; }
-dt,.muted { color:var(--color-muted-text); font-size:13px; } dd { margin:6px 0 0; line-height:1.5; }
-.eyebrow,.prescription { color:var(--color-primary); } .eyebrow { margin-top:24px; font-size:12px; letter-spacing:1px; }
-.exercises { padding-left:24px; } li { padding:18px 8px; border-bottom:1px solid var(--color-card-border); } p { line-height:1.7; margin:10px 0; }
-button,a { display:inline-block; padding:12px 18px; border:1px solid var(--color-primary); border-radius:8px; background:transparent; color:var(--color-primary); font:inherit; cursor:pointer; margin-top:12px; }
-button:disabled { opacity:.5; cursor:default; } button:focus-visible,a:focus-visible,input:focus-visible { outline:2px solid var(--color-primary); outline-offset:4px; }
-label { display:flex; align-items:center; gap:10px; margin-top:16px; } input { width:20px; height:20px; accent-color:var(--color-primary); } .success { padding:20px; border:1px solid var(--color-primary); border-radius:12px; margin-top:24px; }
-@media(max-width:480px) { .facts { grid-template-columns:1fr; } }
+.active-banner,.routine-detail { margin:20px 0; padding:clamp(20px,2.5vw,32px); border:1px solid var(--color-card-border); border-radius:18px; background:var(--color-surface); }
+.active-banner,.banner-actions,.detail-header,.player-topline,.tracker-label,.player-controls,.exercise-nav-controls,.routine-actions,.success-message { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.active-banner p { margin:5px 0 0; color:var(--color-muted-text); font-size:13px; }.routine-detail h2 { margin:0; font-size:clamp(24px,2.8vw,34px); }.muted { color:var(--color-muted-text); font-size:13px; line-height:1.55; }.eyebrow { margin:0 0 8px; color:var(--color-primary); font-size:10px; font-weight:800; letter-spacing:1.5px; }
+.back-button,.primary-button,.secondary-button,.complete-set-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:40px; padding:0 14px; border:1px solid var(--color-card-border); border-radius:10px; background:transparent; color:var(--color-text); font:inherit; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer; }.back-button { margin-bottom:20px; color:var(--color-muted-text); }.primary-button,.complete-set-button { border-color:var(--color-primary); background:var(--color-primary); color:#04110b; }.primary-button:disabled,.secondary-button:disabled { opacity:.45; cursor:not-allowed; }
+.detail-header { align-items:flex-start; margin:4px 0 22px; }.detail-header .muted { margin-top:7px; }.duration-chip { display:inline-flex; align-items:center; gap:7px; flex-shrink:0; padding:8px 12px; border:1px solid var(--color-card-border); border-radius:999px; color:var(--color-primary); font-size:13px; }
+.routine-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:22px; }.routine-facts div { display:grid; gap:6px; min-width:0; padding:12px 14px; border:1px solid var(--color-card-border); border-radius:12px; background:color-mix(in srgb,var(--color-background) 55%,var(--color-surface)); }.routine-facts small { color:var(--color-muted-text); font-size:11px; }.routine-facts strong { font-size:13px; overflow-wrap:anywhere; }
+.routine-exercise-preview>h3 { margin:10px 0 14px; font-size:19px; }.preview-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }.preview-exercise { display:grid; grid-template-columns:28px 100px minmax(0,1fr); align-items:start; gap:12px; min-height:112px; padding:12px; border:1px solid var(--color-card-border); border-radius:13px; background:color-mix(in srgb,var(--color-background) 55%,var(--color-surface)); }.preview-index { color:var(--color-primary); font-size:12px; font-weight:800; }.preview-exercise img,.preview-image-fallback { display:grid; place-items:center; width:100px; height:84px; border-radius:9px; object-fit:cover; background:#f4f5f3; color:var(--color-primary); }.preview-exercise h4 { margin:0 0 5px; font-size:14px; }.preview-exercise p { margin:0 0 5px; color:var(--color-muted-text); font-size:12px; }.preview-exercise small { color:var(--color-subtle-text); font-size:11px; }
+.session-layout { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr); gap:16px; }.workout-player,.exercise-queue { overflow:hidden; border:1px solid var(--color-card-border); border-radius:15px; background:color-mix(in srgb,var(--color-background) 44%,var(--color-surface)); }.player-topline { padding:16px 18px; }.player-topline .muted { margin:0; }.stopwatch { display:flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid color-mix(in srgb,var(--color-primary) 45%,var(--color-card-border)); border-radius:10px; background:var(--color-indicator); color:var(--color-primary); font-variant-numeric:tabular-nums; }.stopwatch strong { font-size:19px; }.stopwatch.paused { color:var(--color-muted-text); background:transparent; }
+.player-image { display:grid; place-items:center; height:clamp(210px,26vw,330px); overflow:hidden; background:#f4f5f3; color:var(--color-primary); }.player-image img { width:100%; height:100%; object-fit:contain; }.player-content { padding:18px; }.player-content h3 { margin:0; font-size:21px; }.prescription { margin:7px 0 2px; color:var(--color-primary); font-size:13px; font-weight:700; }.set-tracker { margin-top:17px; padding:14px; border:1px solid var(--color-card-border); border-radius:12px; background:var(--color-surface); }.tracker-label { color:var(--color-muted-text); font-size:12px; }.tracker-label strong { color:var(--color-text); }.set-buttons { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }.set-button { display:inline-flex; align-items:center; gap:4px; min-width:40px; height:38px; justify-content:center; border:1px solid var(--color-card-border); border-radius:9px; background:transparent; color:var(--color-muted-text); cursor:pointer; }.set-button.next { border-color:var(--color-primary); color:var(--color-primary); }.set-button.done { border-color:var(--color-primary); background:var(--color-primary); color:#04110b; }.set-button:disabled { opacity:.45; cursor:not-allowed; }.complete-set-button { margin-top:12px; min-height:40px; }.complete-note { display:flex; align-items:center; gap:7px; margin:12px 0 0; color:var(--color-primary); font-size:13px; font-weight:700; }
+.technique-box { margin-top:16px; padding-top:14px; border-top:1px solid var(--color-card-border); }.technique-box h4 { margin:0 0 7px; font-size:13px; }.technique-box p { margin:0; color:var(--color-muted-text); font-size:12px; line-height:1.6; white-space:pre-line; }.player-controls { flex-wrap:wrap; margin-top:16px; }.exercise-nav-controls { justify-content:flex-end; }.exercise-queue { padding:15px; }.exercise-queue header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }.exercise-queue header h3 { margin:0; font-size:16px; }.exercise-queue header span { color:var(--color-primary); font-size:12px; }.queue-exercise { display:grid; grid-template-columns:28px 58px minmax(0,1fr); align-items:center; gap:9px; width:100%; margin-top:7px; padding:7px; border:1px solid transparent; border-radius:10px; background:transparent; color:var(--color-text); text-align:left; cursor:pointer; }.queue-exercise.selected { border-color:var(--color-primary); background:var(--color-surface); }.queue-number { display:grid; place-items:center; width:26px; height:26px; border-radius:7px; background:var(--color-indicator); color:var(--color-primary); font-size:11px; }.queue-exercise.completed .queue-number { background:var(--color-primary); color:#04110b; }.queue-exercise img { width:58px; height:48px; border-radius:7px; object-fit:cover; }.queue-copy { display:grid; gap:4px; min-width:0; }.queue-copy strong { overflow:hidden; font-size:12px; text-overflow:ellipsis; white-space:nowrap; }.queue-copy small { color:var(--color-muted-text); font-size:10px; }
+.routine-actions { justify-content:flex-end; margin-top:20px; padding-top:16px; border-top:1px solid var(--color-card-border); }.routine-actions .muted { margin-right:auto; }.finish-button { min-width:220px; }.error-message { color:var(--color-error); }.success-message { justify-content:flex-start; margin-top:20px; padding:16px; border:1px solid var(--color-primary); border-radius:12px; background:var(--color-indicator); }.success-message h3 { margin:0 0 4px; font-size:16px; }.success-message p { margin:0; color:var(--color-muted-text); font-size:12px; }.success-message>a { margin-left:auto; color:var(--color-primary); }
+@media(max-width:900px) { .session-layout { grid-template-columns:1fr; }.exercise-queue { order:2; } }
+@media(max-width:680px) { .routine-facts { grid-template-columns:repeat(2,minmax(0,1fr)); }.preview-list { grid-template-columns:1fr; }.preview-exercise { grid-template-columns:25px 82px minmax(0,1fr); }.preview-exercise img,.preview-image-fallback { width:82px;height:76px; }.detail-header,.active-banner,.banner-actions { align-items:flex-start; }.detail-header,.active-banner { flex-direction:column; }.player-controls,.routine-actions { align-items:stretch; flex-direction:column; }.exercise-nav-controls { justify-content:flex-end; }.success-message { align-items:flex-start; flex-wrap:wrap; }.success-message>a { margin-left:0; } }
 </style>

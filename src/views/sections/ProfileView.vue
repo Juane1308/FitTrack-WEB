@@ -177,7 +177,7 @@ const menu = [
   --profile-line: #242424;
   --profile-font: 'Bricolage Grotesque', 'Arial Narrow', sans-serif;
 
-  max-width: 1240px;
+  max-width: none;
   font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif;
 }
 

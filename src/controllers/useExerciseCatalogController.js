@@ -6,11 +6,17 @@ const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300
 export function useExerciseCatalogController() {
   const exercises = ref([])
   const search = ref('')
+  const selectedGroup = ref('Todos')
+  const selectedLevel = ref('Todos')
+  const muscleGroups = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.muscleGroup).filter(Boolean).sort((a, b) => a.localeCompare(b, 'es')))])
+  const levels = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.level).filter(level => level && level !== 'No especificado').sort((a, b) => a.localeCompare(b, 'es')))])
   const isLoading = ref(true)
   const error = ref('')
   const filteredExercises = computed(() => {
     const term = normalize(search.value.trim())
-    return exercises.value.filter(exercise => normalize(`${exercise.name} ${exercise.muscleGroup ?? ''} ${exercise.equipment ?? ''}`).includes(term))
+    return exercises.value.filter(exercise => (selectedGroup.value === 'Todos' || exercise.muscleGroup === selectedGroup.value)
+      && (selectedLevel.value === 'Todos' || exercise.level === selectedLevel.value)
+      && normalize(`${exercise.name} ${exercise.muscleGroup ?? ''} ${exercise.equipment ?? ''} ${(exercise.primaryMuscles ?? []).join(' ')}`).includes(term))
   })
 
   async function loadExercises() {
@@ -26,5 +32,6 @@ export function useExerciseCatalogController() {
     }
   }
 
-  return { exercises, search, filteredExercises, isLoading, error, loadExercises }
+  function clearFilters() { search.value = ''; selectedGroup.value = 'Todos'; selectedLevel.value = 'Todos' }
+  return { exercises, search, selectedGroup, selectedLevel, muscleGroups, levels, filteredExercises, isLoading, error, loadExercises, clearFilters }
 }

@@ -20,11 +20,13 @@ export class TrainingRepository {
   }
   getActiveWorkout() { return apiRequest('/api/me/workouts/active') }
   startWorkout(id) { return apiRequest(`/api/me/routines/${encodeURIComponent(id)}/start`, { method: 'POST' }) }
-  finishWorkout(id) { return apiRequest(`/api/me/workouts/${encodeURIComponent(id)}/finish`, { method: 'POST' }) }
+  finishWorkout(id, durationSeconds) { return apiRequest(`/api/me/workouts/${encodeURIComponent(id)}/finish`, { method: 'POST', body: JSON.stringify({ durationSeconds }) }) }
+  createCustomRoutine(routine) { return apiRequest('/api/me/custom-routines', { method: 'POST', body: JSON.stringify(routine) }) }
+  removeCustomRoutine(id) { return apiRequest(`/api/me/custom-routines/${encodeURIComponent(id)}`, { method: 'DELETE' }) }
   async getMyRoutines() {
     const data = await apiRequest('/api/me/routines')
     if (!Array.isArray(data?.routines)) throw new Error('Respuesta de mis rutinas inválida')
-    return data.routines.map(routine => ({ ...new Routine({ ...routine, image: images[routine.image] ?? fullBodyImage }), origin: routine.origin }))
+    return data.routines.map(routine => ({ ...new Routine({ ...routine, image: routine.image?.startsWith('/') ? routine.image : images[routine.image] ?? fullBodyImage }), origin: routine.origin, custom: Boolean(routine.custom) }))
   }
 
   saveRoutine(id) {
@@ -46,7 +48,7 @@ export class TrainingRepository {
     if (!Array.isArray(data?.routines)) throw new Error('Respuesta de catálogo inválida')
     return data.routines.map(routine => new Routine({
       ...routine,
-      image: images[routine.image] ?? fullBodyImage,
+      image: routine.image?.startsWith('/') ? routine.image : images[routine.image] ?? fullBodyImage,
     }))
   }
 }

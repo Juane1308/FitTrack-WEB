@@ -142,6 +142,28 @@ CREATE TABLE IF NOT EXISTS public.user_routines (
   PRIMARY KEY (user_id, routine_id)
 );
 
+CREATE TABLE IF NOT EXISTS public.user_custom_routines (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES public.app_users(id) ON DELETE CASCADE,
+  name TEXT NOT NULL CHECK (char_length(name) BETWEEN 2 AND 80),
+  description TEXT NOT NULL DEFAULT '',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS public.user_custom_routine_exercises (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  routine_id TEXT NOT NULL REFERENCES public.user_custom_routines(id) ON DELETE CASCADE,
+  exercise_slug TEXT NOT NULL,
+  sort_order SMALLINT NOT NULL CHECK (sort_order > 0),
+  sets SMALLINT NOT NULL CHECK (sets BETWEEN 1 AND 10),
+  repetitions SMALLINT NOT NULL CHECK (repetitions BETWEEN 1 AND 100),
+  rest_seconds SMALLINT NOT NULL DEFAULT 60 CHECK (rest_seconds BETWEEN 0 AND 600),
+  UNIQUE (routine_id, sort_order),
+  UNIQUE (routine_id, exercise_slug)
+);
+CREATE INDEX IF NOT EXISTS user_custom_routines_user_idx ON public.user_custom_routines(user_id, created_at DESC);
+ALTER TABLE workout_sessions ADD COLUMN IF NOT EXISTS custom_routine_id TEXT REFERENCES public.user_custom_routines(id) ON DELETE SET NULL;
+
 -- Perfil > Mis objetivos. weekly_workouts es la meta de entrenamientos por semana
 -- que usa Inicio cuando no hay una meta específica en weekly_goals.
 CREATE TABLE IF NOT EXISTS user_goals (

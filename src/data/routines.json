@@ -507,5 +507,66 @@
         "perSide": false
       }
     ]
+  },
+  {
+    "id": "core-stability", "name": "Estabilidad del core", "level": "Principiante", "durationMinutes": 25, "durationWeeks": 4,
+    "goal": "Mejorar salud", "muscleGroup": "Abdomen y espalda baja", "location": "Casa", "equipment": ["Colchoneta"], "imageKey": "core-stability",
+    "exercises": [
+      { "order": 1, "exerciseId": "dead-bug", "sets": 3, "repetitions": 8, "durationSeconds": null, "restSeconds": 45, "perSide": true },
+      { "order": 2, "exerciseId": "bird-dog", "sets": 3, "repetitions": 8, "durationSeconds": null, "restSeconds": 45, "perSide": true },
+      { "order": 3, "exerciseId": "plank", "sets": 3, "repetitions": null, "durationSeconds": 25, "restSeconds": 45, "perSide": false },
+      { "order": 4, "exerciseId": "glute-bridge", "sets": 3, "repetitions": 12, "durationSeconds": null, "restSeconds": 45, "perSide": false }
+    ]
+  },
+  {
+    "id": "legs-glutes-home", "name": "Piernas y glúteos en casa", "level": "Principiante", "durationMinutes": 30, "durationWeeks": 6,
+    "goal": "Mantenerse en forma", "muscleGroup": "Piernas y glúteos", "location": "Casa", "equipment": ["Silla estable", "Colchoneta"], "imageKey": "legs-glutes-home",
+    "exercises": [
+      { "order": 1, "exerciseId": "chair-squat", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 60, "perSide": false },
+      { "order": 2, "exerciseId": "reverse-lunge", "sets": 3, "repetitions": 8, "durationSeconds": null, "restSeconds": 60, "perSide": true },
+      { "order": 3, "exerciseId": "glute-bridge", "sets": 3, "repetitions": 12, "durationSeconds": null, "restSeconds": 60, "perSide": false },
+      { "order": 4, "exerciseId": "calf-raise", "sets": 3, "repetitions": 15, "durationSeconds": null, "restSeconds": 45, "perSide": false }
+    ]
+  },
+  {
+    "id": "low-impact-cardio", "name": "Cardio de bajo impacto", "level": "Principiante", "durationMinutes": 30, "durationWeeks": 4,
+    "goal": "Perder peso", "muscleGroup": "Cuerpo completo", "location": "Casa", "equipment": [], "imageKey": "low-impact-cardio",
+    "exercises": [
+      { "order": 1, "exerciseId": "march", "sets": 3, "repetitions": null, "durationSeconds": 60, "restSeconds": 30, "perSide": false },
+      { "order": 2, "exerciseId": "step-jack", "sets": 3, "repetitions": null, "durationSeconds": 45, "restSeconds": 30, "perSide": false },
+      { "order": 3, "exerciseId": "squat", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 45, "perSide": false },
+      { "order": 4, "exerciseId": "walk", "sets": 1, "repetitions": null, "durationSeconds": 300, "restSeconds": 0, "perSide": false }
+    ]
+  },
+  {
+    "id": "chest-arms-gym", "name": "Pecho y brazos en gimnasio", "level": "Intermedio", "durationMinutes": 40, "durationWeeks": 6,
+    "goal": "Ganar masa muscular", "muscleGroup": "Pecho, hombros y brazos", "location": "Gimnasio", "equipment": ["Mancuernas", "Banco", "Polea"], "imageKey": "chest-arms-gym",
+    "exercises": [
+      { "order": 1, "exerciseId": "bench-press", "sets": 3, "repetitions": 8, "durationSeconds": null, "restSeconds": 90, "perSide": false },
+      { "order": 2, "exerciseId": "dumbbell-press", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 3, "exerciseId": "biceps-curl", "sets": 3, "repetitions": 12, "durationSeconds": null, "restSeconds": 60, "perSide": false },
+      { "order": 4, "exerciseId": "triceps-pushdown", "sets": 3, "repetitions": 12, "durationSeconds": null, "restSeconds": 60, "perSide": false }
+    ]
+  },
+  {
+    "id": "back-posture", "name": "Espalda y postura", "level": "Intermedio", "durationMinutes": 35, "durationWeeks": 6,
+    "goal": "Mejorar salud", "muscleGroup": "Espalda y abdomen", "location": "Gimnasio", "equipment": ["Mancuernas", "Polea", "Colchoneta"], "imageKey": "back-posture",
+    "exercises": [
+      { "order": 1, "exerciseId": "seated-row", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 2, "exerciseId": "lat-pulldown", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 3, "exerciseId": "dumbbell-row", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 60, "perSide": true },
+      { "order": 4, "exerciseId": "bird-dog", "sets": 2, "repetitions": 10, "durationSeconds": null, "restSeconds": 45, "perSide": true }
+    ]
+  },
+  {
+    "id": "full-body-dumbbells", "name": "Cuerpo completo con mancuernas", "level": "Intermedio", "durationMinutes": 45, "durationWeeks": 8,
+    "goal": "Ganar masa muscular", "muscleGroup": "Cuerpo completo", "location": "Casa", "equipment": ["Mancuernas", "Colchoneta"], "imageKey": "full-body-dumbbells",
+    "exercises": [
+      { "order": 1, "exerciseId": "goblet-squat", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 2, "exerciseId": "dumbbell-press", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 3, "exerciseId": "dumbbell-row", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 60, "perSide": true },
+      { "order": 4, "exerciseId": "dumbbell-rdl", "sets": 3, "repetitions": 10, "durationSeconds": null, "restSeconds": 75, "perSide": false },
+      { "order": 5, "exerciseId": "plank", "sets": 3, "repetitions": null, "durationSeconds": 30, "restSeconds": 45, "perSide": false }
+    ]
   }
 ]

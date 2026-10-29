@@ -52,7 +52,7 @@ const sectionLabel = computed(() => APP_SECTIONS[props.context.section].label)
 .chat-fab {
   position: fixed;
   right: 18px;
-  bottom: calc(var(--nav-height) + 16px);
+  bottom: 20px;
   z-index: 20;
   display: grid;
   place-items: center;

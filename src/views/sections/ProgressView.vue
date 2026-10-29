@@ -234,7 +234,7 @@ const formatPhotoDate = (date) => photoDate.format(new Date(`${date}T00:00:00`))
   --progress-line: #242424;
   --progress-font: 'Bricolage Grotesque', 'Arial Narrow', sans-serif;
 
-  max-width: 1240px;
+  max-width: none;
   font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif;
 }
 
@@ -249,7 +249,7 @@ const formatPhotoDate = (date) => photoDate.format(new Date(`${date}T00:00:00`))
 
 .progress-header h1 {
   font-family: var(--progress-font);
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
