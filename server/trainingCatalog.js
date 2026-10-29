@@ -58,17 +58,13 @@ export async function getTrainingCatalog(query, userId = null) {
 }
 
 export async function getExerciseCatalog(query) {
-  const result = await query(`SELECT e.id::TEXT AS id, e.slug_fuente AS slug, e.codigo_dataset AS "legacyId", e.nombre AS name,
-    e.descripcion AS description, e.tecnica AS technique,
-    g.nombre AS "muscleGroup", n.nombre AS level, e.equipo AS equipment
-    FROM fittrack.ejercicios e
-    LEFT JOIN fittrack.grupos_musculares g ON g.id=e.grupo_muscular_id
-    LEFT JOIN fittrack.niveles_dificultad n ON n.id=e.nivel_id
-    WHERE e.activo=TRUE ORDER BY e.nombre, e.id`)
-  return result.rows.filter(row => row.slug && bySlug.has(row.slug)).map(row => {
-    const source = bySlug.get(row.slug)
-    return { ...source, ...row, level: row.level === 'No especificado' ? source.level : row.level,
-      muscleGroup: source.group, group: source.group, primaryMuscles: source.primaryMuscles,
-      imageUrl: getExerciseImage(row.slug, row.name) }
-  })
+  // The image and instruction dataset is versioned with the app. Serve it directly so
+  // the catalog remains available before optional source metadata has been imported to Railway.
+  return sourceExercises.map(exercise => ({
+    ...exercise,
+    id: exercise.slug,
+    muscleGroup: exercise.group,
+    level: 'Todos los niveles',
+    imageUrl: getExerciseImage(exercise.slug, exercise.name),
+  }))
 }

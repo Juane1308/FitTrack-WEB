@@ -33,7 +33,7 @@ export function createTrainingSessionsRouter({ query, transaction, authenticate,
         LEFT JOIN fittrack.grupos_musculares g ON g.id=rg.grupo_muscular_id
         WHERE r.id=$1 AND r.activa=TRUE GROUP BY r.id,n.nombre,o.nombre`, [req.params.id])
       if (!routine.rows.length) return res.status(404).json({ message: 'Rutina no disponible' })
-      const exercises = await query(`SELECT e.id::TEXT AS id,e.slug_fuente AS slug,e.codigo_dataset AS "legacyId",e.nombre AS name,e.tecnica AS technique,
+      const exercises = await query(`SELECT e.id::TEXT AS id,e.codigo_dataset AS "legacyId",e.nombre AS name,e.tecnica AS technique,
         re.orden AS "order",re.series AS sets,re.repeticiones AS repetitions,re.duracion_seg AS "durationSeconds",
         re.descanso_seg AS "restSeconds",re.por_lado AS "perSide"
         FROM fittrack.rutina_ejercicios re JOIN fittrack.ejercicios e ON e.id=re.ejercicio_id

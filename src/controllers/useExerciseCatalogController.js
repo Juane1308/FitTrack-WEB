@@ -9,7 +9,7 @@ export function useExerciseCatalogController() {
   const selectedGroup = ref('Todos')
   const selectedLevel = ref('Todos')
   const muscleGroups = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.muscleGroup).filter(Boolean).sort((a, b) => a.localeCompare(b, 'es')))])
-  const levels = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.level).filter(level => level && level !== 'No especificado').sort((a, b) => a.localeCompare(b, 'es')))])
+  const levels = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.level).filter(level => level && !['No especificado', 'Todos los niveles'].includes(level)).sort((a, b) => a.localeCompare(b, 'es')))])
   const isLoading = ref(true)
   const error = ref('')
   const filteredExercises = computed(() => {
