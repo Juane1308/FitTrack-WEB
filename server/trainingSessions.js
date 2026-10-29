@@ -17,6 +17,8 @@ export function createTrainingSessionsRouter({ query, transaction, authenticate,
         const exercises = items.rows.map(item => {
           const source = getSourceExerciseBySlug(item.slug)
           return { id: item.slug, slug: item.slug, name: source.name, technique: source.technique,
+            description: source.description, equipment: source.equipment, muscleGroup: source.group,
+            primaryMuscle: source.primaryMuscles?.[0] ?? '',
             imageUrl: source.imageUrl, sets: item.sets, repetitions: item.repetitions,
             durationSeconds: null, restSeconds: item.restSeconds, perSide: false }
         })
@@ -33,10 +35,13 @@ export function createTrainingSessionsRouter({ query, transaction, authenticate,
         LEFT JOIN fittrack.grupos_musculares g ON g.id=rg.grupo_muscular_id
         WHERE r.id=$1 AND r.activa=TRUE GROUP BY r.id,n.nombre,o.nombre`, [req.params.id])
       if (!routine.rows.length) return res.status(404).json({ message: 'Rutina no disponible' })
-      const exercises = await query(`SELECT e.id::TEXT AS id,e.codigo_dataset AS "legacyId",e.nombre AS name,e.tecnica AS technique,
+      const exercises = await query(`SELECT e.id::TEXT AS id,e.codigo_dataset AS "legacyId",e.nombre AS name,
+        e.tecnica AS technique,e.descripcion AS description,e.equipo AS equipment,
+        g.nombre AS "muscleGroup",
         re.orden AS "order",re.series AS sets,re.repeticiones AS repetitions,re.duracion_seg AS "durationSeconds",
         re.descanso_seg AS "restSeconds",re.por_lado AS "perSide"
         FROM fittrack.rutina_ejercicios re JOIN fittrack.ejercicios e ON e.id=re.ejercicio_id
+        LEFT JOIN fittrack.grupos_musculares g ON g.id=e.grupo_muscular_id
         WHERE re.rutina_id=$1 ORDER BY re.orden,e.id`, [req.params.id])
       return res.json({ routine: { ...routine.rows[0], exercises: exercises.rows.map(exercise => ({
         ...exercise, imageUrl: getExerciseImage(exercise.slug, exercise.name, exercise.legacyId),
