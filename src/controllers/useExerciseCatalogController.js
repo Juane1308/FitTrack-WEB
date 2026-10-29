@@ -3,19 +3,26 @@ import { TrainingRepository } from '@/repositories/trainingRepository'
 
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
+const groupOptions = [
+  { id: 'all', label: 'Todos' },
+  { id: 'biceps', label: 'Bíceps' },
+  { id: 'triceps', label: 'Tríceps' },
+  { id: 'hombros', label: 'Hombros' },
+  { id: 'espalda', label: 'Espalda' },
+  { id: 'pecho', label: 'Pecho' },
+  { id: 'pierna', label: 'Piernas' },
+  { id: 'abdomen', label: 'Abdomen' },
+]
+
 export function useExerciseCatalogController() {
   const exercises = ref([])
   const search = ref('')
-  const selectedGroup = ref('Todos')
-  const selectedLevel = ref('Todos')
-  const muscleGroups = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.muscleGroup).filter(Boolean).sort((a, b) => a.localeCompare(b, 'es')))])
-  const levels = computed(() => ['Todos', ...new Set(exercises.value.map(exercise => exercise.level).filter(level => level && !['No especificado', 'Todos los niveles'].includes(level)).sort((a, b) => a.localeCompare(b, 'es')))])
+  const selectedGroup = ref('all')
   const isLoading = ref(true)
   const error = ref('')
   const filteredExercises = computed(() => {
     const term = normalize(search.value.trim())
-    return exercises.value.filter(exercise => (selectedGroup.value === 'Todos' || exercise.muscleGroup === selectedGroup.value)
-      && (selectedLevel.value === 'Todos' || exercise.level === selectedLevel.value)
+    return exercises.value.filter(exercise => (selectedGroup.value === 'all' || exercise.muscleCategory === selectedGroup.value)
       && normalize(`${exercise.name} ${exercise.muscleGroup ?? ''} ${exercise.equipment ?? ''} ${(exercise.primaryMuscles ?? []).join(' ')}`).includes(term))
   })
 
@@ -32,6 +39,6 @@ export function useExerciseCatalogController() {
     }
   }
 
-  function clearFilters() { search.value = ''; selectedGroup.value = 'Todos'; selectedLevel.value = 'Todos' }
-  return { exercises, search, selectedGroup, selectedLevel, muscleGroups, levels, filteredExercises, isLoading, error, loadExercises, clearFilters }
+  function clearSearch() { search.value = '' }
+  return { exercises, search, selectedGroup, groupOptions, filteredExercises, isLoading, error, loadExercises, clearSearch }
 }
