@@ -47,6 +47,16 @@ INSERT INTO user_profiles (user_id)
 SELECT id FROM app_users
 ON CONFLICT (user_id) DO NOTHING;
 
+-- Medios administrados por la aplicación. El fondo del Home se almacena aquí,
+-- no dentro del bundle del frontend.
+CREATE TABLE IF NOT EXISTS app_media (
+  media_key TEXT PRIMARY KEY,
+  image_data BYTEA NOT NULL,
+  mime_type TEXT NOT NULL CHECK (mime_type IN ('image/jpeg', 'image/png', 'image/webp')),
+  alt_text TEXT,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
 DO $$
 BEGIN
   IF EXISTS (

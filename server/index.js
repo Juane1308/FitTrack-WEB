@@ -12,6 +12,7 @@ import { createProfileRouter } from './profile.js'
 import { createProgressRouter } from './progress.js'
 import { getExerciseCatalog, getTrainingCatalog } from './trainingCatalog.js'
 import { createTrainingSessionsRouter } from './trainingSessions.js'
+import { answerChatMessage } from './chatbot.js'
 
 const app = express()
 const port = Number(process.env.PORT) || 3000
@@ -195,6 +196,26 @@ async function getWeeklyData(userId) {
     [userId],
   )
 
+  const activityResult = await query(
+    `SELECT
+       activity_date::DATE AS activity_date,
+       COALESCE(SUM(ws.duration_minutes) FILTER (WHERE ws.completed = TRUE), 0)::INTEGER AS exercise_minutes,
+       COALESCE(SUM(ws.calories_burned) FILTER (WHERE ws.completed = TRUE), 0)::INTEGER AS calories,
+       COUNT(ws.id) FILTER (WHERE ws.completed = TRUE)::INTEGER AS completed_workouts
+     FROM generate_series(
+       date_trunc('week', CURRENT_DATE),
+       date_trunc('week', CURRENT_DATE) + INTERVAL '6 days',
+       INTERVAL '1 day'
+     ) AS days(activity_date)
+     LEFT JOIN workout_sessions ws
+       ON ws.user_id = $1
+       AND ws.performed_at >= days.activity_date
+       AND ws.performed_at < days.activity_date + INTERVAL '1 day'
+     GROUP BY days.activity_date
+     ORDER BY days.activity_date`,
+    [userId],
+  )
+
   let activeStreak = 0
   let expectedDate = new Date()
   expectedDate.setUTCHours(0, 0, 0, 0)
@@ -219,7 +240,111 @@ async function getWeeklyData(userId) {
     exerciseMinutes: Number(row.exercise_minutes ?? 0),
     calories: row.calories == null ? null : Number(row.calories),
     activeStreak,
+    weeklyActivity: activityResult.rows.map(activity => ({
+      date: activity.activity_date,
+      exerciseMinutes: Number(activity.exercise_minutes ?? 0),
+      calories: Number(activity.calories ?? 0),
+      completedWorkouts: Number(activity.completed_workouts ?? 0),
+    })),
   }
+}
+
+function serializeHomeRoutine(row) {
+  if (!row) return null
+
+  return {
+    id: row.id,
+    name: row.name,
+    date: row.scheduled_for ?? null,
+    durationMinutes: row.duration_minutes == null ? null : Number(row.duration_minutes),
+    difficulty: row.difficulty ?? null,
+    origin: row.origin ?? 'scheduled',
+    completed: Boolean(row.completed),
+  }
+}
+
+async function getHomeRoutine(userId) {
+  const scheduledResult = await query(
+    `SELECT
+       id::TEXT AS id,
+       name,
+       scheduled_for,
+       duration_minutes,
+       difficulty,
+       'scheduled' AS origin,
+       EXISTS (
+         SELECT 1
+         FROM workout_sessions ws
+         WHERE ws.user_id = $1
+           AND ws.routine_id::TEXT = routines.id
+           AND ws.completed = TRUE
+           AND ws.performed_at::DATE = CURRENT_DATE
+       ) AS completed
+     FROM routines
+     WHERE user_id = $1 AND scheduled_for = CURRENT_DATE
+     ORDER BY created_at DESC
+     LIMIT 1`,
+    [userId],
+  )
+
+  if (scheduledResult.rows[0]) return serializeHomeRoutine(scheduledResult.rows[0])
+
+  const catalogResult = await query(
+    `SELECT
+       r.id::TEXT AS id,
+       r.nombre AS name,
+       NULL::DATE AS scheduled_for,
+       r.duracion_estimada_min AS duration_minutes,
+       n.nombre AS difficulty,
+       ur.origin,
+       EXISTS (
+         SELECT 1
+         FROM workout_sessions ws
+         WHERE ws.user_id = $1
+           AND ws.routine_id::TEXT = r.id::TEXT
+           AND ws.completed = TRUE
+           AND ws.performed_at::DATE = CURRENT_DATE
+       ) AS completed
+     FROM public.user_routines ur
+     JOIN fittrack.rutinas r ON r.id = ur.routine_id
+     LEFT JOIN fittrack.niveles_dificultad n ON n.id = r.nivel_id
+     WHERE ur.user_id = $1 AND r.activa = TRUE
+     ORDER BY CASE WHEN ur.origin = 'assigned' THEN 0 ELSE 1 END, ur.created_at DESC
+     LIMIT 1`,
+    [userId],
+  )
+
+  return serializeHomeRoutine(catalogResult.rows[0])
+}
+
+async function getRoutineSummary(userId) {
+  const result = await query(
+    `SELECT
+       COUNT(*)::INTEGER AS total,
+       COUNT(*) FILTER (WHERE ur.origin = 'assigned')::INTEGER AS assigned,
+       COUNT(*) FILTER (WHERE ur.origin = 'saved')::INTEGER AS saved
+     FROM public.user_routines ur
+     JOIN fittrack.rutinas r ON r.id = ur.routine_id
+     WHERE ur.user_id = $1 AND r.activa = TRUE`,
+    [userId],
+  )
+
+  const row = result.rows[0] ?? {}
+  return {
+    total: Number(row.total ?? 0),
+    assigned: Number(row.assigned ?? 0),
+    saved: Number(row.saved ?? 0),
+  }
+}
+
+async function getHomeBackground() {
+  const result = await query(
+    `SELECT mime_type, encode(image_data, 'base64') AS image_base64
+     FROM app_media
+     WHERE media_key = 'home-background'`,
+  )
+  const row = result.rows[0]
+  return row ? `data:${row.mime_type};base64,${row.image_base64}` : null
 }
 
 app.get('/api/health', async (_request, response) => {
@@ -373,15 +498,11 @@ app.put('/api/profile', authenticate, async (request, response, next) => {
 app.get('/api/home', authenticate, async (request, response, next) => {
   try {
     const weekly = await getWeeklyData(request.user.id)
-    const routineResult = await query(
-      `SELECT name, scheduled_for, duration_minutes, difficulty
-       FROM routines
-       WHERE user_id = $1 AND scheduled_for = CURRENT_DATE
-       ORDER BY created_at DESC
-       LIMIT 1`,
-      [request.user.id],
-    )
-    const routine = routineResult.rows[0]
+    const [todayRoutine, routineSummary, homeBackground] = await Promise.all([
+      getHomeRoutine(request.user.id),
+      getRoutineSummary(request.user.id),
+      getHomeBackground(),
+    ])
 
     return response.json({
       user: publicUser(request.user),
@@ -394,15 +515,42 @@ app.get('/api/home', authenticate, async (request, response, next) => {
         exerciseMinutes: weekly.exerciseMinutes,
         activeStreak: weekly.activeStreak,
       },
-      todayRoutine: routine
-        ? {
-            name: routine.name,
-            date: routine.scheduled_for,
-            durationMinutes: routine.duration_minutes,
-            difficulty: routine.difficulty,
-          }
-        : null,
+      todayRoutine,
+      routineSummary,
+      weeklyActivity: weekly.weeklyActivity,
+      homeBackground,
     })
+  } catch (error) {
+    return next(error)
+  }
+})
+
+app.post('/api/me/workouts', authenticate, async (request, response, next) => {
+  try {
+    const routineId = request.body?.routineId == null ? null : String(request.body.routineId).trim()
+    const routineDbId = routineId && /^\d+$/.test(routineId) ? routineId : null
+    const durationMinutes = Number(request.body?.durationMinutes ?? 0)
+    const rawCalories = request.body?.caloriesBurned
+    const caloriesBurned = rawCalories == null || rawCalories === '' ? null : Number(rawCalories)
+
+    if (routineId && routineId.length > 100) {
+      return response.status(400).json({ message: 'Rutina inválida' })
+    }
+    if (!Number.isInteger(durationMinutes) || durationMinutes < 0 || durationMinutes > 1440) {
+      return response.status(400).json({ message: 'Duración inválida' })
+    }
+    if (caloriesBurned != null && (!Number.isInteger(caloriesBurned) || caloriesBurned < 0)) {
+      return response.status(400).json({ message: 'Calorías inválidas' })
+    }
+
+    await query(
+      `INSERT INTO workout_sessions
+        (id, user_id, routine_id, performed_at, duration_minutes, calories_burned, completed)
+       VALUES ($1, $2, $3::BIGINT, NOW(), $4, $5, TRUE)`,
+      [createId(), request.user.id, routineDbId, durationMinutes, caloriesBurned],
+    )
+
+    return response.status(201).json({ status: 'completed' })
   } catch (error) {
     return next(error)
   }
@@ -481,6 +629,15 @@ app.get('/api/nutrition/recipes', async (_request, response, next) => {
     response.json(await getRecipeCatalog(query))
   } catch (error) {
     next(error)
+  }
+})
+
+app.post('/api/chat', authenticate, async (request, response, next) => {
+  try {
+    const result = await answerChatMessage(query, request.body?.message, request.user)
+    return response.json(result)
+  } catch (error) {
+    return next(error)
   }
 })
 
