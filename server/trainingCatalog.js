@@ -47,10 +47,10 @@ export async function getTrainingCatalog(query, userId = null) {
   const standard = result.rows.map(row => ({ ...row, image: `/images/exercises/${routineCovers[row.datasetId] ?? 'bodyweight-squat'}.jpg` }))
   if (userId === null) return standard
   const custom = await query(`SELECT cr.id, cr.name, cr.description, 'Personalizada' AS level,
-    GREATEST(10, COUNT(cre.id)::INTEGER * 8) AS "durationMinutes", 1 AS "durationWeeks",
+    GREATEST(10, COUNT(cre.routine_id)::INTEGER * 8) AS "durationMinutes", 1 AS "durationWeeks",
     'Personalizada' AS goal, 'Personalizada' AS location, '{}'::TEXT[] AS equipment,
     'custom' AS origin, TRUE AS custom,
-    COALESCE((SELECT '/images/exercises/' || e.slug || '.jpg' FROM public.user_custom_routine_exercises e
+    COALESCE((SELECT '/images/exercises/' || e.exercise_slug || '.jpg' FROM public.user_custom_routine_exercises e
       WHERE e.routine_id=cr.id ORDER BY e.sort_order LIMIT 1), '/images/exercises/bodyweight-squat.jpg') AS image
     FROM public.user_custom_routines cr LEFT JOIN public.user_custom_routine_exercises cre ON cre.routine_id=cr.id
     WHERE cr.user_id=$1 GROUP BY cr.id ORDER BY cr.created_at DESC`, [userId])

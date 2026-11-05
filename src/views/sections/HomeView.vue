@@ -231,9 +231,7 @@ function formatActivityDay(date) {
 }
 
 .home-page {
-  width: min(100%, 1180px);
-  max-width: 1180px;
-  margin: 0 auto;
+  max-width: none;
   position: relative;
   z-index: 2;
   border-radius: 28px;
@@ -511,6 +509,87 @@ header > .muted {
   gap: 16px;
   margin-top: 32px;
   padding: 28px;
+}
+
+@media (min-width: 901px) {
+  .home-page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .welcome-header {
+    margin-bottom: 4px;
+  }
+
+  h1 {
+    font-size: clamp(25px, 2vw, 30px);
+  }
+
+  .progress-card {
+    gap: 24px;
+    margin-top: 22px;
+    padding: 22px 26px;
+  }
+
+  .progress-ring {
+    flex-basis: 136px;
+    width: 136px;
+    height: 136px;
+  }
+
+  .progress-ring::before {
+    width: 106px;
+    height: 106px;
+  }
+
+  .progress-ring strong {
+    font-size: 29px;
+  }
+
+  .progress-content h2 {
+    font-size: 21px;
+  }
+
+  .progress-bar {
+    height: 10px;
+    margin-top: 17px;
+  }
+
+  .progress-content p {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  .routine-card {
+    gap: 14px 20px;
+    margin-top: 18px;
+    padding: 18px 22px;
+  }
+
+  .metric-grid,
+  .home-secondary-grid {
+    gap: 13px;
+    margin-top: 18px;
+  }
+
+  .metric-card {
+    min-height: 108px;
+    gap: 9px;
+  }
+
+  .metric-card h2 {
+    font-size: 15px;
+  }
+
+  .metric-card strong {
+    font-size: 21px;
+  }
+
+  .routine-summary-card,
+  .activity-card {
+    gap: 13px;
+  }
 }
 
 .error-card {

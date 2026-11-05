@@ -129,9 +129,9 @@ input {
 /* Contenedor de sección (equivalente a SafeArea + ConstrainedBox + ListView) */
 .section-page {
   width: 100%;
-  max-width: none;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 24px clamp(18px, 3vw, 38px) 64px;
+  padding: 22px clamp(18px, 2.5vw, 34px) 48px;
 }
 
 .muted {

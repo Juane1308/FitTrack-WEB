@@ -21,8 +21,11 @@ const routineOrigin = routine => myRoutines.value.find(item => item.id === routi
 const bookmarkLabel = routine => routineOrigin(routine) === 'assigned' ? `${routine.name}: rutina asignada` : routineOrigin(routine) === 'saved' ? `Quitar ${routine.name} de mis rutinas` : `Guardar ${routine.name} en mis rutinas`
 async function onRoutineCreated(routine) {
   selectedCatalog.value = 'mine'
+  actionError.value = ''
   await loadMyRoutines()
-  if (routine?.id) selectedRoutineId.value = `custom:${routine.id}`
+  if (routine?.id && !myRoutines.value.some(item => String(item.id) === String(routine.id))) {
+    actionError.value = 'La rutina se creó, pero no apareció en “Mis rutinas”. Actualiza la lista para volver a cargarla.'
+  }
 }
 </script>
 
@@ -61,22 +64,23 @@ async function onRoutineCreated(routine) {
     </div>
 
     <p v-if="actionError" role="alert">{{ actionError }}</p>
+    <p v-else-if="catalogError && displayedRoutines.length" class="catalog-warning" role="status">{{ catalogError }} Se muestran las rutinas cargadas anteriormente.</p>
     <p v-if="loading" role="status">Cargando rutinas…</p>
     <AppCard v-else-if="isMyCatalog && !canManageRoutines" class="empty-state">
       <p>Inicia sesión para consultar tus rutinas guardadas o asignadas.</p>
       <a href="/login">Iniciar sesión</a>
     </AppCard>
-    <AppCard v-else-if="catalogError" class="empty-state">
+    <AppCard v-else-if="catalogError && !displayedRoutines.length" class="empty-state">
       <p role="alert">{{ catalogError }}</p>
       <button type="button" @click="isMyCatalog ? loadMyRoutines() : loadRoutines()">Reintentar</button>
     </AppCard>
     <ul v-else-if="displayedRoutines.length" class="routine-grid" :aria-label="isMyCatalog ? 'Mis rutinas' : 'Catálogo de rutinas'">
       <li v-for="routine in displayedRoutines" :key="routine.id">
         <AppCard class="routine-card" padding="0">
-          <img :src="routine.image" alt="" class="routine-image" width="361" height="298" />
-          <div class="routine-info">
+          <div class="routine-face">
+            <img :src="routine.image" alt="" class="routine-image" width="361" height="298" />
+            <div class="routine-info">
             <h3>{{ routine.name }}</h3>
-            <button type="button" class="save-routine" @click="selectedRoutineId = routine.custom ? `custom:${routine.id}` : routine.id">Ver detalle de {{ routine.name }}</button>
             <p v-if="isMyCatalog" class="origin">{{ routine.origin === 'assigned' ? 'Asignada' : 'Guardada' }}</p>
             <dl class="routine-classification">
               <div>
@@ -96,24 +100,24 @@ async function onRoutineCreated(routine) {
               <CalendarDays :size="16" aria-hidden="true" />
               Programa de {{ routine.durationWeeks }} semanas
             </p>
-            <template v-if="canManageRoutines">
-              <button v-if="routine.custom" type="button" class="bookmark-routine delete-custom-routine" :disabled="pendingIds.has(routine.id)" :aria-label="`Eliminar ${routine.name}`" title="Eliminar rutina" @click="removeCustomRoutine(routine.id)">
-                <LoaderCircle v-if="pendingIds.has(routine.id)" class="bookmark-loading" :size="21" aria-hidden="true" />
-                <Trash2 v-else :size="19" aria-hidden="true" />
-              </button>
-              <template v-else>
-              <button type="button" class="bookmark-routine" :class="{ saved: savedIds.has(routine.id), removable: routineOrigin(routine) === 'saved' }" :disabled="pendingIds.has(routine.id) || routineOrigin(routine) === 'assigned' || Boolean(myError) || myLoading" :aria-label="bookmarkLabel(routine)" :title="pendingIds.has(routine.id) ? 'Actualizando…' : routineOrigin(routine) === 'assigned' ? 'Rutina asignada' : routineOrigin(routine) === 'saved' ? 'Quitar' : 'Guardar'" @click="changeSavedRoutine(routine.id, routineOrigin(routine) === 'saved')">
-                <LoaderCircle v-if="pendingIds.has(routine.id)" class="bookmark-loading" :size="21" aria-hidden="true" />
-                <template v-else-if="savedIds.has(routine.id)">
-                  <BookmarkCheck class="bookmark-check-icon" :size="21" aria-hidden="true" />
-                  <BookmarkMinus v-if="routineOrigin(routine) === 'saved'" class="bookmark-remove-icon" :size="21" aria-hidden="true" />
-                </template>
-                <Bookmark v-else :size="21" aria-hidden="true" />
-                <span class="bookmark-tooltip" aria-hidden="true">{{ routineOrigin(routine) === 'saved' ? 'Quitar' : 'Guardar' }}</span>
-              </button>
-              </template>
-            </template>
+            </div>
           </div>
+          <button type="button" class="routine-select" :aria-label="`Ver rutina ${routine.name}`" @click="selectedRoutineId = routine.custom ? `custom:${routine.id}` : routine.id"></button>
+          <template v-if="canManageRoutines">
+            <button v-if="routine.custom" type="button" class="bookmark-routine delete-custom-routine" :disabled="pendingIds.has(routine.id)" :aria-label="`Eliminar ${routine.name}`" title="Eliminar rutina" @click="removeCustomRoutine(routine.id)">
+              <LoaderCircle v-if="pendingIds.has(routine.id)" class="bookmark-loading" :size="19" aria-hidden="true" />
+              <Trash2 v-else :size="18" aria-hidden="true" />
+            </button>
+            <button v-else type="button" class="bookmark-routine" :class="{ saved: savedIds.has(routine.id), removable: routineOrigin(routine) === 'saved' }" :disabled="pendingIds.has(routine.id) || routineOrigin(routine) === 'assigned'" :aria-label="bookmarkLabel(routine)" :title="pendingIds.has(routine.id) ? 'Actualizando…' : routineOrigin(routine) === 'assigned' ? 'Rutina asignada' : routineOrigin(routine) === 'saved' ? 'Quitar' : 'Guardar'" @click="changeSavedRoutine(routine, routineOrigin(routine) === 'saved')">
+              <LoaderCircle v-if="pendingIds.has(routine.id)" class="bookmark-loading" :size="19" aria-hidden="true" />
+              <template v-else-if="savedIds.has(routine.id)">
+                <BookmarkCheck class="bookmark-check-icon" :size="19" aria-hidden="true" />
+                <BookmarkMinus v-if="routineOrigin(routine) === 'saved'" class="bookmark-remove-icon" :size="19" aria-hidden="true" />
+              </template>
+              <Bookmark v-else :size="19" aria-hidden="true" />
+              <span class="bookmark-tooltip" aria-hidden="true">{{ routineOrigin(routine) === 'saved' ? 'Quitar' : 'Guardar' }}</span>
+            </button>
+          </template>
         </AppCard>
       </li>
     </ul>
@@ -149,7 +153,10 @@ h1 { font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -.7px; }
 .catalog-heading span { font-size: 13px; padding-bottom: 16px; }
 .routine-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .routine-card { position: relative; height: 100%; display: flex; flex-direction:column; align-items:stretch; overflow:hidden; background: linear-gradient(135deg, #0b1713, #050907); }
-.bookmark-routine { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--color-card-border); border-radius: 10px; background: #0b1713; color: var(--color-primary); cursor: pointer; transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease; }
+.routine-face { height:100%; }
+.routine-select { position:absolute; z-index:1; inset:0; width:100%; height:100%; padding:0; border:0; border-radius:inherit; background:transparent; cursor:pointer; }
+.routine-select:focus-visible { outline:2px solid var(--color-primary); outline-offset:-3px; }
+.bookmark-routine { position: absolute; z-index:2; top: 10px; right: 10px; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--color-card-border); border-radius: 10px; background: #0b1713; color: var(--color-primary); cursor: pointer; transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease; }
 .bookmark-routine > svg { grid-area: 1 / 1; transition: opacity .18s ease, transform .18s ease; }
 .bookmark-remove-icon { opacity: 0; transform: scale(.65); }
 .bookmark-routine.removable:is(:hover, :focus-visible):not(:disabled) { color: #ff7878; border-color: #ff7878; background: #391719; transform: translateY(-2px); }
@@ -164,8 +171,8 @@ h1 { font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -.7px; }
 .bookmark-loading { animation: bookmark-spin 1s linear infinite; }
 @keyframes bookmark-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .bookmark-loading { animation: none; } .bookmark-routine, .bookmark-routine > svg, .bookmark-tooltip { transition: none; } }
-.routine-image { display:block; width:100%; height:clamp(140px,13vw,180px); object-fit:contain; background:#f4f5f3; flex-shrink:0; }
-.routine-info { position:relative; flex:1; padding:18px 16px 16px; min-width:0; }
+.routine-image { display:block; width:100%; height:clamp(120px,10vw,148px); object-fit:contain; background:#f4f5f3; flex-shrink:0; }
+.routine-info { position:relative; flex:1; padding:14px 14px 13px; min-width:0; }
 .level { display: inline-block; color: var(--color-accent); background: var(--color-indicator); border-radius: 6px; padding: 5px 8px; font-size: 12px; }
 h3 { margin: 0 0 12px; font-size: 19px; overflow-wrap: anywhere; }
 .routine-classification { margin: 0 0 14px; display: grid; gap: 12px; }
@@ -193,4 +200,25 @@ h3 { margin: 0 0 12px; font-size: 19px; overflow-wrap: anywhere; }
 .create-routine-button:hover { filter:brightness(1.08); }
 .catalog-heading .create-routine-button { margin-left:auto; margin-bottom:10px; }
 .delete-custom-routine { color:var(--color-error); }
+.catalog-warning { margin:0 0 14px; color:var(--color-muted-text); font-size:12px; }
+@media (min-width: 761px) {
+  .routine-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap:13px; }
+}
+@media (min-width: 901px) {
+  .training-page { padding-top: 26px; }
+  .eyebrow { margin-bottom: 8px; }
+  h1 { font-size: clamp(25px, 2vw, 30px); }
+  .introduction { margin-top: 7px; font-size: 14px; }
+  .catalog-navigation { margin: 20px 0; }
+  .catalog-navigation button { padding: 11px 15px; font-size: 14px; }
+  .catalog-heading { margin: 24px 0 18px; }
+  .catalog-heading h2 { font-size: 18px; padding-bottom: 11px; }
+  .routine-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 13px; }
+  .routine-image { height: clamp(115px, 10vw, 145px); }
+  .routine-info { padding: 13px 13px 12px; }
+  h3 { margin-bottom: 9px; font-size: 17px; }
+  .save-routine { margin-top: 9px; padding: 8px 10px; font-size: 12px; }
+  .routine-classification { gap: 8px; margin-bottom: 10px; }
+  .duration { font-size: 12px; }
+}
 </style>

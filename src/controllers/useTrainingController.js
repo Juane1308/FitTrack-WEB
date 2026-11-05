@@ -24,9 +24,8 @@ export function useTrainingController() {
   }, { flush: 'sync' })
   async function loadMyRoutines() {
     const version = ++myRequestVersion
-    myRoutines.value = []
     myError.value = ''
-    if (!auth.isAuthenticated) return
+    if (!auth.isAuthenticated) { myRoutines.value = []; return }
     myLoading.value = true
     try {
       const result = await repository.getMyRoutines()
@@ -36,24 +35,39 @@ export function useTrainingController() {
       if (version === myRequestVersion) myError.value = exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : 'No fue posible cargar tus rutinas. Intenta nuevamente.'
     } finally { if (version === myRequestVersion) myLoading.value = false }
   }
-  async function changeSavedRoutine(id, remove = false) {
+  async function changeSavedRoutine(routineOrId, remove = false) {
+    const routine = typeof routineOrId === 'object' ? routineOrId : null
+    const id = routine?.id ?? routineOrId
     if (!auth.isAuthenticated || pendingIds.value.has(id)) return
-    pendingIds.value.add(id)
+    pendingIds.value = new Set(pendingIds.value).add(id)
     actionError.value = ''
     try {
       if (remove) await repository.removeRoutine(id)
       else await repository.saveRoutine(id)
+      myRoutines.value = remove
+        ? myRoutines.value.filter(item => String(item.id) !== String(id))
+        : routine && !myRoutines.value.some(item => String(item.id) === String(id))
+          ? [...myRoutines.value, { ...routine, origin: 'saved' }]
+          : myRoutines.value
       await loadMyRoutines()
     } catch (exception) {
-      actionError.value = exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : 'No fue posible actualizar tus rutinas. Intenta nuevamente.'
-    } finally { pendingIds.value.delete(id) }
+      actionError.value = exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : exception.message || 'No fue posible actualizar tus rutinas. Intenta nuevamente.'
+    } finally {
+      const next = new Set(pendingIds.value)
+      next.delete(id)
+      pendingIds.value = next
+    }
   }
   async function removeCustomRoutine(id) {
     if (!auth.isAuthenticated || pendingIds.value.has(id)) return
-    pendingIds.value.add(id); actionError.value = ''
+    pendingIds.value = new Set(pendingIds.value).add(id); actionError.value = ''
     try { await repository.removeCustomRoutine(id); await loadMyRoutines() }
     catch (exception) { actionError.value = exception.status === 409 ? exception.message : exception.status === 401 ? 'Tu sesión venció. Inicia sesión nuevamente.' : 'No fue posible eliminar la rutina. Intenta nuevamente.' }
-    finally { pendingIds.value.delete(id) }
+    finally {
+      const next = new Set(pendingIds.value)
+      next.delete(id)
+      pendingIds.value = next
+    }
   }
   const routines = computed(() => state.routines)
   const isLoading = ref(true)

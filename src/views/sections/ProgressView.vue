@@ -629,6 +629,30 @@ const formatPhotoDate = (date) => photoDate.format(new Date(`${date}T00:00:00`))
   color: var(--color-muted-text);
 }
 
+@media (min-width: 901px) {
+  .progress-page { padding-top: 24px; }
+  .progress-header { gap: 12px 18px; margin-bottom: 18px; }
+  .progress-header h1 { font-size: 27px; }
+  .progress-header p { font-size: 13px; }
+  .progress-grid { gap: 14px; }
+  .card { padding: 19px; border-radius: 16px; }
+  .measure { gap: 17px; }
+  .big-number { margin-top: 10px; font-size: 43px; }
+  .change { margin-top: 10px; font-size: 12px; }
+  .measure-form { gap: 8px; }
+  .measure-form label { font-size: 12px; }
+  .field { height: 40px; padding: 0 11px; }
+  .field input { font-size: 14px; }
+  .measure-form .btn { min-height: 36px; font-size: 12px; }
+  .chart-card .card-heading { margin-bottom: 12px; }
+  .goal-card { gap: 14px; }
+  .goal-figure strong { font-size: 29px; }
+  .ring { width: 108px; height: 108px; }
+  .ring strong { font-size: 24px; }
+  .photos-card { gap: 15px; }
+  .photo { max-height: 260px; }
+}
+
 @media (max-width: 1100px) {
   .progress-grid {
     grid-template-columns: 1fr;

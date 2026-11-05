@@ -583,6 +583,16 @@ const menu = [
   font-size: 15px;
 }
 
+@media (min-width: 901px) {
+  .profile-page { padding-top: 24px; }
+  .profile-page h1 { font-size: 29px; }
+  .summary { gap: 14px; }
+  .summary-block { padding: 22px; }
+  .menu-item { gap: 14px; padding: 16px 4px; }
+  .menu-text strong { font-size: 16px; }
+  .menu-text small { font-size: 13px; }
+}
+
 @media (max-width: 1000px) {
   .summary {
     grid-template-columns: 1fr;

@@ -196,6 +196,32 @@ h1 { max-width: 650px; font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -.7p
 .ingredients-list li::marker,.steps-list li::marker { color: var(--color-primary); }
 .detail-source { margin-top: 20px; color: var(--color-subtle-text); font-size: 12px; }
 button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+@media (min-width: 901px) {
+  .nutrition-page { padding-top: 26px; }
+  .eyebrow { margin-bottom: 7px; }
+  h1 { font-size: clamp(25px, 2vw, 30px); }
+  .heading-accent { width: 48px; height: 3px; margin-top: 14px; }
+  .nutrition-tabs { gap: 26px; margin-top: 22px; }
+  .nutrition-tabs button { min-width: 90px; padding-bottom: 11px; font-size: 14px; }
+  .catalog-toolbar { margin: 18px 0; }
+  .catalog-copy h2 { font-size: 19px; }
+  .catalog-copy p { font-size: 14px; }
+  .category-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; }
+  .category-card { min-height: 108px; }
+  .category-card img { height: 108px; }
+  .category-info { gap: 6px; padding: 13px; }
+  .category-info strong { font-size: 15px; }
+  .category-info small { font-size: 12px; }
+  .category-arrow { padding: 0 13px; font-size: 25px; }
+  .item-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; }
+  .item-card { border-radius: 16px; }
+  .item-info { gap: 6px; padding: 11px; }
+  .item-info strong { font-size: 14px; }
+  .item-metadata,.item-info small { font-size: 12px; }
+}
+@media (min-width: 1350px) {
+  .item-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
 @media(max-width:900px) { .item-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:650px) {
   .nutrition-page { padding: 28px 18px calc(var(--nav-height) + 110px); }
