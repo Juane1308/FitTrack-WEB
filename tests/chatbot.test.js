@@ -43,6 +43,21 @@ describe('Asistencia IA basada en datasets', () => {
     expect(query.mock.calls[0][1]).toEqual(['%glute%', 2, null])
   })
 
+  it('informa cuando hay menos ejercicios disponibles que los solicitados', async () => {
+    const query = vi.fn().mockResolvedValue({
+      rows: [
+        { id: 1, name: 'Jalón al pecho', technique: 'Controla el descenso', muscleGroup: 'Espalda', level: 'Principiante' },
+        { id: 2, name: 'Remo con mancuerna', technique: 'Mantén el tronco estable', muscleGroup: 'Espalda', level: 'Intermedio' },
+        { id: 3, name: 'Remo sentado en polea', technique: 'Lleva el agarre al abdomen', muscleGroup: 'Espalda', level: 'Principiante' },
+      ],
+    })
+
+    const result = await answerChatMessage(query, 'dame 4 ejercicios para espalda')
+
+    expect(result.items).toHaveLength(3)
+    expect(result.message).toContain('solicitaste 4')
+  })
+
   it('busca recetas sin ingredientes lácteos identificados', async () => {
     const query = vi.fn().mockResolvedValue({
       rows: [{ id: 'r1', name: 'Avena con fruta', minutes: 10, servings: 1, calories: 300, protein: 8, carbs: 50, fat: 7 }],

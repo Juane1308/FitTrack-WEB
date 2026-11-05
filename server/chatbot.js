@@ -141,11 +141,15 @@ export async function answerChatMessage(query, message, profile = {}) {
 
     const focusLabel = muscle?.label ?? 'entrenamiento'
     const notice = safetyNotice(blockedPatterns)
+    const exerciseMessage = result.rows.length === 0
+      ? `No encontré ejercicios de ${focusLabel} compatibles con los datos de tu perfil.`
+      : result.rows.length < count
+        ? `Solo encontré ${result.rows.length} ejercicios de ${focusLabel} compatibles con tu búsqueda; solicitaste ${count}.`
+        : `Encontré ${result.rows.length} ejercicio${result.rows.length === 1 ? '' : 's'} de ${focusLabel}.`
+
     return {
       type: 'exercises',
-      message: `${result.rows.length
-        ? `Encontré ${result.rows.length} ejercicio${result.rows.length === 1 ? '' : 's'} de ${focusLabel}.`
-        : `No encontré ejercicios de ${focusLabel} compatibles con los datos de tu perfil.`}${notice ? ` ${notice}` : ''}`,
+      message: `${exerciseMessage}${notice ? ` ${notice}` : ''}`,
       items: result.rows.map(exercise => ({
         id: String(exercise.id),
         name: exercise.name,

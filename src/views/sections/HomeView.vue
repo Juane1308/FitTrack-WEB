@@ -231,7 +231,9 @@ function formatActivityDay(date) {
 }
 
 .home-page {
-  max-width: none;
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
   border-radius: 28px;

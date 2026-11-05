@@ -34,12 +34,12 @@ const icons = {
         <img :src="logo" alt="FitTrack" />
       </RouterLink>
 
-      <nav class="main-navigation" aria-label="Navegación principal">
+      <nav class="sidebar-navigation" aria-label="Navegación principal">
         <RouterLink
           v-for="section in sections"
           :key="section.key"
           :to="{ name: section.key }"
-          class="main-link"
+          class="sidebar-link"
           :class="{ selected: currentSection === section.key }"
           :aria-current="currentSection === section.key ? 'page' : undefined"
           @click="closeSidebarOnMobile"
@@ -49,9 +49,6 @@ const icons = {
         </RouterLink>
       </nav>
 
-      <RouterLink :to="{ name: 'profile' }" class="profile-button" aria-label="Abrir perfil" :aria-current="currentSection === AppSection.profile ? 'page' : undefined">
-        <User :size="20" aria-hidden="true" />
-      </RouterLink>
     </aside>
 
     <main class="main-content" :class="{ 'sidebar-collapsed': !sidebarOpen, 'home-content': currentSection === AppSection.home }">
