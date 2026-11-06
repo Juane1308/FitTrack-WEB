@@ -1,0 +1,242 @@
+[
+  {
+    "id": "squat",
+    "name": "Sentadilla al aire",
+    "muscleGroup": "Piernas",
+    "equipment": "Sin equipo",
+    "level": "Principiante",
+    "technique": "Separa los pies al ancho de hombros, flexiona caderas y rodillas y vuelve a subir con control."
+  },
+  {
+    "id": "chair-squat",
+    "name": "Sentadilla a silla",
+    "muscleGroup": "Piernas",
+    "equipment": "Silla estable",
+    "level": "Principiante",
+    "technique": "Coloca una silla firme detrás, baja con control hasta tocar el asiento y levántate sin impulso."
+  },
+  {
+    "id": "reverse-lunge",
+    "name": "Zancada hacia atrás",
+    "muscleGroup": "Piernas",
+    "equipment": "Sin equipo",
+    "level": "Intermedio",
+    "technique": "Da un paso atrás, flexiona ambas rodillas y vuelve a la posición inicial; alterna las piernas."
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Puente de glúteos",
+    "muscleGroup": "Glúteos",
+    "equipment": "Colchoneta",
+    "level": "Principiante",
+    "technique": "Acostado boca arriba con rodillas flexionadas, eleva la cadera sin arquear la espalda y baja lentamente."
+  },
+  {
+    "id": "calf-raise",
+    "name": "Elevación de talones",
+    "muscleGroup": "Pantorrillas",
+    "equipment": "Sin equipo",
+    "level": "Principiante",
+    "technique": "De pie junto a un apoyo estable, eleva los talones y desciende lentamente."
+  },
+  {
+    "id": "wall-push-up",
+    "name": "Flexión en pared",
+    "muscleGroup": "Pecho",
+    "equipment": "Pared",
+    "level": "Principiante",
+    "technique": "Apoya las manos en una pared, flexiona los codos acercando el pecho y empuja manteniendo el cuerpo alineado."
+  },
+  {
+    "id": "incline-push-up",
+    "name": "Flexión inclinada",
+    "muscleGroup": "Pecho",
+    "equipment": "Banco estable",
+    "level": "Principiante",
+    "technique": "Apoya las manos en un banco firme, mantén el tronco alineado y acerca el pecho flexionando los codos."
+  },
+  {
+    "id": "push-up",
+    "name": "Flexión de brazos",
+    "muscleGroup": "Pecho",
+    "equipment": "Sin equipo",
+    "level": "Intermedio",
+    "technique": "Apoya manos y puntas de pies, conserva el cuerpo alineado y baja y sube con control."
+  },
+  {
+    "id": "plank",
+    "name": "Plancha de antebrazos",
+    "muscleGroup": "Abdomen",
+    "equipment": "Colchoneta",
+    "level": "Principiante",
+    "technique": "Apoya antebrazos y puntas de pies y mantén tronco y cadera alineados respirando con normalidad."
+  },
+  {
+    "id": "side-plank",
+    "name": "Plancha lateral",
+    "muscleGroup": "Abdomen",
+    "equipment": "Colchoneta",
+    "level": "Intermedio",
+    "technique": "Apoya un antebrazo y el lateral de los pies, eleva la cadera y mantén la alineación; cambia de lado."
+  },
+  {
+    "id": "dead-bug",
+    "name": "Bicho muerto",
+    "muscleGroup": "Abdomen",
+    "equipment": "Colchoneta",
+    "level": "Principiante",
+    "technique": "Boca arriba, extiende de forma alternada brazo y pierna opuestos sin despegar la zona lumbar del suelo."
+  },
+  {
+    "id": "bird-dog",
+    "name": "Extensión alterna en cuadrupedia",
+    "muscleGroup": "Abdomen",
+    "equipment": "Colchoneta",
+    "level": "Principiante",
+    "technique": "En cuadrupedia, extiende brazo y pierna opuestos sin girar la pelvis y alterna los lados."
+  },
+  {
+    "id": "march",
+    "name": "Marcha en el sitio",
+    "muscleGroup": "Cuerpo completo",
+    "equipment": "Sin equipo",
+    "level": "Principiante",
+    "technique": "Alterna pasos en el sitio con movimiento natural de brazos y un ritmo cómodo."
+  },
+  {
+    "id": "walk",
+    "name": "Caminata continua",
+    "muscleGroup": "Cuerpo completo",
+    "equipment": "Sin equipo",
+    "level": "Principiante",
+    "technique": "Camina sobre una superficie regular con postura erguida y un ritmo que permita hablar."
+  },
+  {
+    "id": "step-jack",
+    "name": "Paso lateral con brazos",
+    "muscleGroup": "Cuerpo completo",
+    "equipment": "Sin equipo",
+    "level": "Principiante",
+    "technique": "Abre una pierna hacia un lado mientras elevas los brazos y regresa; alterna sin saltar."
+  },
+  {
+    "id": "jumping-jack",
+    "name": "Salto de tijera",
+    "muscleGroup": "Cuerpo completo",
+    "equipment": "Sin equipo",
+    "level": "Intermedio",
+    "technique": "Abre y cierra piernas y brazos con saltos suaves, aterrizando con las rodillas ligeramente flexionadas."
+  },
+  {
+    "id": "mountain-climber",
+    "name": "Escalador",
+    "muscleGroup": "Abdomen",
+    "equipment": "Colchoneta",
+    "level": "Intermedio",
+    "technique": "En apoyo de manos y pies, acerca alternadamente las rodillas al pecho manteniendo la cadera estable."
+  },
+  {
+    "id": "goblet-squat",
+    "name": "Sentadilla con mancuerna",
+    "muscleGroup": "Piernas",
+    "equipment": "Mancuerna",
+    "level": "Intermedio",
+    "technique": "Sujeta una mancuerna junto al pecho, baja flexionando caderas y rodillas y sube con control."
+  },
+  {
+    "id": "dumbbell-rdl",
+    "name": "Peso muerto rumano con mancuernas",
+    "muscleGroup": "Cadena posterior",
+    "equipment": "Mancuernas",
+    "level": "Intermedio",
+    "technique": "Con las rodillas ligeramente flexionadas, lleva la cadera hacia atrás y baja las mancuernas cerca de las piernas sin redondear la espalda."
+  },
+  {
+    "id": "dumbbell-row",
+    "name": "Remo con mancuerna",
+    "muscleGroup": "Espalda",
+    "equipment": "Mancuerna y banco",
+    "level": "Intermedio",
+    "technique": "Con una mano apoyada en un banco y el tronco estable, lleva el codo hacia atrás y baja con control; cambia de lado."
+  },
+  {
+    "id": "dumbbell-press",
+    "name": "Press de pecho con mancuernas",
+    "muscleGroup": "Pecho",
+    "equipment": "Mancuernas y banco",
+    "level": "Intermedio",
+    "technique": "Acostado en un banco, empuja las mancuernas sobre el pecho y baja con control sin rebotes."
+  },
+  {
+    "id": "shoulder-press",
+    "name": "Press de hombros con mancuernas",
+    "muscleGroup": "Hombros",
+    "equipment": "Mancuernas",
+    "level": "Intermedio",
+    "technique": "Con el tronco estable, eleva las mancuernas desde la altura de los hombros y baja sin arquear la espalda."
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Elevación lateral",
+    "muscleGroup": "Hombros",
+    "equipment": "Mancuernas",
+    "level": "Principiante",
+    "technique": "Eleva los brazos hacia los lados hasta la altura de los hombros con los codos ligeramente flexionados y baja despacio."
+  },
+  {
+    "id": "biceps-curl",
+    "name": "Curl de bíceps",
+    "muscleGroup": "Bíceps",
+    "equipment": "Mancuernas",
+    "level": "Principiante",
+    "technique": "Flexiona los codos sin balancear el tronco y baja las mancuernas lentamente."
+  },
+  {
+    "id": "triceps-pushdown",
+    "name": "Extensión de tríceps en polea",
+    "muscleGroup": "Tríceps",
+    "equipment": "Polea",
+    "level": "Principiante",
+    "technique": "Con los codos junto al cuerpo, extiende los brazos empujando el accesorio hacia abajo y vuelve con control."
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Jalón al pecho",
+    "muscleGroup": "Espalda",
+    "equipment": "Polea",
+    "level": "Principiante",
+    "technique": "Sentado con el tronco estable, lleva la barra hacia la parte superior del pecho y retorna sin tirones."
+  },
+  {
+    "id": "seated-row",
+    "name": "Remo sentado en polea",
+    "muscleGroup": "Espalda",
+    "equipment": "Polea",
+    "level": "Principiante",
+    "technique": "Lleva el agarre hacia el abdomen manteniendo el tronco estable y extiende los brazos con control."
+  },
+  {
+    "id": "leg-press",
+    "name": "Prensa de piernas",
+    "muscleGroup": "Piernas",
+    "equipment": "Prensa",
+    "level": "Intermedio",
+    "technique": "Apoya espalda y pies, flexiona las rodillas sin despegar la pelvis y empuja sin bloquear las rodillas."
+  },
+  {
+    "id": "bench-press",
+    "name": "Press de banca con barra",
+    "muscleGroup": "Pecho",
+    "equipment": "Barra y banco",
+    "level": "Avanzado",
+    "technique": "Con apoyo estable y asistencia de seguridad, baja la barra hacia el pecho con control y empuja sin rebotes."
+  },
+  {
+    "id": "barbell-squat",
+    "name": "Sentadilla con barra",
+    "muscleGroup": "Piernas",
+    "equipment": "Barra y soporte de seguridad",
+    "level": "Avanzado",
+    "technique": "Con la barra estable y soportes ajustados, flexiona caderas y rodillas manteniendo el tronco firme y sube con control."
+  }
+]

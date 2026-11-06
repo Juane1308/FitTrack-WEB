@@ -31,3 +31,24 @@ export async function query(text, values = []) {
 
   return pool.query(text, values)
 }
+
+export async function transaction(callback) {
+  if (!pool) {
+    const error = new Error('La base de datos no está configurada')
+    error.code = 'DATABASE_NOT_CONFIGURED'
+    throw error
+  }
+
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    const result = await callback(client)
+    await client.query('COMMIT')
+    return result
+  } catch (error) {
+    await client.query('ROLLBACK').catch(() => {})
+    throw error
+  } finally {
+    client.release()
+  }
+}

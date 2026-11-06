@@ -1,5 +1,5 @@
 export class Routine {
-  constructor({ id, name, level, durationMinutes, durationWeeks, image, goal, muscleGroup, exercises = [] }) {
+  constructor({ id, name, level, durationMinutes, durationWeeks, image, goal, muscleGroup, location, equipment = [], exercises = [] }) {
     this.id = id
     this.durationWeeks = durationWeeks
     this.image = image
@@ -9,5 +9,7 @@ export class Routine {
     this.goal = goal
     this.muscleGroup = muscleGroup
     this.exercises = exercises
+    this.location = location
+    this.equipment = equipment
   }
 }

@@ -1,0 +1,54 @@
+import { apiRequest } from './apiClient'
+import { Routine } from '@/models'
+import fullBodyImage from '@/assets/images/training/full-body.png'
+import hypertrophyImage from '@/assets/images/training/hypertrophy.png'
+import fatLossImage from '@/assets/images/training/fat-loss.png'
+import strengthImage from '@/assets/images/training/strength.png'
+
+const images = {
+  'full-body': fullBodyImage,
+  hypertrophy: hypertrophyImage,
+  'fat-loss': fatLossImage,
+  strength: strengthImage,
+}
+
+export class TrainingRepository {
+  async getRoutine(id) {
+    const data = await apiRequest(`/api/routines/${encodeURIComponent(id)}`)
+    if (!data?.routine || !Array.isArray(data.routine.exercises)) throw new Error('Detalle de rutina inválido')
+    return data.routine
+  }
+  getActiveWorkout() { return apiRequest('/api/me/workouts/active') }
+  startWorkout(id) { return apiRequest(`/api/me/routines/${encodeURIComponent(id)}/start`, { method: 'POST' }) }
+  finishWorkout(id, durationSeconds) { return apiRequest(`/api/me/workouts/${encodeURIComponent(id)}/finish`, { method: 'POST', body: JSON.stringify({ durationSeconds }) }) }
+  createCustomRoutine(routine) { return apiRequest('/api/me/custom-routines', { method: 'POST', body: JSON.stringify(routine) }) }
+  removeCustomRoutine(id) { return apiRequest(`/api/me/custom-routines/${encodeURIComponent(id)}`, { method: 'DELETE' }) }
+  async getMyRoutines() {
+    const data = await apiRequest('/api/me/routines')
+    if (!Array.isArray(data?.routines)) throw new Error('Respuesta de mis rutinas inválida')
+    return data.routines.map(routine => ({ ...new Routine({ ...routine, image: routine.image?.startsWith('/') ? routine.image : images[routine.image] ?? fullBodyImage }), origin: routine.origin, custom: Boolean(routine.custom) }))
+  }
+
+  saveRoutine(id) {
+    return apiRequest(`/api/me/routines/${encodeURIComponent(id)}`, { method: 'POST' })
+  }
+
+  removeRoutine(id) {
+    return apiRequest(`/api/me/routines/${encodeURIComponent(id)}`, { method: 'DELETE' })
+  }
+
+  async getExercises() {
+    const data = await apiRequest('/api/exercises')
+    if (!Array.isArray(data?.exercises)) throw new Error('Respuesta de ejercicios inválida')
+    return data.exercises
+  }
+
+  async getRoutines() {
+    const data = await apiRequest('/api/routines')
+    if (!Array.isArray(data?.routines)) throw new Error('Respuesta de catálogo inválida')
+    return data.routines.map(routine => new Routine({
+      ...routine,
+      image: routine.image?.startsWith('/') ? routine.image : images[routine.image] ?? fullBodyImage,
+    }))
+  }
+}

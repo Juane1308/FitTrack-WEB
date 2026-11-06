@@ -1,15 +1,13 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { ArrowLeft, Clock3, Flame, Utensils, X } from 'lucide-vue-next'
-import { foodCategories, recipeCategories, nutritionSources } from '@/data/nutritionCatalog'
 import { useNutritionController } from '@/controllers/useNutritionController'
 
-const { activeTab, selectedCategory, selectedItem, items, selectTab, openCategory, backToCategories, openItem, closeItem } = useNutritionController()
+const { activeTab, selectedCategory, selectedItem, items, categories, sourceUrl, isLoading, error, loadCatalogs, selectTab, openCategory, backToCategories, openItem, closeItem } = useNutritionController()
+onMounted(loadCatalogs)
 const query = ref('')
-const categories = computed(() => activeTab.value === 'foods' ? foodCategories : recipeCategories)
 const filteredCategories = computed(() => categories.value.filter((category) => category.name.toLowerCase().includes(query.value.toLowerCase())))
 const filteredItems = computed(() => items.value.filter((item) => item.name.toLowerCase().includes(query.value.toLowerCase())))
-const sourceUrl = computed(() => activeTab.value === 'foods' ? nutritionSources.foods : nutritionSources.recipes)
 const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) closeItem() }
 </script>
 
@@ -44,7 +42,12 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
     </div>
 
     <div id="nutrition-content" role="tabpanel" :aria-labelledby="activeTab === 'foods' ? 'tab-foods' : 'tab-recipes'">
-      <ul v-if="!selectedCategory" class="category-grid" aria-label="Categorías">
+      <div v-if="isLoading" class="empty-state" role="status"><p>Cargando catálogo de alimentación…</p></div>
+      <div v-else-if="error" class="empty-state" role="alert">
+        <p>{{ error }}</p>
+        <button type="button" class="btn btn-filled" @click="loadCatalogs">Reintentar</button>
+      </div>
+      <ul v-else-if="!selectedCategory" class="category-grid" aria-label="Categorías">
         <li v-for="category in filteredCategories" :key="category.id">
           <button class="category-card" type="button" @click="openCategory(category)">
             <img :src="category.image" :alt="`Preparación de ${category.name.toLowerCase()}`" loading="lazy" />
@@ -80,8 +83,8 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
     <footer class="source-note">
       <span>Fuente de referencia:</span>
       <a :href="sourceUrl" target="_blank" rel="noreferrer">{{ activeTab === 'foods' ? 'USDA FoodData Central' : 'Kaggle · Food.com Recipes and Reviews' }}</a>
-      <p v-if="activeTab === 'foods'">Información nutricional de referencia por 100 g basada en USDA FoodData Central. Las fotografías son de recetas relacionadas del dataset Food.com en Kaggle.</p>
-      <p v-else>Las fotografías corresponden al dataset de Food.com en Kaggle; las recetas y sus valores nutricionales son datos de demostración.</p>
+      <p v-if="activeTab === 'foods'">Información nutricional de referencia por 100 g basada en USDA FoodData Central. Las fotografías tienen su fuente y licencia indicadas en cada ficha.</p>
+      <p v-else>Los nombres, ingredientes y pasos se basan en Food.com en Kaggle. Calorías y macronutrientes son estimaciones de FitTrack; las fotos incluyen su fuente y licencia en cada ficha.</p>
     </footer>
 
     <Teleport to="body">
@@ -107,9 +110,11 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
                 <div><span>Fibra</span><strong>{{ selectedItem.fiber == null ? 'No disponible' : `${selectedItem.fiber} g` }}</strong></div>
               </div>
               <h3>Beneficios</h3><p class="detail-paragraph">{{ selectedItem.benefits }}</p>
-              <p class="detail-source">
-                Fuente: <a :href="selectedItem.sourceUrl" target="_blank" rel="noreferrer">{{ selectedItem.source }}</a>
-                <br />Imagen relacionada: <a :href="selectedItem.imageSource.url" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.recipeName }} · Kaggle</a>
+              <p class="detail-source">Información: <a :href="selectedItem.sourceUrl" target="_blank" rel="noreferrer">{{ selectedItem.source }}</a></p>
+              <p v-if="selectedItem.imageSource?.sourcePage" class="detail-source">
+                Fotografía: <a :href="selectedItem.imageSource.sourcePage" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.title }}</a>
+                <span v-if="selectedItem.imageSource.creator"> · {{ selectedItem.imageSource.creator }}</span>
+                <span v-if="selectedItem.imageSource.license"> · <a :href="selectedItem.imageSource.licenseUrl" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.license }}</a></span>
               </p>
             </template>
             <template v-else>
@@ -119,6 +124,11 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
               <h3>Preparación</h3>
               <ol class="steps-list"><li v-for="step in selectedItem.steps" :key="step">{{ step }}</li></ol>
               <p class="detail-source">{{ selectedItem.source }}</p>
+              <p v-if="selectedItem.imageSource?.sourcePage" class="detail-source">
+                Fotografía: <a :href="selectedItem.imageSource.sourcePage" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.title }}</a>
+                <span v-if="selectedItem.imageSource.creator"> · {{ selectedItem.imageSource.creator }}</span>
+                <span v-if="selectedItem.imageSource.license"> · <a :href="selectedItem.imageSource.licenseUrl" target="_blank" rel="noreferrer">{{ selectedItem.imageSource.license }}</a></span>
+              </p>
             </template>
           </div>
         </article>
@@ -131,7 +141,7 @@ const onEscape = (event) => { if (event.key === 'Escape' && selectedItem.value) 
 .nutrition-page { padding-top: 34px; }
 .nutrition-heading { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
 .eyebrow { color: var(--color-primary); font-size: 11px; font-weight: 700; letter-spacing: 1.8px; margin-bottom: 10px; }
-h1 { max-width: 650px; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1px; line-height: 1.15; }
+h1 { max-width: 650px; font-size: clamp(26px, 2.8vw, 34px); letter-spacing: -.7px; line-height: 1.15; }
 .heading-accent { display: block; width: 58px; height: 4px; margin-top: 20px; border-radius: 3px; background: var(--color-primary); }
 .heading-icon { color: var(--color-primary); flex-shrink: 0; }
 .nutrition-tabs { display: flex; gap: 38px; margin-top: 30px; border-bottom: 1px solid var(--color-card-border); }
@@ -141,24 +151,24 @@ h1 { max-width: 650px; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1px; 
 .catalog-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 22px 0 22px; }
 .catalog-copy { display: grid; gap: 9px; }
 .catalog-copy p { max-width: 620px; line-height: 1.5; }
-.catalog-copy h2 { font-size: 26px; }
+.catalog-copy h2 { font-size: 22px; }
 .back-button { display: flex; align-items: center; gap: 7px; width: fit-content; padding: 0; border: 0; background: none; color: var(--color-primary); font-size: 15px; cursor: pointer; }
 .search-box input { width: min(270px, 36vw); height: 42px; padding: 0 14px; border: 1px solid var(--color-input-border); border-radius: 12px; outline: 0; background: var(--color-surface); }
 .search-box input:focus { border-color: var(--color-primary); }
 .category-grid,.item-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
-.category-card { display: flex; align-items: center; width: 100%; min-height: 148px; overflow: hidden; padding: 0; border: 1px solid var(--color-card-border); border-radius: var(--radius-card); background: var(--color-surface); text-align: left; cursor: pointer; transition: border-color .18s, transform .18s; }
+.category-card { display: flex; align-items: center; width: 100%; min-height: 128px; overflow: hidden; padding: 0; border: 1px solid var(--color-card-border); border-radius: 16px; background: var(--color-surface); text-align: left; cursor: pointer; transition: border-color .18s, transform .18s; }
 .category-card:hover,.item-card:hover { border-color: var(--color-primary); transform: translateY(-2px); }
-.category-card img { width: 36%; height: 148px; flex-shrink: 0; object-fit: cover; }
+.category-card img { width: 34%; height: 128px; flex-shrink: 0; object-fit: cover; }
 .category-info { display: grid; gap: 8px; min-width: 0; padding: 18px; }
-.category-info strong { font-size: 20px; }
+.category-info strong { font-size: 17px; }
 .category-info small { color: var(--color-muted-text); font-size: 14px; line-height: 1.45; }
 .category-arrow { margin-left: auto; padding: 0 20px; color: var(--color-muted-text); font-size: 32px; }
 .result-count { margin: 0 0 16px; font-size: 14px; }
 .item-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .item-card { display: flex; flex-direction: column; width: 100%; overflow: hidden; padding: 0; border: 1px solid var(--color-card-border); border-radius: var(--radius-card); background: var(--color-surface); text-align: left; cursor: pointer; transition: border-color .18s, transform .18s; }
 .item-card > img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #14231d; }
-.item-info { display: grid; gap: 10px; padding: 16px; }
-.item-info strong { font-size: 19px; line-height: 1.3; }
+.item-info { display: grid; gap: 8px; padding: 14px; }
+.item-info strong { font-size: 16px; line-height: 1.3; }
 .item-metadata { display: flex; flex-wrap: wrap; gap: 14px; color: var(--color-muted-text); font-size: 13px; }
 .item-metadata span { display: inline-flex; align-items: center; gap: 6px; }
 .item-metadata svg { color: var(--color-primary); }
@@ -186,6 +196,32 @@ h1 { max-width: 650px; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1px; 
 .ingredients-list li::marker,.steps-list li::marker { color: var(--color-primary); }
 .detail-source { margin-top: 20px; color: var(--color-subtle-text); font-size: 12px; }
 button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+@media (min-width: 901px) {
+  .nutrition-page { padding-top: 26px; }
+  .eyebrow { margin-bottom: 7px; }
+  h1 { font-size: clamp(25px, 2vw, 30px); }
+  .heading-accent { width: 48px; height: 3px; margin-top: 14px; }
+  .nutrition-tabs { gap: 26px; margin-top: 22px; }
+  .nutrition-tabs button { min-width: 90px; padding-bottom: 11px; font-size: 14px; }
+  .catalog-toolbar { margin: 18px 0; }
+  .catalog-copy h2 { font-size: 19px; }
+  .catalog-copy p { font-size: 14px; }
+  .category-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; }
+  .category-card { min-height: 108px; }
+  .category-card img { height: 108px; }
+  .category-info { gap: 6px; padding: 13px; }
+  .category-info strong { font-size: 15px; }
+  .category-info small { font-size: 12px; }
+  .category-arrow { padding: 0 13px; font-size: 25px; }
+  .item-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; }
+  .item-card { border-radius: 16px; }
+  .item-info { gap: 6px; padding: 11px; }
+  .item-info strong { font-size: 14px; }
+  .item-metadata,.item-info small { font-size: 12px; }
+}
+@media (min-width: 1350px) {
+  .item-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
 @media(max-width:900px) { .item-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:650px) {
   .nutrition-page { padding: 28px 18px calc(var(--nav-height) + 110px); }
@@ -210,4 +246,3 @@ button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3
   .nutrition-facts { grid-template-columns: repeat(2,1fr); }
 }
 </style>
-

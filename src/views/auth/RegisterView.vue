@@ -1,14 +1,12 @@
 <script setup>
 import { Lock, LockKeyhole, Mail, User } from 'lucide-vue-next'
 
-import AppDialog from '@/components/AppDialog.vue'
 import LoadingButton from '@/components/LoadingButton.vue'
 import TextField from '@/components/TextField.vue'
 import { useRegisterController } from '@/controllers/useRegisterController'
 import AuthLayout from './AuthLayout.vue'
 
-const { form, errors, isLoading, showSuccessDialog, register, confirmSuccess, goBack } =
-  useRegisterController()
+const { form, errors, isLoading, register, goBack } = useRegisterController()
 </script>
 
 <template>
@@ -49,20 +47,11 @@ const { form, errors, isLoading, showSuccessDialog, register, confirmSuccess, go
         <input v-model="form.acceptTerms" type="checkbox" :disabled="isLoading" />
         Acepto los términos y condiciones.
       </label>
-      <LoadingButton :loading="isLoading">Crear cuenta</LoadingButton>
+      <LoadingButton :loading="isLoading">Continuar</LoadingButton>
       <button type="button" class="btn btn-text" :disabled="isLoading" @click="goBack">
         Ya tengo una cuenta
       </button>
     </form>
-
-    <AppDialog
-      :open="showSuccessDialog"
-      title="Cuenta creada correctamente."
-      action-label="Continuar"
-      @action="confirmSuccess"
-    >
-      Ahora puedes iniciar sesión en FITTRACK.
-    </AppDialog>
   </AuthLayout>
 </template>
 

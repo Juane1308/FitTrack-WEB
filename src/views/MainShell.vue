@@ -1,5 +1,6 @@
 <script setup>
-import { Bell, ChartLine, Dumbbell, House, User, Utensils } from 'lucide-vue-next'
+import { Bell, ChartLine, Dumbbell, House, Menu, User, Utensils, X } from 'lucide-vue-next'
+import { ref } from 'vue'
 
 import ContextualChatButton from '@/components/ContextualChatButton.vue'
 import { AppSection } from '@/core/constants'
@@ -7,6 +8,15 @@ import { useMainShellController } from '@/controllers/useMainShellController'
 import logo from '@/assets/images/fittrack_logo.png'
 
 const { sections, currentSection, chatContext } = useMainShellController()
+const sidebarOpen = ref(typeof window === 'undefined' || window.innerWidth > 900)
+
+function toggleSidebar() {
+  sidebarOpen.value = !sidebarOpen.value
+}
+
+function closeSidebarOnMobile() {
+  if (window.innerWidth <= 900) sidebarOpen.value = false
+}
 
 const icons = {
   [AppSection.home]: House,
@@ -19,7 +29,7 @@ const icons = {
 
 <template>
   <div class="shell">
-    <aside class="sidebar">
+    <aside id="main-sidebar" class="sidebar" :class="{ 'sidebar-hidden': !sidebarOpen }">
       <RouterLink :to="{ name: 'home' }" class="brand" aria-label="Ir al inicio">
         <img :src="logo" alt="FitTrack" />
       </RouterLink>
@@ -32,21 +42,44 @@ const icons = {
           class="sidebar-link"
           :class="{ selected: currentSection === section.key }"
           :aria-current="currentSection === section.key ? 'page' : undefined"
+          @click="closeSidebarOnMobile"
         >
-          <component :is="icons[section.key]" :size="25" aria-hidden="true" />
+          <component :is="icons[section.key]" :size="18" aria-hidden="true" />
           <span>{{ section.label }}</span>
         </RouterLink>
       </nav>
 
-      <div class="sidebar-footer" aria-hidden="true">
-        <span>MEJORES HÁBITOS</span>
-        <span>GRANDES RESULTADOS</span>
-        <i></i>
-      </div>
     </aside>
 
-    <main class="main-content">
+    <main class="main-content" :class="{ 'sidebar-collapsed': !sidebarOpen, 'home-content': currentSection === AppSection.home }">
       <header class="topbar">
+        <RouterLink :to="{ name: 'home' }" class="topbar-brand" aria-label="FitTrack, ir al inicio">
+          <img :src="logo" alt="FitTrack" />
+        </RouterLink>
+        <nav class="desktop-navigation" aria-label="Navegación principal">
+          <RouterLink
+            v-for="section in sections"
+            :key="section.key"
+            :to="{ name: section.key }"
+            class="desktop-link"
+            :class="{ selected: currentSection === section.key }"
+            :aria-current="currentSection === section.key ? 'page' : undefined"
+          >
+            <component :is="icons[section.key]" :size="17" aria-hidden="true" />
+            <span>{{ section.label }}</span>
+          </RouterLink>
+        </nav>
+        <button
+          type="button"
+          class="menu-button"
+          :aria-expanded="sidebarOpen"
+          aria-controls="main-sidebar"
+          :aria-label="sidebarOpen ? 'Ocultar navegación' : 'Mostrar navegación'"
+          @click="toggleSidebar"
+        >
+          <X v-if="sidebarOpen" :size="25" aria-hidden="true" />
+          <Menu v-else :size="25" aria-hidden="true" />
+        </button>
         <button type="button" class="notification-button" aria-label="Notificaciones">
           <Bell :size="29" />
           <span></span>
@@ -69,6 +102,14 @@ const icons = {
     </main>
 
     <ContextualChatButton :context="chatContext" />
+
+    <button
+      v-if="sidebarOpen"
+      type="button"
+      class="sidebar-backdrop"
+      aria-label="Cerrar navegación"
+      @click="sidebarOpen = false"
+    ></button>
 
     <nav class="navigation-bar" aria-label="Navegación principal">
       <RouterLink
@@ -105,10 +146,16 @@ const icons = {
   z-index: 20;
   display: flex;
   flex-direction: column;
-  width: 258px;
-  padding: 28px 17px 32px;
+  width: 230px;
+  padding: 22px 14px 28px;
   border-right: 1px solid var(--color-card-border);
   background: #060b0f;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-hidden {
+  transform: translateX(-100%);
+  pointer-events: none;
 }
 
 .brand {
@@ -116,29 +163,29 @@ const icons = {
   align-items: center;
   justify-content: center;
   height: 75px;
-  margin-bottom: 42px;
+  margin-bottom: 30px;
 }
 
 .brand img {
-  width: 190px;
-  max-height: 58px;
+  width: 164px;
+  max-height: 50px;
   object-fit: contain;
 }
 
 .sidebar-navigation {
   display: grid;
-  gap: 14px;
+  gap: 9px;
 }
 
 .sidebar-link {
   display: flex;
   align-items: center;
-  gap: 22px;
-  min-height: 58px;
-  padding: 0 20px;
+  gap: 16px;
+  min-height: 50px;
+  padding: 0 16px;
   border-radius: 12px;
   color: #c7d2df;
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
 }
@@ -170,16 +217,55 @@ const icons = {
 .main-content {
   min-width: 0;
   min-height: 100vh;
-  margin-left: 258px;
+  margin-left: 230px;
+  transition: margin-left 0.25s ease;
+}
+
+.main-content.sidebar-collapsed {
+  margin-left: 0;
+}
+
+.main-content.home-content {
+  position: relative;
+  z-index: 2;
 }
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 26px;
-  height: 96px;
-  padding: 0 38px;
+  gap: 18px;
+  height: 72px;
+  padding: 0 clamp(22px, 3vw, 42px);
+}
+
+.topbar-brand,
+.desktop-navigation {
+  display: none;
+}
+
+.topbar-brand img {
+  display: block;
+  width: 142px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.menu-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .notification-button,
@@ -191,6 +277,10 @@ const icons = {
   background: transparent;
   color: #dbe6f0;
   cursor: pointer;
+}
+
+.notification-button {
+  margin-left: auto;
 }
 
 .notification-button span {
@@ -213,10 +303,15 @@ const icons = {
 
 .notification-button:focus-visible,
 .profile-button:focus-visible,
+.menu-button:focus-visible,
 .sidebar-link:focus-visible,
 .destination:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+.sidebar-backdrop {
+  display: none;
 }
 
 .navigation-bar {
@@ -278,7 +373,8 @@ const icons = {
 
 @media (max-width: 900px) {
   .sidebar {
-    display: none;
+    width: min(258px, 86vw);
+    box-shadow: 14px 0 32px rgba(0, 0, 0, 0.38);
   }
 
   .main-content {
@@ -290,8 +386,99 @@ const icons = {
     padding: 0 20px;
   }
 
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    display: block;
+    border: 0;
+    background: rgba(0, 0, 0, 0.58);
+    cursor: pointer;
+  }
+
   .navigation-bar {
     display: grid;
+  }
+}
+
+@media (min-width: 901px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content,
+  .main-content.sidebar-collapsed {
+    margin-left: 0;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    justify-content: space-between;
+    height: 66px;
+    border-bottom: 1px solid var(--color-card-border);
+    background: rgb(6 11 15 / 94%);
+    backdrop-filter: blur(14px);
+  }
+
+  .topbar-brand {
+    display: block;
+    flex: 0 0 150px;
+  }
+
+  .desktop-navigation {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .desktop-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 13px;
+    border-radius: 9px;
+    color: var(--color-muted-text);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color .18s, color .18s;
+  }
+
+  .desktop-link:hover,
+  .desktop-link.selected {
+    background: var(--color-indicator);
+    color: var(--color-primary);
+  }
+
+  .desktop-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .site-header .profile-button,
+  .profile-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-muted-text);
+    text-decoration: none;
+  }
+
+  .profile-button svg {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>

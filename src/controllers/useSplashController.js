@@ -12,7 +12,9 @@ export function useSplashController() {
 
   onMounted(() => {
     timer = setTimeout(() => {
-      router.replace(auth.isAuthenticated ? { name: 'home' } : { name: 'login' })
+      router.replace(auth.isAuthenticated
+        ? { name: auth.currentUser?.profileCompleted ? 'home' : 'personalization' }
+        : { name: 'login' })
     }, SPLASH_MS)
   })
 
