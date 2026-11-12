@@ -1,6 +1,6 @@
 <script setup>
 import { Bell, ChartLine, Dumbbell, House, Menu, User, Utensils, X } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 import ContextualChatButton from '@/components/ContextualChatButton.vue'
 import { AppSection } from '@/core/constants'
@@ -9,6 +9,13 @@ import logo from '@/assets/images/fittrack_logo.png'
 
 const { sections, currentSection, chatContext } = useMainShellController()
 const sidebarOpen = ref(typeof window === 'undefined' || window.innerWidth > 900)
+
+function handleViewportChange() {
+  if (window.innerWidth <= 900) sidebarOpen.value = false
+}
+
+onMounted(() => window.addEventListener('resize', handleViewportChange))
+onBeforeUnmount(() => window.removeEventListener('resize', handleViewportChange))
 
 function toggleSidebar() {
   sidebarOpen.value = !sidebarOpen.value
@@ -137,6 +144,7 @@ const icons = {
 <style scoped>
 .shell {
   min-height: 100vh;
+  overflow-x: clip;
   background: var(--color-background);
 }
 
@@ -147,6 +155,7 @@ const icons = {
   display: flex;
   flex-direction: column;
   width: 230px;
+  height: 100dvh;
   padding: 22px 14px 28px;
   border-right: 1px solid var(--color-card-border);
   background: #060b0f;
@@ -237,6 +246,7 @@ const icons = {
   gap: 18px;
   height: 72px;
   padding: 0 clamp(22px, 3vw, 42px);
+  box-sizing: border-box;
 }
 
 .topbar-brand,
@@ -382,8 +392,29 @@ const icons = {
   }
 
   .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    justify-content: flex-start;
     height: 74px;
     padding: 0 20px;
+    border-bottom: 1px solid var(--color-card-border);
+    background: rgb(6 11 15 / 94%);
+    backdrop-filter: blur(14px);
+  }
+
+  .notification-button {
+    margin-left: auto;
+  }
+
+  .profile-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .profile-button svg {
+    width: 21px;
+    height: 21px;
   }
 
   .sidebar-backdrop {
@@ -398,6 +429,42 @@ const icons = {
 
   .navigation-bar {
     display: grid;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    gap: 10px;
+    height: 64px;
+    padding: 0 14px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .notification-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .profile-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navigation-bar {
+    min-height: 64px;
+  }
+
+  .indicator {
+    width: 48px;
+    height: 28px;
+  }
+
+  .label {
+    font-size: 10px;
   }
 }
 
