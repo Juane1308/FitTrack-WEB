@@ -206,6 +206,8 @@ function formatActivityDay(date) {
 <style scoped>
 .home-view {
   position: relative;
+  width: 100%;
+  min-width: 0;
   min-height: 100vh;
   isolation: isolate;
 }
@@ -447,6 +449,7 @@ header > .muted {
 }
 
 .progress-ring {
+  position: relative;
   display: grid;
   flex: 0 0 170px;
   place-items: center;
@@ -597,17 +600,91 @@ header > .muted {
 }
 
 @media (max-width: 600px) {
+  .home-page {
+    width: 100%;
+    max-width: none;
+    padding: 16px 14px calc(var(--nav-height, 72px) + 24px);
+    border-radius: 0;
+  }
+
+  .welcome-header {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(25px, 8vw, 32px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .progress-card {
+    gap: 20px;
+    margin-top: 22px;
+    padding: 22px 16px;
+  }
+
+  .progress-ring {
+    flex-basis: 136px;
+    width: 136px;
+    height: 136px;
+  }
+
+  .progress-ring::before {
+    width: 106px;
+    height: 106px;
+  }
+
+  .progress-ring strong {
+    font-size: 28px;
+  }
+
+  .progress-content h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .progress-content p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .routine-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: 18px;
+    padding: 18px 16px;
+  }
+
+  .routine-heading {
+    flex-basis: auto;
+  }
+
+  .routine-heading h2,
+  .empty-routine-card h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .routine-card > .muted {
+    width: 100%;
+  }
+
+  .routine-actions {
+    width: 100%;
+  }
+
   .metric-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
   }
 
   .home-secondary-grid {
     grid-template-columns: 1fr;
-  }
-
-  .progress-card {
-    flex-direction: column;
-    text-align: center;
+    gap: 12px;
+    margin-top: 18px;
   }
 
   .progress-content {
@@ -627,6 +704,50 @@ header > .muted {
   .activity-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .activity-chart {
+    gap: 4px;
+    min-height: 156px;
+  }
+
+  .activity-column {
+    height: 144px;
+  }
+
+  .activity-bar-track {
+    height: 100px;
+  }
+
+  .activity-value,
+  .activity-column small {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-page {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .progress-card,
+  .routine-card,
+  .routine-summary-card,
+  .activity-card {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .progress-ring {
+    flex-basis: 122px;
+    width: 122px;
+    height: 122px;
+  }
+
+  .progress-ring::before {
+    width: 94px;
+    height: 94px;
   }
 }
 </style>

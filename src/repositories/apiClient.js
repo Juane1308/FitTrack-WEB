@@ -36,6 +36,17 @@ export async function apiRequest(path, options = {}) {
     throw error
   }
 
+  // El Home permanece montado dentro de KeepAlive. Avisamos cuando una
+  // sesión de entrenamiento acaba para que pueda refrescar sus métricas
+  // aunque el usuario todavía esté en el módulo Entrenamiento.
+  if (
+    typeof window !== 'undefined'
+    && options.method === 'POST'
+    && /^\/api\/me\/workouts\/[^/]+\/finish$/.test(path)
+  ) {
+    window.dispatchEvent(new CustomEvent('fittrack:workout-completed', { detail: data }))
+  }
+
   return data
 }
 

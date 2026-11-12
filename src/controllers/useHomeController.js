@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { completeWorkout, fetchHomeDashboard } from '@/repositories/weeklyProgressRepository'
 import { useAuthController } from './authController'
@@ -24,6 +24,18 @@ export function useHomeController() {
     if (goal === 0) return 0
 
     return Math.min(100, Math.round((completed / goal) * 100))
+  })
+
+  function refreshAfterWorkout() {
+    loadHomeDashboard({ clearCompletion: false })
+  }
+
+  onMounted(() => {
+    window.addEventListener('fittrack:workout-completed', refreshAfterWorkout)
+  })
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('fittrack:workout-completed', refreshAfterWorkout)
   })
 
   async function loadHomeDashboard({ clearCompletion = true } = {}) {
